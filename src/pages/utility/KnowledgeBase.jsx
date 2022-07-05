@@ -20,7 +20,7 @@ function KnowledgeBase() {
         <main>
 
           {/* Search area */}
-          <div className="relative flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 lg:py-16 bg-indigo-500 overflow-hidden">
+          <div className="relative flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-8 lg:py-16 bg-primary overflow-hidden">
             {/* Glow */}
             <div className="absolute pointer-events-none" aria-hidden="true">
               <svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +144,7 @@ function KnowledgeBase() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                           Explore -&gt;
                         </a>
                       </div>
@@ -183,7 +183,7 @@ function KnowledgeBase() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                           Explore -&gt;
                         </a>
                       </div>
@@ -217,7 +217,7 @@ function KnowledgeBase() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                           Explore -&gt;
                         </a>
                       </div>
@@ -258,7 +258,7 @@ function KnowledgeBase() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                           Explore -&gt;
                         </a>
                       </div>
@@ -298,7 +298,7 @@ function KnowledgeBase() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                           Explore -&gt;
                         </a>
                       </div>
@@ -339,7 +339,7 @@ function KnowledgeBase() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                           Explore -&gt;
                         </a>
                       </div>
@@ -376,7 +376,7 @@ function KnowledgeBase() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                           Explore -&gt;
                         </a>
                       </div>
@@ -415,7 +415,7 @@ function KnowledgeBase() {
                       </div>
                       {/* Link */}
                       <div>
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                           Explore -&gt;
                         </a>
                       </div>
@@ -450,7 +450,7 @@ function KnowledgeBase() {
                         </div>
                         {/* Link */}
                         <div>
-                          <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                          <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                             View -&gt;
                           </a>
                         </div>
@@ -475,7 +475,7 @@ function KnowledgeBase() {
                         </div>
                         {/* Link */}
                         <div>
-                          <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                          <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                             View -&gt;
                           </a>
                         </div>
@@ -500,7 +500,7 @@ function KnowledgeBase() {
                         </div>
                         {/* Link */}
                         <div>
-                          <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                          <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                             View -&gt;
                           </a>
                         </div>
@@ -525,7 +525,7 @@ function KnowledgeBase() {
                         </div>
                         {/* Link */}
                         <div>
-                          <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                          <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                             View -&gt;
                           </a>
                         </div>

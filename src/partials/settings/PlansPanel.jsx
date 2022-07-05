@@ -148,10 +148,10 @@ function PlansPanel() {
               </div>
              {/* Tab 3 */}
               <div className="relative col-span-full xl:col-span-4 bg-white shadow-md rounded-sm border border-slate-200">
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-indigo-500" aria-hidden="true"></div>
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-primary" aria-hidden="true"></div>
                 <div className="px-5 pt-5 pb-6 border-b border-slate-200">
                   <header className="flex items-center mb-2">
-                    <div className="w-6 h-6 rounded-full shrink-0 bg-gradient-to-tr from-indigo-500 to-indigo-300 mr-3">
+                    <div className="w-6 h-6 rounded-full shrink-0 bg-gradient-to-tr from-primary to-indigo-300 mr-3">
                       <svg className="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
                         <path d="M12 17a.833.833 0 01-.833-.833 3.333 3.333 0 00-3.334-3.334.833.833 0 110-1.666 3.333 3.333 0 003.334-3.334.833.833 0 111.666 0 3.333 3.333 0 003.334 3.334.833.833 0 110 1.666 3.333 3.333 0 00-3.334 3.334c0 .46-.373.833-.833.833z" />
                       </svg>
@@ -164,7 +164,7 @@ function PlansPanel() {
                     <span className="text-2xl">$</span><span className="text-3xl">{annual? '74': '79'}</span><span className="text-slate-500 font-medium text-sm">/mo</span>
                   </div>
                  {/* CTA */}
-                  <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white w-full">Upgrade</button>
+                  <button className="btn bg-primary hover:bg-indigo-600 text-white w-full">Upgrade</button>
                 </div>
                 <div className="px-5 pt-4 pb-5">
                   <div className="text-xs text-slate-800 font-semibold uppercase mb-4">What's included</div>
@@ -217,7 +217,7 @@ function PlansPanel() {
         <section>
           <div className="px-5 py-3 bg-indigo-50 border border-indigo-100 rounded-sm text-center xl:text-left xl:flex xl:flex-wrap xl:justify-between xl:items-center">
             <div className="text-slate-800 font-semibold mb-2 xl:mb-0">Looking for different configurations?</div>
-            <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">Contact Sales</button>
+            <button className="btn bg-primary hover:bg-indigo-600 text-white">Contact Sales</button>
           </div>
         </section>
 
@@ -248,7 +248,7 @@ function PlansPanel() {
                 Got more questions?
               </div>
               <div className="text-sm">
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum in voluptate velit esse cillum dolore eu fugiat <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">contact us</a>.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum in voluptate velit esse cillum dolore eu fugiat <a className="font-medium text-primary hover:text-indigo-600" href="#0">contact us</a>.
               </div>
             </li>
           </ul>
@@ -261,7 +261,7 @@ function PlansPanel() {
         <div className="flex flex-col px-6 py-5 border-t border-slate-200">
           <div className="flex self-end">
             <button className="btn border-slate-200 hover:border-slate-300 text-slate-600">Cancel</button>
-            <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3">Save Changes</button>
+            <button className="btn bg-primary hover:bg-indigo-600 text-white ml-3">Save Changes</button>
           </div>
         </div>
       </footer>

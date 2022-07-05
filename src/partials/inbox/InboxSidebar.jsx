@@ -53,7 +53,7 @@ function InboxSidebar({
               <div className="absolute bottom-0 w-full h-px bg-slate-200" aria-hidden="true"></div>
               <ul className="relative text-sm font-medium flex flex-nowrap -mx-4 sm:-mx-6 lg:-mx-8 overflow-x-scroll no-scrollbar">
                 <li className="mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8">
-                  <a className="block pb-3 text-indigo-500 whitespace-nowrap border-b-2 border-indigo-500" href="#0">Primary</a>
+                  <a className="block pb-3 text-primary whitespace-nowrap border-b-2 border-primary" href="#0">Primary</a>
                 </li>
                 <li className="mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8">
                   <a className="block pb-3 text-slate-500 hover:text-slate-600 whitespace-nowrap" href="#0">Social</a>

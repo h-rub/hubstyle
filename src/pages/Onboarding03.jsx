@@ -39,7 +39,7 @@ function Onboarding03() {
                   </svg>
                 </Link>
                 <div className="text-sm">
-                  Have an account? <Link className="font-medium text-indigo-500 hover:text-indigo-600" to="/signin">Sign In</Link>
+                  Have an account? <Link className="font-medium text-primary hover:text-indigo-600" to="/signin">Sign In</Link>
                 </div>
               </div>
 
@@ -50,13 +50,13 @@ function Onboarding03() {
                     <div className="absolute left-0 top-1/2 -mt-px w-full h-0.5 bg-slate-200" aria-hidden="true"></div>
                     <ul className="relative flex justify-between w-full">
                       <li>
-                        <Link className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold bg-indigo-500 text-white" to="/onboarding-01">1</Link>
+                        <Link className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold bg-primary text-white" to="/onboarding-01">1</Link>
                       </li>
                       <li>
-                        <Link className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold bg-indigo-500 text-white" to="/onboarding-02">2</Link>
+                        <Link className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold bg-primary text-white" to="/onboarding-02">2</Link>
                       </li>
                       <li>
-                        <Link className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold bg-indigo-500 text-white" to="/onboarding-03">3</Link>
+                        <Link className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold bg-primary text-white" to="/onboarding-03">3</Link>
                       </li>
                       <li>
                         <Link className="flex items-center justify-center w-6 h-6 rounded-full text-xs font-semibold bg-slate-100 text-slate-500" to="/onboarding-04">4</Link>
@@ -107,7 +107,7 @@ function Onboarding03() {
                   </div>
                   <div className="flex items-center justify-between">
                     <Link className="text-sm underline hover:no-underline" to="/onboarding-02">&lt;- Back</Link>
-                    <Link className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-auto" to="/onboarding-04">Next Step -&gt;</Link>
+                    <Link className="btn bg-primary hover:bg-indigo-600 text-white ml-auto" to="/onboarding-04">Next Step -&gt;</Link>
                   </div>
                 </form>
 

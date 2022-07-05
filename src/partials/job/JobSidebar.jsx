@@ -34,7 +34,7 @@ function JobSidebar() {
         <div className="relative">
           <div className="text-sm font-medium text-slate-800 mb-2">Remember to keep track of your job research.</div>
           <div className="text-right">
-            <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+            <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
               Create Alert -&gt;
             </a>
           </div>

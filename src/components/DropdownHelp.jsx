@@ -66,7 +66,7 @@ function DropdownHelp({
           <ul>
             <li>
               <Link
-                className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
+                className="font-medium text-sm text-primary hover:text-indigo-600 flex items-center py-1 px-3"
                 to="#0"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
@@ -79,7 +79,7 @@ function DropdownHelp({
             </li>
             <li>
               <Link
-                className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
+                className="font-medium text-sm text-primary hover:text-indigo-600 flex items-center py-1 px-3"
                 to="#0"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
@@ -91,7 +91,7 @@ function DropdownHelp({
             </li>
             <li>
               <Link
-                className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
+                className="font-medium text-sm text-primary hover:text-indigo-600 flex items-center py-1 px-3"
                 to="#0"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >

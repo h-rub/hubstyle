@@ -39,7 +39,7 @@ function Cart3() {
                       <span>-&gt;</span>
                       <span className="text-slate-500">Payment</span>
                       <span>-&gt;</span>
-                      <span className="text-indigo-500">Confirm</span>
+                      <span className="text-primary">Confirm</span>
                     </div>
                   </div>
                   <header className="mb-6">
@@ -117,7 +117,7 @@ function Cart3() {
                           </div>
                         </div>
                         <div className="text-right">
-                          <button type="submit" className="btn bg-white border-slate-200 hover:border-slate-300 text-indigo-500">
+                          <button type="submit" className="btn bg-white border-slate-200 hover:border-slate-300 text-primary">
                             Download Invoice
                           </button>
                         </div>
@@ -255,7 +255,7 @@ function Cart3() {
 
                       <div className="mt-6">
                         <div className="mb-4">
-                          <Link to="/ecommerce/pay" className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white">
+                          <Link to="/ecommerce/pay" className="btn w-full bg-primary hover:bg-indigo-600 text-white">
                             View Your Order
                           </Link>
                         </div>

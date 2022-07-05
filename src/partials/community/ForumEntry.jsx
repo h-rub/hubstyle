@@ -15,7 +15,7 @@ function ForumEntry() {
       <div className="mb-2">
         <ul className="inline-flex flex-wrap text-sm font-medium">
           <li className="flex items-center">
-            <Link className="text-slate-500 hover:text-indigo-500" to="/community/forum">
+            <Link className="text-slate-500 hover:text-primary" to="/community/forum">
               Home
             </Link>
             <svg className="h-4 w-4 fill-current text-slate-400 mx-2" viewBox="0 0 16 16">
@@ -23,7 +23,7 @@ function ForumEntry() {
             </svg>
           </li>
           <li className="flex items-center">
-            <a className="text-slate-500 hover:text-indigo-500" href="#0">
+            <a className="text-slate-500 hover:text-primary" href="#0">
               Discussion
             </a>
           </li>
@@ -47,7 +47,7 @@ function ForumEntry() {
         {/* Meta */}
         <div className="flex flex-wrap text-sm">
           <div className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-            <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+            <a className="font-medium text-primary hover:text-indigo-600" href="#0">
               katemerlu
             </a>
           </div>
@@ -82,7 +82,7 @@ function ForumEntry() {
           </div>
         </div>
         <div className="text-right">
-          <button type="submit" className="btn-sm bg-indigo-500 hover:bg-indigo-600 text-white whitespace-nowrap">
+          <button type="submit" className="btn-sm bg-primary hover:bg-indigo-600 text-white whitespace-nowrap">
             Reply -&gt;
           </button>
         </div>
@@ -97,7 +97,7 @@ function ForumEntry() {
             <div className="flex items-start">
               {/* Comment upvote */}
               <div className="absolute top-0 left-0">
-                <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-indigo-500">
+                <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-primary">
                   <svg className="inline-flex fill-slate-400 mt-1.5 mb-1.5" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
                     <path d="m0 6 6-6 6 6z" />
                   </svg>
@@ -121,7 +121,7 @@ function ForumEntry() {
                     <a className="block mr-2" href="#0">
                       <img className="rounded-full" src={UserImage02} width="24" height="24" alt="User 02" />
                     </a>
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       ekuplu89
                     </a>
                   </div>
@@ -146,7 +146,7 @@ function ForumEntry() {
                 <div className="flex items-start">
                   {/* Comment upvote */}
                   <div className="absolute top-0 left-0">
-                    <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-indigo-500">
+                    <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-primary">
                       <svg className="inline-flex fill-slate-400 mt-1.5 mb-1.5" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
                         <path d="m0 6 6-6 6 6z" />
                       </svg>
@@ -159,7 +159,7 @@ function ForumEntry() {
                     <div className="grow text-sm text-slate-800 space-y-2 mb-2">
                       <p>
                         That's great advice,{' '}
-                        <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                           @ekuplu89
                         </a>{' '}
                         👏
@@ -171,7 +171,7 @@ function ForumEntry() {
                         <a className="block mr-2" href="#0">
                           <img className="rounded-full" src={UserImage05} width="24" height="24" alt="User 05" />
                         </a>
-                        <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                           ellielong
                         </a>
                       </div>
@@ -198,7 +198,7 @@ function ForumEntry() {
               {/* Comment upvote */}
               <div className="absolute top-0 left-0">
                 <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center">
-                  <svg className="inline-flex fill-indigo-500 mt-1.5 mb-1.5" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="inline-flex fill-primary mt-1.5 mb-1.5" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
                     <path d="m0 6 6-6 6 6z" />
                   </svg>
                   <div>27</div>
@@ -219,7 +219,7 @@ function ForumEntry() {
                     <a className="block mr-2" href="#0">
                       <img className="rounded-full" src={UserImage01} width="24" height="24" alt="User 01" />
                     </a>
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       markcuttik
                     </a>
                   </div>
@@ -243,7 +243,7 @@ function ForumEntry() {
             <div className="flex items-start">
               {/* Comment upvote */}
               <div className="absolute top-0 left-0">
-                <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-indigo-500">
+                <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-primary">
                   <svg className="inline-flex fill-slate-400 mt-1.5 mb-1.5" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
                     <path d="m0 6 6-6 6 6z" />
                   </svg>
@@ -265,7 +265,7 @@ function ForumEntry() {
                     <a className="block mr-2" href="#0">
                       <img className="rounded-full" src={UserImage09} width="24" height="24" alt="User 09" />
                     </a>
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       davidp1
                     </a>
                   </div>
@@ -290,7 +290,7 @@ function ForumEntry() {
                 <div className="flex items-start">
                   {/* Comment upvote */}
                   <div className="absolute top-0 left-0">
-                    <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-indigo-500">
+                    <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-primary">
                       <svg className="inline-flex fill-slate-400 mt-1.5 mb-1.5" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
                         <path d="m0 6 6-6 6 6z" />
                       </svg>
@@ -309,7 +309,7 @@ function ForumEntry() {
                         <a className="block mr-2" href="#0">
                           <img className="rounded-full" src={UserImage05} width="24" height="24" alt="User 05" />
                         </a>
-                        <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                        <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                           ellielong
                         </a>
                       </div>
@@ -334,7 +334,7 @@ function ForumEntry() {
                     <div className="flex items-start">
                       {/* Comment upvote */}
                       <div className="absolute top-0 left-0">
-                        <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-indigo-500">
+                        <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-primary">
                           <svg className="inline-flex fill-slate-400 mt-1.5 mb-1.5" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
                             <path d="m0 6 6-6 6 6z" />
                           </svg>
@@ -353,7 +353,7 @@ function ForumEntry() {
                             <a className="block mr-2" href="#0">
                               <img className="rounded-full" src={UserImage09} width="24" height="24" alt="User 09" />
                             </a>
-                            <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                            <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                               davidp1
                             </a>
                           </div>
@@ -381,7 +381,7 @@ function ForumEntry() {
             <div className="flex items-start">
               {/* Comment upvote */}
               <div className="absolute top-0 left-0">
-                <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-indigo-500">
+                <button className="text-xs font-semibold text-left w-6 rounded-sm flex flex-col justify-center items-center hover:text-primary">
                   <svg className="inline-flex fill-slate-400 mt-1.5 mb-1.5" width="12" height="6" xmlns="http://www.w3.org/2000/svg">
                     <path d="m0 6 6-6 6 6z" />
                   </svg>
@@ -400,7 +400,7 @@ function ForumEntry() {
                     <a className="block mr-2" href="#0">
                       <img className="rounded-full" src={UserImage10} width="24" height="24" alt="User 10" />
                     </a>
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       patrick2
                     </a>
                   </div>
@@ -421,7 +421,7 @@ function ForumEntry() {
         </ul>
         {/* View more link */}
         <div className="text-center mt-5">
-          <button className="text-sm font-medium text-indigo-500 hover:text-indigo-600">View More Comments</button>
+          <button className="text-sm font-medium text-primary hover:text-indigo-600">View More Comments</button>
         </div>
       </div>
     </article>

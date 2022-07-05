@@ -14,7 +14,7 @@ function ForumRightContent() {
         <div className="md:py-8">
           {/* Button */}
           <div className="mb-6">
-            <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white">Create Post</button>
+            <button className="btn w-full bg-primary hover:bg-indigo-600 text-white">Create Post</button>
           </div>
 
           {/* Blocks */}
@@ -198,7 +198,7 @@ function ForumRightContent() {
                 </li>
               </ul>
               <div className="mt-4">
-                <button className="btn-sm w-full bg-white border-slate-200 hover:border-slate-300 text-indigo-500 shadow-none">View All</button>
+                <button className="btn-sm w-full bg-white border-slate-200 hover:border-slate-300 text-primary shadow-none">View All</button>
               </div>
             </div>
             
@@ -213,7 +213,7 @@ function ForumRightContent() {
                     </a>
                   </div>
                   <div className="text-xs text-slate-500">
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       markusj
                     </a>{' '}
                     · 2d · 312 comments
@@ -226,7 +226,7 @@ function ForumRightContent() {
                     </a>
                   </div>
                   <div className="text-xs text-slate-500">
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       katemerlu
                     </a>{' '}
                     · 2h · 7 comments
@@ -239,7 +239,7 @@ function ForumRightContent() {
                     </a>
                   </div>
                   <div className="text-xs text-slate-500">
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       sophiestar
                     </a>{' '}
                     · 3d · 66 comments
@@ -252,7 +252,7 @@ function ForumRightContent() {
                     </a>
                   </div>
                   <div className="text-xs text-slate-500">
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       ekuplu89
                     </a>{' '}
                     · 4h · 14 comments
@@ -265,7 +265,7 @@ function ForumRightContent() {
                     </a>
                   </div>
                   <div className="text-xs text-slate-500">
-                    <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="font-medium text-primary hover:text-indigo-600" href="#0">
                       molliehacks
                     </a>{' '}
                     · 3d · 32 comments
@@ -273,7 +273,7 @@ function ForumRightContent() {
                 </li>
               </ul>
               <div className="mt-4">
-                <button className="btn-sm w-full bg-white border-slate-200 hover:border-slate-300 text-indigo-500 shadow-none">View All</button>
+                <button className="btn-sm w-full bg-white border-slate-200 hover:border-slate-300 text-primary shadow-none">View All</button>
               </div>
             </div>
           </div>

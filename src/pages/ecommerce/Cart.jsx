@@ -30,7 +30,7 @@ function Cart() {
               <div className="mb-6 lg:mb-0">
                 <div className="mb-3">
                   <div className="flex text-sm font-medium text-slate-400 space-x-2">
-                    <span className="text-indigo-500">Review</span>
+                    <span className="text-primary">Review</span>
                     <span>-&gt;</span>
                     <span className="text-slate-500">Payment</span>
                     <span>-&gt;</span>
@@ -77,10 +77,10 @@ function Cart() {
                       <div className="text-sm text-slate-400 italic">optional</div>
                     </div>
                     <input id="promo" className="form-input w-full mb-2" type="text" />
-                    <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed shadow-none" disabled>Apply Code</button>
+                    <button className="btn w-full bg-primary hover:bg-indigo-600 text-white disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed shadow-none" disabled>Apply Code</button>
                   </div>
                   <div className="mb-4">
-                    <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white" href="#0">Buy Now - $253.00</button>
+                    <button className="btn w-full bg-primary hover:bg-indigo-600 text-white" href="#0">Buy Now - $253.00</button>
                   </div>
                   <div className="text-xs text-slate-500 italic text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <a className="underline hover:no-underline" href="#0">Terms</a>.</div>
                 </div>

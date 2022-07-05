@@ -85,7 +85,7 @@ function AnalyticsCard05() {
           </div>
           {/* Card footer */}
           <div className="text-center pt-4 pb-1 border-t border-slate-100">
-            <Link className="text-sm font-medium text-indigo-500 hover:text-indigo-600" to="#0">Channels Report -&gt;</Link>
+            <Link className="text-sm font-medium text-primary hover:text-indigo-600" to="#0">Channels Report -&gt;</Link>
           </div>
         </div>
       </div>

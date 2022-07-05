@@ -47,7 +47,7 @@ function Faqs() {
               <div className="mb-8 border-b border-slate-200">
                 <ul className="text-sm font-medium flex flex-nowrap -mx-4 sm:-mx-6 lg:-mx-8 overflow-x-scroll no-scrollbar">
                   <li className="pb-3 mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8">
-                    <a className="text-indigo-500 whitespace-nowrap" href="#0">Popular</a>
+                    <a className="text-primary whitespace-nowrap" href="#0">Popular</a>
                   </li>
                   <li className="pb-3 mr-6 last:mr-0 first:pl-4 sm:first:pl-6 lg:first:pl-8 last:pr-4 sm:last:pr-6 lg:last:pr-8">
                     <a className="text-slate-500 hover:text-slate-600 whitespace-nowrap" href="#0">Accessibility</a>
@@ -73,7 +73,7 @@ function Faqs() {
                     <div className="mt-2 mr-3">
                       <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
                         <path className="text-indigo-300" d="M4 8H0v4.9c0 1 .7 1.9 1.7 2.1 1.2.2 2.3-.8 2.3-2V8z" />
-                        <path className="text-indigo-500" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
+                        <path className="text-primary" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
                       </svg>
                     </div>
                     <h3 className="text-xl leading-snug text-slate-800 font-bold">How can the widget to my website?</h3>
@@ -82,10 +82,10 @@ function Faqs() {
                     <div className="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
                     <ul className="flex flex-wrap">
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">General</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">General</a>
                       </li>
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Marketing</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Marketing</a>
                       </li>
                     </ul>
                   </div>
@@ -96,7 +96,7 @@ function Faqs() {
                     <div className="mt-2 mr-3">
                       <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
                         <path className="text-indigo-300" d="M4 8H0v4.9c0 1 .7 1.9 1.7 2.1 1.2.2 2.3-.8 2.3-2V8z" />
-                        <path className="text-indigo-500" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
+                        <path className="text-primary" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
                       </svg>
                     </div>
                     <h3 className="text-xl leading-snug text-slate-800 font-bold">What would happen if I choose not to pay after the usage?</h3>
@@ -105,10 +105,10 @@ function Faqs() {
                     <div className="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
                     <ul className="flex flex-wrap">
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Development</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Development</a>
                       </li>
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Acessibility</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Acessibility</a>
                       </li>
                     </ul>
                   </div>
@@ -119,7 +119,7 @@ function Faqs() {
                     <div className="mt-2 mr-3">
                       <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
                         <path className="text-indigo-300" d="M4 8H0v4.9c0 1 .7 1.9 1.7 2.1 1.2.2 2.3-.8 2.3-2V8z" />
-                        <path className="text-indigo-500" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
+                        <path className="text-primary" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
                       </svg>
                     </div>
                     <h3 className="text-xl leading-snug text-slate-800 font-bold">What limitations do trial accounts have?</h3>
@@ -128,10 +128,10 @@ function Faqs() {
                     <div className="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
                     <ul className="flex flex-wrap">
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Development</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Development</a>
                       </li>
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Plans</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Plans</a>
                       </li>
                     </ul>
                   </div>
@@ -142,7 +142,7 @@ function Faqs() {
                     <div className="mt-2 mr-3">
                       <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
                         <path className="text-indigo-300" d="M4 8H0v4.9c0 1 .7 1.9 1.7 2.1 1.2.2 2.3-.8 2.3-2V8z" />
-                        <path className="text-indigo-500" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
+                        <path className="text-primary" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
                       </svg>
                     </div>
                     <h3 className="text-xl leading-snug text-slate-800 font-bold">Is there any difference between Standard and Plus licenses?</h3>
@@ -151,10 +151,10 @@ function Faqs() {
                     <div className="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
                     <ul className="flex flex-wrap">
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Development</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Development</a>
                       </li>
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Account</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Account</a>
                       </li>
                     </ul>
                   </div>
@@ -165,7 +165,7 @@ function Faqs() {
                     <div className="mt-2 mr-3">
                       <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
                         <path className="text-indigo-300" d="M4 8H0v4.9c0 1 .7 1.9 1.7 2.1 1.2.2 2.3-.8 2.3-2V8z" />
-                        <path className="text-indigo-500" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
+                        <path className="text-primary" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
                       </svg>
                     </div>
                     <h3 className="text-xl leading-snug text-slate-800 font-bold">Is my personal information protected?</h3>
@@ -174,10 +174,10 @@ function Faqs() {
                     <div className="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
                     <ul className="flex flex-wrap">
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">General</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">General</a>
                       </li>
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Accessibility</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Accessibility</a>
                       </li>
                     </ul>
                   </div>
@@ -188,7 +188,7 @@ function Faqs() {
                     <div className="mt-2 mr-3">
                       <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
                         <path className="text-indigo-300" d="M4 8H0v4.9c0 1 .7 1.9 1.7 2.1 1.2.2 2.3-.8 2.3-2V8z" />
-                        <path className="text-indigo-500" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
+                        <path className="text-primary" d="M15 1H7c-.6 0-1 .4-1 1v11c0 .7-.2 1.4-.6 2H13c1.7 0 3-1.3 3-3V2c0-.6-.4-1-1-1z" />
                       </svg>
                     </div>
                     <h3 className="text-xl leading-snug text-slate-800 font-bold">What can I create with with this product?</h3>
@@ -197,10 +197,10 @@ function Faqs() {
                     <div className="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
                     <ul className="flex flex-wrap">
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Marketing</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Marketing</a>
                       </li>
                       <li className="flex items-center after:block after:content-['·'] last:after:content-[''] after:text-sm after:text-slate-400 after:px-2">
-                        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">Plans</a>
+                        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">Plans</a>
                       </li>
                     </ul>
                   </div>
@@ -210,7 +210,7 @@ function Faqs() {
               {/* Pagination */}
               <div className="mt-6">
                 <div className="flex justify-end">
-                  <a className="btn bg-white border-slate-200 hover:border-slate-300 text-indigo-500" href="#0">See All Questions -&gt;</a>
+                  <a className="btn bg-white border-slate-200 hover:border-slate-300 text-primary" href="#0">See All Questions -&gt;</a>
                 </div>
               </div>
 

@@ -120,7 +120,7 @@ $daysWidth: $daySize*7;
 .flatpickr-day.selected.nextMonthDay,
 .flatpickr-day.startRange.nextMonthDay,
 .flatpickr-day.endRange.nextMonthDay {
-    @apply bg-indigo-500 text-indigo-50;
+    @apply bg-primary text-indigo-50;
 }
 
 .flatpickr-day.inRange,

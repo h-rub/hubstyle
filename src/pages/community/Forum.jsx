@@ -40,7 +40,7 @@ function Forum() {
                     {/* Buttons group */}
                     <div className="mb-4">
                       <div className="w-full flex flex-wrap -space-x-px">
-                        <button className="btn grow bg-white border-slate-200 text-indigo-500 rounded-none first:rounded-l last:rounded-r">Popular</button>
+                        <button className="btn grow bg-white border-slate-200 text-primary rounded-none first:rounded-l last:rounded-r">Popular</button>
                         <button className="btn grow bg-white border-slate-200 hover:bg-slate-50 text-slate-600 rounded-none first:rounded-l last:rounded-r">Newest</button>
                         <button className="btn grow bg-white border-slate-200 hover:bg-slate-50 text-slate-600 rounded-none first:rounded-l last:rounded-r">Following</button>
                       </div>
@@ -59,7 +59,7 @@ function Forum() {
                             <a className="btn bg-white border-slate-200 text-slate-300 cursor-not-allowed" href="#0" disabled>&lt;- Previous</a>
                           </li>
                           <li className="ml-3 first:ml-0">
-                            <a className="btn bg-white border-slate-200 hover:border-slate-300 text-indigo-500" href="#0">Next -&gt;</a>
+                            <a className="btn bg-white border-slate-200 hover:border-slate-300 text-primary" href="#0">Next -&gt;</a>
                           </li>
                         </ul>
                       </nav>

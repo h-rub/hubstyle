@@ -10,7 +10,7 @@ function ShopSidebar() {
             <div className="text-sm text-slate-800 font-semibold mb-3">Discover</div>
             <ul className="text-sm font-medium space-y-2">
               <li>
-                <a className="text-indigo-500" href="#0">View All</a>
+                <a className="text-primary" href="#0">View All</a>
               </li>
               <li>
                 <a className="text-slate-600 hover:text-slate-700" href="#0">Apps / Software</a>

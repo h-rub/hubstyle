@@ -10,7 +10,7 @@ function ApplicationsCard03(props) {
           <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
             <path className="text-indigo-300" d="M13 15l11-7L11.504.136a1 1 0 00-1.019.007L0 7l13 8z" />
             <path className="text-indigo-600" d="M13 15L0 7v9c0 .355.189.685.496.864L13 24v-9z" />
-            <path className="text-indigo-500" d="M13 15.047V24l10.573-7.181A.999.999 0 0024 16V8l-11 7.047z" />
+            <path className="text-primary" d="M13 15.047V24l10.573-7.181A.999.999 0 0024 16V8l-11 7.047z" />
           </svg>
         );
       case 1:
@@ -56,7 +56,7 @@ function ApplicationsCard03(props) {
           <h3 className="text-lg text-slate-800 font-semibold mb-1">{props.title}</h3>
         </div>
         <div>
-          <Link className="text-sm font-medium text-indigo-500 hover:text-indigo-600" to={props.link}>Explore -&gt;</Link>
+          <Link className="text-sm font-medium text-primary hover:text-indigo-600" to={props.link}>Explore -&gt;</Link>
         </div>
       </div>
     </div>

@@ -185,7 +185,7 @@ function Calendar() {
       case 'sky':
         return 'text-white bg-sky-500';
       case 'indigo':
-        return 'text-white bg-indigo-500';
+        return 'text-white bg-primary';
       case 'yellow':
         return 'text-white bg-amber-500';
       case 'emerald':
@@ -283,7 +283,7 @@ function Calendar() {
                 <hr className="w-px h-full bg-slate-200 mx-1" />
 
                 {/* Create event button */}
-                <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">
+                <button className="btn bg-primary hover:bg-indigo-600 text-white">
                   <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
                     <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                   </svg>
@@ -314,7 +314,7 @@ function Calendar() {
                   </li>
                   <li className="m-1">
                     <button className="btn-sm bg-white border-slate-200 hover:border-slate-300 text-slate-500">
-                      <div className="w-1 h-3.5 bg-indigo-500 shrink-0"></div>
+                      <div className="w-1 h-3.5 bg-primary shrink-0"></div>
                       <span className="ml-1.5">Reservations</span>
                     </button>
                   </li>
@@ -331,14 +331,14 @@ function Calendar() {
                     </button>
                   </li>
                   <li className="m-1">
-                    <button className="btn-sm bg-white border-slate-200 hover:border-slate-300 text-indigo-500">+Add New</button>
+                    <button className="btn-sm bg-white border-slate-200 hover:border-slate-300 text-primary">+Add New</button>
                   </li>
                 </ul>
               </div>
 
               {/* View buttons (requires custom integration) */}
               <div className="flex flex-nowrap -space-x-px">
-                <button className="btn bg-slate-50 border-slate-200 hover:bg-slate-50 text-indigo-500 rounded-none first:rounded-l last:rounded-r">Month</button>
+                <button className="btn bg-slate-50 border-slate-200 hover:bg-slate-50 text-primary rounded-none first:rounded-l last:rounded-r">Month</button>
                 <button className="btn bg-white border-slate-200 hover:bg-slate-50 text-slate-600 rounded-none first:rounded-l last:rounded-r">Week</button>
                 <button className="btn bg-white border-slate-200 hover:bg-slate-50 text-slate-600 rounded-none first:rounded-l last:rounded-r">Day</button>
               </div>
@@ -427,7 +427,7 @@ function Calendar() {
                               </button>
                             }
                             {/* Day number */}
-                            <button className={`inline-flex ml-auto w-6 h-6 items-center justify-center text-xs sm:text-sm font-medium text-center rounded-full hover:bg-indigo-100 ${isToday(day) && 'text-indigo-500'}`}>{day}</button>
+                            <button className={`inline-flex ml-auto w-6 h-6 items-center justify-center text-xs sm:text-sm font-medium text-center rounded-full hover:bg-indigo-100 ${isToday(day) && 'text-primary'}`}>{day}</button>
                           </div>
                         </div>
                       </div>                      

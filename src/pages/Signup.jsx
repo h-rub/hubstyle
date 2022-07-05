@@ -40,20 +40,20 @@ function Signup() {
             </div>
 
             <div className="max-w-sm mx-auto px-4 py-8">
-              <h1 className="text-3xl text-slate-800 font-bold mb-6">Create your Account ✨</h1>
+              <h1 className="text-3xl text-slate-800 font-bold mb-6">Crea tu cuenta ✨</h1>
               {/* Form */}
               <form>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium mb-1" htmlFor="email">Email Address <span className="text-rose-500">*</span></label>
+                    <label className="block text-sm font-medium mb-1" htmlFor="email">Correo electrónico <span className="text-rose-500">*</span></label>
                     <input id="email" className="form-input w-full" type="email" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1" htmlFor="name">Full Name <span className="text-rose-500">*</span></label>
+                    <label className="block text-sm font-medium mb-1" htmlFor="name">Nombre completo <span className="text-rose-500">*</span></label>
                     <input id="name" className="form-input w-full" type="text" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1" htmlFor="role">Your Role <span className="text-rose-500">*</span></label>
+                    <label className="block text-sm font-medium mb-1" htmlFor="role">Puesto <span className="text-rose-500">*</span></label>
                     <select id="role" className="form-select w-full">
                       <option>Designer</option>
                       <option>Developer</option>
@@ -61,7 +61,7 @@ function Signup() {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-1" htmlFor="password">Password</label>
+                    <label className="block text-sm font-medium mb-1" htmlFor="password">Contraseña</label>
                     <input id="password" className="form-input w-full" type="password" autoComplete="on" />
                   </div>
                 </div>
@@ -72,13 +72,13 @@ function Signup() {
                       <span className="text-sm ml-2">Email me about product news.</span>
                     </label>
                   </div>
-                  <Link className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3 whitespace-nowrap" to="/">Sign Up</Link>
+                  <Link className="btn bg-primary hover:bg-indigo-600 text-white ml-3 whitespace-nowrap" to="/">Sign Up</Link>
                 </div>
               </form>
               {/* Footer */}
               <div className="pt-5 mt-6 border-t border-slate-200">
                 <div className="text-sm">
-                  Have an account? <Link className="font-medium text-indigo-500 hover:text-indigo-600" to="/signin">Sign In</Link>
+                  Have an account? <Link className="font-medium text-primary hover:text-indigo-600" to="/signin">Sign In</Link>
                 </div>
               </div>
             </div>

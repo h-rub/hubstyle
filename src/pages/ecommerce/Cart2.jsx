@@ -33,7 +33,7 @@ function Cart2() {
                     <div className="flex text-sm font-medium text-slate-400 space-x-2">
                       <span className="text-slate-500">Review</span>
                       <span>-&gt;</span>
-                      <span className="text-indigo-500">Payment</span>
+                      <span className="text-primary">Payment</span>
                       <span>-&gt;</span>
                       <span className="text-slate-500">Confirm</span>
                     </div>
@@ -122,7 +122,7 @@ function Cart2() {
 
                       <div className="mt-6">
                         <div className="mb-4">
-                          <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white">Pay $253.00</button>
+                          <button className="btn w-full bg-primary hover:bg-indigo-600 text-white">Pay $253.00</button>
                         </div>
                         <div className="text-xs text-slate-500 italic text-center">You'll be charged $253, including $48 for VAT in Italy</div>
                       </div>

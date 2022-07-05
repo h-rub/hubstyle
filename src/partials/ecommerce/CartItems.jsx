@@ -197,7 +197,7 @@ function CartItems() {
       </ul>
 
       <div className="mt-6">
-        <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">&lt;- Back To Shopping</a>
+        <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">&lt;- Back To Shopping</a>
       </div>
     </>
   );

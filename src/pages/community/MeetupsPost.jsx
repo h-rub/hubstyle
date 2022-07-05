@@ -50,7 +50,7 @@ function MeetupsPost() {
                     <span>Back To Meetups</span>
                   </Link>
                 </div>
-                <div className="text-sm font-semibold text-indigo-500 uppercase mb-2">Mon 27 Dec, 2021 - 9:00 PM -&gt; 10:00 PM</div>
+                <div className="text-sm font-semibold text-primary uppercase mb-2">Mon 27 Dec, 2021 - 9:00 PM -&gt; 10:00 PM</div>
                 <header className="mb-4">
                   {/* Title */}
                   <h1 className="text-2xl md:text-3xl text-slate-800 font-bold mb-2">The World of AI and Machine Learning — Open Chat</h1>
@@ -203,7 +203,7 @@ function MeetupsPost() {
                       {/* Content */}
                       <div className="grow p-5 flex flex-col">
                         <div className='grow'>
-                          <div className="text-sm font-semibold text-indigo-500 uppercase mb-2">Mon 27 Dec, 2021</div>
+                          <div className="text-sm font-semibold text-primary uppercase mb-2">Mon 27 Dec, 2021</div>
                           <a className="inline-flex mb-2" href="#0">
                             <h3 className="text-lg font-bold text-slate-800">New York &amp; New Jersey Virtual Retreat 2021</h3>
                           </a>
@@ -241,7 +241,7 @@ function MeetupsPost() {
                 {/* 1st block */}
                 <div className="bg-white p-5 shadow-lg rounded-sm border border-slate-200 lg:w-72 xl:w-80">
                   <div className="space-y-2">
-                    <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white">
+                    <button className="btn w-full bg-primary hover:bg-indigo-600 text-white">
                       <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 16 16">
                         <path d="m2.457 8.516.969-.99 2.516 2.481 5.324-5.304.985.989-6.309 6.284z" />
                       </svg>
@@ -260,7 +260,7 @@ function MeetupsPost() {
                 <div className="bg-white p-5 shadow-lg rounded-sm border border-slate-200 lg:w-72 xl:w-80">
                   <div className="flex justify-between space-x-1 mb-5">
                     <div className="text-sm text-slate-800 font-semibold">Attendees (127)</div>
-                    <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                       View All
                     </a>
                   </div>
@@ -352,7 +352,7 @@ function MeetupsPost() {
                 <div className="bg-white p-5 shadow-lg rounded-sm border border-slate-200 lg:w-72 xl:w-80">
                   <div className="flex justify-between space-x-1 mb-5">
                     <div className="text-sm text-slate-800 font-semibold">Invite Friends</div>
-                    <a className="text-sm font-medium text-indigo-500 hover:text-indigo-600" href="#0">
+                    <a className="text-sm font-medium text-primary hover:text-indigo-600" href="#0">
                       View All
                     </a>
                   </div>

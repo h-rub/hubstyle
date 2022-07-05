@@ -121,7 +121,7 @@ function Pay() {
                 {/* htmlForm footer */}
                 <div className="mt-6">
                   <div className="mb-4">
-                    <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white" href="#0">Pay $253.00</button>
+                    <button className="btn w-full bg-primary hover:bg-indigo-600 text-white" href="#0">Pay $253.00</button>
                   </div>
                   <div className="text-xs text-slate-500 italic text-center">You'll be charged $253, including $48 htmlFor VAT in Italy</div>
                 </div>
@@ -133,7 +133,7 @@ function Pay() {
               <div>
                 <div>
                   <div className="mb-4">
-                    <button className="btn w-full bg-indigo-500 hover:bg-indigo-600 text-white" href="#0">Pay with PayPal - $253.00</button>
+                    <button className="btn w-full bg-primary hover:bg-indigo-600 text-white" href="#0">Pay with PayPal - $253.00</button>
                   </div>
                   <div className="text-xs text-slate-500 italic text-center">You'll be charged $253, including $48 htmlFor VAT in Italy</div>
                 </div>

@@ -92,7 +92,7 @@ function ApplicationsCard01(props) {
           </div>
           {/* Card footer */}
           <div>
-            <Link className="btn-sm w-full bg-indigo-500 hover:bg-indigo-600 text-white" to={props.link}>Install</Link>
+            <Link className="btn-sm w-full bg-primary hover:bg-indigo-600 text-white" to={props.link}>Install</Link>
           </div>
         </div>
       </div>

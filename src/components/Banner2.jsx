@@ -46,7 +46,7 @@ function Banner2({
       case 'success':
         return 'bg-emerald-100 border-emerald-200 text-emerald-600';
       default:
-        return 'bg-indigo-100 border-indigo-200 text-indigo-500';
+        return 'bg-indigo-100 border-indigo-200 text-primary';
     }
   };
 

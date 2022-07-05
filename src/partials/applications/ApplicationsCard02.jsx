@@ -24,7 +24,7 @@ function ApplicationsCard02(props) {
           </div>
           {/* Card footer */}
           <div>
-            <Link className="btn-sm w-full bg-indigo-500 hover:bg-indigo-600 text-white" to={props.link}>Buy Now</Link>
+            <Link className="btn-sm w-full bg-primary hover:bg-indigo-600 text-white" to={props.link}>Buy Now</Link>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ function MessagesFooter() {
             <label htmlFor="message-input" className="sr-only">Type a message</label>
             <input id="message-input" className="form-input w-full bg-slate-100 border-transparent focus:bg-white focus:border-slate-300" type="text" placeholder="Aa" />
           </div>
-          <button type="submit" className="btn bg-indigo-500 hover:bg-indigo-600 text-white whitespace-nowrap">Send -&gt;</button>
+          <button type="submit" className="btn bg-primary hover:bg-hover text-white whitespace-nowrap">Send -&gt;</button>
         </form>
       </div>
     </div>

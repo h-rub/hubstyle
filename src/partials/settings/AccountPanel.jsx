@@ -17,7 +17,7 @@ function AccountPanel() {
             <div className="mr-4">
               <img className="w-20 h-20 rounded-full" src={Image} width="80" height="80" alt="User upload" />
             </div>
-            <button className="btn-sm bg-indigo-500 hover:bg-indigo-600 text-white">Change</button>
+            <button className="btn-sm bg-primary hover:bg-indigo-600 text-white">Change</button>
           </div>
         </section>
         {/* Business Profile */}
@@ -48,7 +48,7 @@ function AccountPanel() {
               <label className="sr-only" htmlFor="email">Business email</label>
               <input id="email" className="form-input" type="email" />
             </div>
-            <button className="btn border-slate-200 hover:border-slate-300 shadow-sm text-indigo-500">Change</button>
+            <button className="btn border-slate-200 hover:border-slate-300 shadow-sm text-primary">Change</button>
           </div>
         </section>
         {/* Password */}
@@ -56,7 +56,7 @@ function AccountPanel() {
           <h2 className="text-xl leading-snug text-slate-800 font-bold mb-1">Password</h2>
           <div className="text-sm">You can set a permanent password if you don't want to use temporary login codes.</div>
           <div className="mt-5">
-            <button className="btn border-slate-200 shadow-sm text-indigo-500">Set New Password</button>
+            <button className="btn border-slate-200 shadow-sm text-primary">Set New Password</button>
           </div>
         </section>
         {/* Smart Sync */}
@@ -80,7 +80,7 @@ function AccountPanel() {
         <div className="flex flex-col px-6 py-5 border-t border-slate-200">
           <div className="flex self-end">
             <button className="btn border-slate-200 hover:border-slate-300 text-slate-600">Cancel</button>
-            <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3">Save Changes</button>
+            <button className="btn bg-primary hover:bg-indigo-600 text-white ml-3">Save Changes</button>
           </div>
         </div>
       </footer>

@@ -23,7 +23,7 @@ function MessagesBody() {
       <div className="flex items-start mb-4 last:mb-0">
         <img className="rounded-full mr-4" src={User02} width="40" height="40" alt="User 02" />
         <div>
-          <div className="text-sm bg-indigo-500 text-white p-3 rounded-lg rounded-tl-none border border-transparent shadow-md mb-1">
+          <div className="text-sm bg-primary text-white p-3 rounded-lg rounded-tl-none border border-transparent shadow-md mb-1">
             Hey Dominik Lamakani 👋<br />
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est 🙌
           </div>
@@ -69,7 +69,7 @@ function MessagesBody() {
       <div className="flex items-start mb-4 last:mb-0">
         <img className="rounded-full mr-4" src={User02} width="40" height="40" alt="User 02" />
         <div>
-          <div className="text-sm bg-indigo-500 text-white p-3 rounded-lg rounded-tl-none border border-transparent shadow-md mb-1">
+          <div className="text-sm bg-secondary text-black p-3 rounded-lg rounded-tl-none border border-transparent shadow-md mb-1">
             Sed euismod nisi porta lorem mollis. Tellus elementum sagittis vitae et leo duis. Viverra justo nec ultrices dui.<br />
             Sed lectus vestibulum mattis ullamcorper velit sed. Ut sem nulla pharetra diam sit amet 🎁
           </div>
@@ -91,7 +91,7 @@ function MessagesBody() {
       <div className="flex items-start mb-4 last:mb-0">
         <img className="rounded-full mr-4" src={User02} width="40" height="40" alt="User 02" />
         <div>
-          <div className="text-sm bg-indigo-500 text-white p-3 rounded-lg rounded-tl-none border border-transparent shadow-md mb-1">
+          <div className="text-sm bg-secondary text-black p-3 rounded-lg rounded-tl-none border border-transparent shadow-md mb-1">
             Can you join <a className="font-medium" href="#0">@dominik</a>? <a className="underline" href="#0">https://meet.google.com/haz-r3gt-idj</a>
           </div>
           <div className="flex items-center justify-between">
