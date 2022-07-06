@@ -31,8 +31,8 @@ function PageNotFound() {
                 <div className="inline-flex mb-8">
                   <img src={NotFoundImage} width="176" height="176" alt="404 illustration" />
                 </div>
-                <div className="mb-6">Hmm...this page doesn’t exist. Try searching for something else!</div>
-                <Link to="/" className="btn bg-primary hover:bg-indigo-600 text-white">Back To Dashboard</Link>
+                <div className="mb-6">Hmm... esta página no existe. ¡Intenta buscar otra cosa!</div>
+                <Link to="/" className="btn bg-primary hover:bg-indigo-600 text-white">Volver al Inicio</Link>
               </div>
 
             </div>
