@@ -546,15 +546,7 @@ function ModalPage() {
                         </div>
                       </ModalBasic>
                       {/* End */}
-                    </div>
-
-                    {/* Quick Find */}
-                    <div className="m-1.5">
-                      {/* Start */}
-                      <button className="btn bg-primary hover:bg-indigo-600 text-white" aria-controls="quick-find-modal" onClick={(e) => { e.stopPropagation(); setSearchModalOpen(true); }}>Quick Find</button>
-                      <ModalSearch id="quick-find-modal" searchId="quick-find" modalOpen={searchModalOpen} setModalOpen={setSearchModalOpen} />
-                      {/* End */}
-                    </div>                  
+                    </div>                
                     
                   </div>
                 </div>
