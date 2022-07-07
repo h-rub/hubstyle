@@ -48,8 +48,8 @@ function WelcomeBanner() {
 
       {/* Content */}
       <div className="relative">
-        <h1 className="text-2xl md:text-3xl text-slate-800 font-bold mb-1">Bienvenido a Hubmine HR System 👋</h1>
-        <p>"Las grandes cosas son hechas siempre con una gran pasión"</p>
+        <h1 className="text-2xl md:text-3xl text-slate-800 font-bold mb-1">Bienvenido a la template base de Hubmine 👋</h1>
+        <p>A partir de aquí podrás crear el dashboard que tú desees.</p>
       </div>
 
     </div>
