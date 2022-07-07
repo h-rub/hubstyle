@@ -1,17 +1,44 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import AuthImage from '../images/auth-image.jpg';
 import AuthDecoration from '../images/auth-decoration.png';
 
-
-
 function Signin() {
+  const [locked, setLocked] = useState();
   const [eye, setEye] = useState(false);
+  const navigate = useNavigate();
+  const submit = (data) => console.log(data);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({ mode: 'all' });
 
   const toggleEye = () => {
     setEye((prevState) => !prevState);
   };
+
+  async function loginUser(credentials) {
+    return fetch('https://hubhr.herokuapp.com/auth/login/', {
+      mode: 'cors',
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; Access-Control-Allow-Origin: *',
+      },
+      body: JSON.stringify(credentials),
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        if (json.id === 1) {
+          navigate('/');
+        } else {
+          setLocked(true);
+        }
+      });
+  }
 
   return (
     <main className='bg-white'>
@@ -64,32 +91,58 @@ function Signin() {
                 Hola de nuevo ✨
               </h1>
               {/* Form */}
-              <form>
+              <form onSubmit={handleSubmit(loginUser)}>
                 <div className='space-y-4'>
                   <div>
-                    <label
-                      className='block text-sm font-medium mb-1'
-                      htmlFor='email'>
+                    <label className='block text-sm font-medium mb-1'>
                       Correo electrónico
                     </label>
                     <input
-                      id='email'
+                      autoComplete='off'
                       className='form-input w-full'
                       type='email'
+                      {...register('username', {
+                        required: {
+                          value: true,
+                          message: 'El campo es requerido',
+                        },
+                        pattern: {
+                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                          message: 'El formato no es correcto',
+                        },
+                      })}
                     />
+                    {errors.username && (
+                      <span className='text-red-500 text-sm'>
+                        {errors.username.message}
+                      </span>
+                    )}
                   </div>
                   <div className='relative'>
-                    <label
-                      className='block text-sm font-medium mb-1'
-                      htmlFor='password'>
+                    <label className='block text-sm font-medium mb-1'>
                       Contraseña
                     </label>
                     <input
-                      id='password'
                       className='form-input w-full'
                       type={eye ? 'text' : 'password'}
-                      autoComplete='on'
+                      autoComplete='off'
+                      {...register('password', {
+                        required: {
+                          value: true,
+                          message: 'El campo es requerido',
+                        },
+                        minLength: {
+                          value: 6,
+                          message:
+                            'La contraseña debe de tener al menos 6 caracteres',
+                        },
+                      })}
                     />
+                    {errors.password && (
+                      <span className='text-red-500 text-sm'>
+                        {errors.password.message}
+                      </span>
+                    )}
                     <button
                       onClick={toggleEye}
                       type='button'
@@ -150,30 +203,40 @@ function Signin() {
                       ¿Olvidaste tu contraseña?
                     </Link>
                   </div>
-                  <Link
-                    className='btn bg-secondary hover:bg-primary hover:text-white text-primary ml-3'
-                    to='/'>
+                  <button
+                    type='submit'
+                    className='btn bg-secondary hover:bg-primary hover:text-white text-primary ml-3'>
                     Iniciar sesión
-                  </Link>
+                  </button>
                 </div>
               </form>
               {/* Footer */}
               <div className='pt-5 mt-6 border-t border-slate-200'>
                 {/* Warning */}
-                <div className='mt-5'>
-                  <div className='bg-amber-100 text-amber-600 px-3 py-2 rounded'>
-                    <svg
-                      className='inline w-3 h-3 shrink-0 fill-current mr-2'
-                      viewBox='0 0 12 12'>
-                      <path d='M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z' />
-                    </svg>
-                    <span className='text-sm'>
-                      Este sitio es de uso exclusivo para empleados de Hubmine,
-                      si usted no es un empleado no está autorizado a continuar
-                      usando este sitio.
-                    </span>
+                {!locked ? (
+                  <div className='mt-5'>
+                    <div className='bg-amber-100 text-amber-600 px-3 py-2 rounded'>
+                      <svg
+                        className='inline w-3 h-3 shrink-0 fill-current mr-2'
+                        viewBox='0 0 12 12'>
+                        <path d='M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z' />
+                      </svg>
+                      <span className='text-sm'>
+                        Este sitio es de uso exclusivo para empleados de
+                        Hubmine, si usted no es un empleado no está autorizado a
+                        continuar usando este sitio.
+                      </span>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className='mt-5'>
+                    <div className='bg-red-100 text-red-600 px-3 py-2 rounded'>
+                      <span className='text-sm'>
+                        Contraseña o usuario incorrecto
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
