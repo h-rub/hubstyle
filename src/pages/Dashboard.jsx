@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
-import Datepicker from '../components/Datepicker';
 import DashboardCard06 from '../partials/dashboard/DashboardCard06';
 
 
