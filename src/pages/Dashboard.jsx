@@ -18,6 +18,9 @@ import DashboardCard09 from '../partials/dashboard/DashboardCard09';
 import DashboardCard10 from '../partials/dashboard/DashboardCard10';
 import DashboardCard11 from '../partials/dashboard/DashboardCard11';
 
+import AnalyticsCard01 from '../partials/analytics/AnalyticsCard01';
+import AnalyticsCard10 from '../partials/analytics/AnalyticsCard10';
+
 function Dashboard() {
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -40,6 +43,16 @@ function Dashboard() {
 
             {/* Welcome banner */}
             <WelcomeBanner />
+
+             {/* Cards */}
+             <div className="grid grid-cols-12 gap-6">
+
+                {/* Line chart (Analytics) */}
+                <AnalyticsCard01 />
+                {/* Polar chart (Sessions By Gender) */}
+                <AnalyticsCard10 />
+
+</div>
 
           
 

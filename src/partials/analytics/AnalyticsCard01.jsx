@@ -9,24 +9,13 @@ function AnalyticsCard01() {
   const chartData = {
     labels: [
       '12-01-2020', '01-01-2021', '02-01-2021',
-      '03-01-2021', '04-01-2021', '05-01-2021',
-      '06-01-2021', '07-01-2021', '08-01-2021',
-      '09-01-2021', '10-01-2021', '11-01-2021',
-      '12-01-2021', '01-01-2022', '02-01-2022',
-      '03-01-2022', '04-01-2022', '05-01-2022',
-      '06-01-2022', '07-01-2022', '08-01-2022',
-      '09-01-2022', '10-01-2022', '11-01-2022',
-      '12-01-2022', '01-01-2023',
     ],
     datasets: [
       // Indigo line
       {
         label: 'Current',
         data: [
-          5000, 8700, 7500, 12000, 11000, 9500, 10500,
-          10000, 15000, 9000, 10000, 7000, 22000, 7200,
-          9800, 9000, 10000, 8000, 15000, 12000, 11000,
-          13000, 11000, 15000, 17000, 18000,
+          5000, 8700, 7500,
         ],
         fill: true,
         backgroundColor: `rgba(${hexToRGB(tailwindConfig().theme.colors.blue[500])}, 0.08)`,
@@ -42,10 +31,7 @@ function AnalyticsCard01() {
       {
         label: 'Previous',
         data: [
-          8000, 5000, 6500, 5000, 6500, 12000, 8000,
-          9000, 8000, 8000, 12500, 10000, 10000, 12000,
-          11000, 16000, 12000, 10000, 10000, 14000, 9000,
-          10000, 15000, 12500, 14000, 11000,
+          8000, 5000, 6500, 
         ],
         borderColor: tailwindConfig().theme.colors.slate[300],
         fill: false,
@@ -62,7 +48,7 @@ function AnalyticsCard01() {
   return (
     <div className="flex flex-col col-span-full xl:col-span-8 bg-white shadow-lg rounded-sm border border-slate-200">
       <header className="px-5 py-4 border-b border-slate-100 flex items-center">
-        <h2 className="font-semibold text-slate-800">Analytics</h2>
+        <h2 className="font-semibold text-slate-800">Métricas</h2>
       </header>
       <div className="px-5 py-1">
         <div className="flex flex-wrap">
@@ -70,10 +56,10 @@ function AnalyticsCard01() {
           <div className="flex items-center py-2">
             <div className="mr-5">
               <div className="flex items-center">
-                <div className="text-3xl font-bold text-slate-800 mr-2">24.7K</div>
+                <div className="text-3xl font-bold text-slate-800 mr-2">21</div>
                 <div className="text-sm font-medium text-emerald-500">+49%</div>
               </div>
-              <div className="text-sm text-slate-500">Unique Visitors</div>
+              <div className="text-sm text-slate-500">Colaboradores activos</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-slate-200 mr-5" aria-hidden="true"></div>
           </div>
@@ -81,10 +67,10 @@ function AnalyticsCard01() {
           <div className="flex items-center py-2">
             <div className="mr-5">
               <div className="flex items-center">
-                <div className="text-3xl font-bold text-slate-800 mr-2">56.9K</div>
-                <div className="text-sm font-medium text-emerald-500">+7%</div>
+                <div className="text-3xl font-bold text-slate-800 mr-2">7</div>
+                <div className="text-sm font-medium text-emerald-500">+27%</div>
               </div>
-              <div className="text-sm text-slate-500">Total Pageviews</div>
+              <div className="text-sm text-slate-500">Contratos firmados</div>
             </div>
             <div className="hidden md:block w-px h-8 bg-slate-200 mr-5" aria-hidden="true"></div>
           </div>
@@ -95,18 +81,7 @@ function AnalyticsCard01() {
                 <div className="text-3xl font-bold text-slate-800 mr-2">54%</div>
                 <div className="text-sm font-medium text-amber-500">-7%</div>
               </div>
-              <div className="text-sm text-slate-500">Bounce Rate</div>
-            </div>
-            <div className="hidden md:block w-px h-8 bg-slate-200 mr-5" aria-hidden="true"></div>
-          </div>
-          {/* Visit Duration*/}
-          <div className="flex items-center">
-            <div>
-              <div className="flex items-center">
-                <div className="text-3xl font-bold text-slate-800 mr-2">2m 56s</div>
-                <div className="text-sm font-medium text-amber-500">+7%</div>
-              </div>
-              <div className="text-sm text-slate-500">Visit Duration</div>
+              <div className="text-sm text-slate-500">Crecimiento de equipo en los últimos 3 meses</div>
             </div>
           </div>
         </div>
