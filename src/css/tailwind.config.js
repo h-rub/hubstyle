@@ -11,7 +11,8 @@ module.exports = {
         primary: '#0DB1AC',
         secondary: '#D8F6F0',
         third: '#839DE2',
-        hover: '#116361'
+        hover: '#116361',
+        gray20: "#BBC0C9"
       },
       boxShadow: {
         DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.02)',
