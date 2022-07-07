@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import AuthImage from '../images/auth-image.jpg';
 import AuthDecoration from '../images/auth-decoration.png';
 
 function Signin() {
+  const [locked, setLocked] = useState();
   const [eye, setEye] = useState(false);
+  const navigate = useNavigate();
   const submit = (data) => console.log(data);
 
   const {
@@ -21,18 +23,19 @@ function Signin() {
 
   async function loginUser(credentials) {
     return fetch('https://hubhr.herokuapp.com/auth/login/', {
+      mode: 'cors',
       method: 'POST',
       headers: {
-        'Content-type': 'application/json',
+        'Content-type': 'application/json; Access-Control-Allow-Origin: *',
       },
       body: JSON.stringify(credentials),
     })
       .then((response) => response.json())
       .then((json) => {
-        if (json.status !== 400) {
-          console.log(json);
+        if (json.id === 1) {
+          navigate('/');
         } else {
-          console.log('hola');
+          setLocked(true);
         }
       });
   }
@@ -210,20 +213,30 @@ function Signin() {
               {/* Footer */}
               <div className='pt-5 mt-6 border-t border-slate-200'>
                 {/* Warning */}
-                <div className='mt-5'>
-                  <div className='bg-amber-100 text-amber-600 px-3 py-2 rounded'>
-                    <svg
-                      className='inline w-3 h-3 shrink-0 fill-current mr-2'
-                      viewBox='0 0 12 12'>
-                      <path d='M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z' />
-                    </svg>
-                    <span className='text-sm'>
-                      Este sitio es de uso exclusivo para empleados de Hubmine,
-                      si usted no es un empleado no está autorizado a continuar
-                      usando este sitio.
-                    </span>
+                {!locked ? (
+                  <div className='mt-5'>
+                    <div className='bg-amber-100 text-amber-600 px-3 py-2 rounded'>
+                      <svg
+                        className='inline w-3 h-3 shrink-0 fill-current mr-2'
+                        viewBox='0 0 12 12'>
+                        <path d='M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z' />
+                      </svg>
+                      <span className='text-sm'>
+                        Este sitio es de uso exclusivo para empleados de
+                        Hubmine, si usted no es un empleado no está autorizado a
+                        continuar usando este sitio.
+                      </span>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className='mt-5'>
+                    <div className='bg-red-100 text-red-600 px-3 py-2 rounded'>
+                      <span className='text-sm'>
+                        Contraseña o usuario incorrecto
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
