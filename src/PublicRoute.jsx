@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 function PublicRoute({ children }) {
   const id = localStorage.getItem('id');
 
-  if (token) {
+  if (id) {
     return <Navigate to='/' />;
   }
   return children;

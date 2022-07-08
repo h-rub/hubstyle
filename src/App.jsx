@@ -37,7 +37,8 @@ import TabsPage from './pages/component/TabsPage';
 import BadgePage from './pages/component/BadgePage';
 
 import TooltipPage from './pages/component/TooltipPage';
-// Function for Private routes or Public Routes
+
+// Function for Private routes and Public Routes
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
