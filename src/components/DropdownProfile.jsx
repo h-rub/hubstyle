@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Transition from '../utils/Transition';
 
-import UserAvatar from '../images/user-avatar-32.png';
+import UserAvatar from '../images/user-36-03.jpg';
 
 function DropdownProfile({
   align
@@ -75,7 +75,7 @@ function DropdownProfile({
             <li>
               <Link
                 className="font-medium text-sm text-black-500 hover:text-primary flex items-center py-1 px-3"
-                to="/settings"
+                to="/settings/account"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 Configuración

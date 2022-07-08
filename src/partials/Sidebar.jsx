@@ -171,19 +171,6 @@ function Sidebar({
                               </span>
                             </NavLink>
                           </li>
-                          <li className="mb-1 last:mb-0">
-                            <NavLink
-                              end
-                              to="/dashboard/fintech"
-                              className={({ isActive }) =>
-                                'block text-slate-400 hover:text-slate-200 transition duration-150 truncate ' + (isActive ? '!text-primary' : '')
-                              }
-                            >
-                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                Finanzas
-                              </span>
-                            </NavLink>
-                          </li>
                         </ul>
                       </div>
                     </React.Fragment>
@@ -191,7 +178,7 @@ function Sidebar({
                 }}
               </SidebarLinkGroup>
             
-              {/* Community */}
+              {/* community */}
               <SidebarLinkGroup activecondition={pathname.includes('community')}>
                 {(handleClick, open) => {
                   return (
@@ -239,7 +226,7 @@ function Sidebar({
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/community/users-tiles"
+                              to="/hubstars/all"
                               className={({ isActive }) =>
                                 'block text-slate-400 hover:text-slate-200 transition duration-150 truncate ' + (isActive ? '!text-primary' : '')
                               }
@@ -252,7 +239,7 @@ function Sidebar({
                           <li className="mb-1 last:mb-0">
                             <NavLink
                               end
-                              to="/community/profile"
+                              to="/hubstars/profile"
                               className={({ isActive }) =>
                                 'block text-slate-400 hover:text-slate-200 transition duration-150 truncate ' + (isActive ? '!text-primary' : '')
                               }
