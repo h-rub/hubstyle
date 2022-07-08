@@ -7,12 +7,11 @@ import './charts/ChartjsConfig';
 
 // Import pages
 import Dashboard from './pages/Dashboard';
-import Fintech from './pages/Fintech';
 
-import UsersTiles from './pages/community/UsersTiles';
-import Profile from './pages/community/Profile';
+import UsersTiles from './pages/hubstars/UsersTiles';
+import Profile from './pages/hubstars/Profile';
+import NewHubstar from "./pages/hubstars/newHubstar/NewHubstar"
 
-import Calendar from './pages/Calendar';
 import Account from './pages/settings/Account';
 import Notifications from './pages/settings/Notifications';
 
@@ -65,11 +64,12 @@ function App() {
           }
         />
 
-        <Route path='/dashboard/fintech' element={<Fintech />} />
-
-        <Route path='/community/users-tiles' element={<UsersTiles />} />
-        <Route path='/community/profile' element={<Profile />} />
-        <Route path='/calendar' element={<Calendar />} />
+        <Route path='/hubstars/all' element={<UsersTiles />} />
+        <Route path='/hubstars/add' element={<NewHubstar />} />
+        <Route path='/hubstars/profile' element={<Profile />} />
+        <Route path="/hubstars/new-hubstar" element={<NewHubstar />} />
+      
+        
 
         <Route path='/settings/account' element={<Account />} />
         <Route path='/settings/notifications' element={<Notifications />} />
