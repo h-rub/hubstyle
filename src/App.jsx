@@ -37,8 +37,10 @@ import TabsPage from './pages/component/TabsPage';
 import BadgePage from './pages/component/BadgePage';
 
 import TooltipPage from './pages/component/TooltipPage';
-// Function for Private routes or Public Routes
+
+// Function for Private routes and Public Routes
 import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 function App() {
   const location = useLocation();
@@ -81,7 +83,14 @@ function App() {
         <Route path='/utility/404' element={<PageNotFound />} />
 
         {/* Auth */}
-        <Route path='/signin' element={<Signin />} />
+        <Route
+          path='/signin'
+          element={
+            <PublicRoute>
+              <Signin />
+            </PublicRoute>
+          }
+        />
         <Route path='/signup' element={<Signup />} />
         <Route path='/reset-password' element={<ResetPassword />} />
 
