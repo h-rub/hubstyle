@@ -6,12 +6,12 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   define: {
     'process.env': process.env,
-    base: '/hubstyle/',
   },
   css: {
     postcss,
   },
   plugins: [react()],
+  base: '/hubstyle/',
   resolve: {
     alias: [
       {
