@@ -5,7 +5,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename='/hubstyle/'>
+    <Router>
       <App />
     </Router>
   </React.StrictMode>,
