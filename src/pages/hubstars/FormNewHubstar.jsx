@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Datepicker from '../../../components/Datepicker';
+import './styleDate.css';
+import ModalBlank from '../../components/ModalBlank';
+
+const NewHub = (data) => {
+  fetch('https://hubhr.herokuapp.com/api/associate/create', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+    });
+};
 
 function FormNewHubstar() {
+  const onsubmit = (data) => console.log(data);
+
   const {
     handleSubmit,
-    watch,
     register,
     formState: { errors },
   } = useForm();
@@ -24,7 +40,7 @@ function FormNewHubstar() {
           <h2 className='text-2xl text-slate-800 font-bold mb-6'>
             Datos personales
           </h2>
-          <form>
+          <form onSubmit={handleSubmit(NewHub)}>
             <section className='grid gap-5 md:grid-cols-3'>
               <div>
                 {/* INPUT FIRST NAME */}
@@ -46,7 +62,7 @@ function FormNewHubstar() {
                         message: 'El formato no es correcto',
                       },
                     })}
-                  />{' '}
+                  />
                   {errors.first_name && (
                     <span className='text-red-500 text-sm'>
                       {errors.first_name.message}
@@ -117,7 +133,7 @@ function FormNewHubstar() {
                     RFC<span className='text-rose-500'>*</span>
                   </label>
                   <input
-                    className='form-input w-full'
+                    className='uppercase form-input w-full'
                     autoComplete='off'
                     type='text'
                     {...register('rfc', {
@@ -145,7 +161,7 @@ function FormNewHubstar() {
                     CURP <span className='text-rose-500'>*</span>
                   </label>
                   <input
-                    className='form-input w-full'
+                    className='uppercase form-input w-full '
                     autoComplete='off'
                     type='text'
                     {...register('curp', {
@@ -167,7 +183,7 @@ function FormNewHubstar() {
                 </div>
               </div>
               <div>
-                {/* SELECT GENERO */}
+                {/* SELECT GENER */}
                 <div>
                   <label className='block text-sm font-medium mb-1'>
                     Genero<span className='text-rose-500'>*</span>
@@ -180,9 +196,15 @@ function FormNewHubstar() {
                         message: 'El campo es requerido',
                       },
                     })}>
-                    <option>Masculino</option>
-                    <option>Femenino</option>
+                    <option value=''>selecciona</option>
+                    <option value='M'>Masculino</option>
+                    <option value='F'>Femenino</option>
                   </select>
+                  {errors.first_name && (
+                    <span className='text-red-500 text-sm'>
+                      {errors.first_name.message}
+                    </span>
+                  )}
                 </div>
               </div>
             </section>
@@ -207,9 +229,14 @@ function FormNewHubstar() {
                         message: 'El campo es requerido',
                       },
                     })}>
+                    <option value=''>selecciona</option>
                     <option>Entrevistado</option>
-                    <option>Intern</option>
                   </select>
+                  {errors.first_name && (
+                    <span className='text-red-500 text-sm'>
+                      {errors.first_name.message}
+                    </span>
+                  )}
                 </div>
               </div>
               <div>
@@ -222,36 +249,107 @@ function FormNewHubstar() {
                     <select
                       className='form-select w-full'
                       {...register('job_title', {
+                        valueAsNumber: true,
                         required: {
                           value: true,
                           message: 'El campo es requerido',
                         },
                       })}>
-                      <option>Backend</option>
-                      <option>Frontend</option>
+                      <option value=''>selecciona</option>
+                      <option value='1'>Backend</option>
+                      <option value='2'>Frontend</option>
                     </select>
+                    {errors.first_name && (
+                      <span className='text-red-500 text-sm'>
+                        {errors.first_name.message}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
-              {/* COMPONENT DATE */}
+              {/* INPUT SIGNATURE */}
               <div>
-                <div>
-                  <label
-                    className='block text-sm font-medium mb-1'
-                    htmlFor='default'>
+                <label
+                  className='block text-sm font-medium mb-1'
+                  htmlFor='default'>
+                  Firma
+                  <span className='text-rose-500'>*</span>
+                </label>
+                <select
+                  className='form-select w-full'
+                  {...register('signature', {
+                    required: {
+                      value: true,
+                      setValueAs: (val) => true,
+                      message: 'El campo es requerido',
+                    },
+                  })}>
+                  <option value=''>selecciona</option>
+                  <option value='true'>Si</option>
+                  <option value='false'>No</option>
+                </select>
+                {errors.signature && (
+                  <span className='text-red-500 text-sm'>
+                    {errors.signature.message}
+                  </span>
+                )}
+              </div>
+              {/* INPUT START DATE */}
+              <div className='flex space-x-5'>
+                <div className='relative'>
+                  <label className='block text-sm font-medium mb-1'>
                     Fecha de Inicio <span className='text-rose-500'>*</span>
                   </label>
-                  <Datepicker />
+                  <input
+                    type='date'
+                    className='form-input pl-9 text-slate-500 hover:text-slate-600 font-medium focus:border-slate-300 w-60 styleDate'
+                    {...register('start_date', {
+                      required: {
+                        value: true,
+                        message: 'El campo es requerido',
+                      },
+                    })}
+                  />
+                  <div className='absolute right-auto top-6 mt-3 mr-4'>
+                    <svg
+                      className='w-4 h-4 fill-current text-slate-500 ml-3'
+                      viewBox='0 0 16 16'>
+                      <path d='M15 2h-2V0h-2v2H9V0H7v2H5V0H3v2H1a1 1 0 00-1 1v12a1 1 0 001 1h14a1 1 0 001-1V3a1 1 0 00-1-1zm-1 12H2V6h12v8z' />
+                    </svg>
+                  </div>
+                  {errors.start_date && (
+                    <span className='text-red-500 text-sm'>
+                      {errors.start_date.message}
+                    </span>
+                  )}
+                  {/* INPUT FINISH DATE */}
                 </div>
-              </div>
-              <div>
-                <div>
-                  <label
-                    className='block text-sm font-medium mb-1'
-                    htmlFor='default'>
+                <div className='relative'>
+                  <label className='block text-sm font-medium mb-1'>
                     Fecha final <span className='text-rose-500'>*</span>
                   </label>
-                  <Datepicker />
+                  <input
+                    type='date'
+                    className='form-input pl-9 text-slate-500 hover:text-slate-600 font-medium focus:border-slate-300 w-60 styleDate'
+                    {...register('finish_date', {
+                      required: {
+                        value: true,
+                        message: 'El campo es requerido',
+                      },
+                    })}
+                  />
+                  <div className='absolute right-auto top-6 mt-3 mr-4'>
+                    <svg
+                      className='w-4 h-4 fill-current text-slate-500 ml-3'
+                      viewBox='0 0 16 16'>
+                      <path d='M15 2h-2V0h-2v2H9V0H7v2H5V0H3v2H1a1 1 0 00-1 1v12a1 1 0 001 1h14a1 1 0 001-1V3a1 1 0 00-1-1zm-1 12H2V6h12v8z' />
+                    </svg>
+                  </div>
+                  {errors.finish_date && (
+                    <span className='text-red-500 text-sm'>
+                      {errors.finish_date.message}
+                    </span>
+                  )}
                 </div>
               </div>
             </section>
@@ -285,7 +383,7 @@ function FormNewHubstar() {
                         message: 'El formato no es correcto',
                       },
                     })}
-                  />{' '}
+                  />
                   {errors.interbank_key && (
                     <span className='text-red-500 text-sm'>
                       {errors.interbank_key.message}
@@ -302,15 +400,22 @@ function FormNewHubstar() {
                     </label>
                     <select
                       className='form-select w-full'
-                      {...register('job_title', {
+                      {...register('country', {
+                        valueAsNumber: true,
                         required: {
                           value: true,
                           message: 'El campo es requerido',
                         },
                       })}>
-                      <option>MEXICO</option>
-                      <option>COLOMBIA</option>
+                      <option value=''>selecciona</option>
+                      <option value='1'>MEXICO</option>
+                      <option value='2'>COLOMBIA</option>
                     </select>
+                    {errors.country && (
+                      <span className='text-red-500 text-sm'>
+                        {errors.country.message}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -318,7 +423,7 @@ function FormNewHubstar() {
             <section className='w-full flex space-x-6 justify-center items-center mt-10'>
               <div className='m-1.5'>
                 <button
-                  type='button'
+                  type='submit'
                   className='btn bg-emerald-500 hover:bg-emerald-600 text-white'>
                   Guardar
                 </button>
