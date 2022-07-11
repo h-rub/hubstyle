@@ -29,7 +29,7 @@ function FeedbackPanel() {
                   </button>
                 </li>
                 <li className="flex">
-                  <button className="w-3 h-3 rounded-full bg-indigo-500 border-2 border-indigo-500">
+                  <button className="w-3 h-3 rounded-full bg-primary border-2 border-primary">
                     <span className="sr-only">3</span>
                   </button>
                 </li>
@@ -66,7 +66,7 @@ function FeedbackPanel() {
         <div className="flex flex-col px-6 py-5 border-t border-slate-200">
           <div className="flex self-end">
             <button className="btn border-slate-200 hover:border-slate-300 text-slate-600">Cancel</button>
-            <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white ml-3">Save Changes</button>
+            <button className="btn bg-primary hover:bg-indigo-600 text-white ml-3">Save Changes</button>
           </div>
         </div>
       </footer>

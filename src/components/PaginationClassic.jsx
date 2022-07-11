@@ -9,7 +9,7 @@ function PaginationClassic() {
             <a className="btn bg-white border-slate-200 text-slate-300 cursor-not-allowed" href="#0" disabled>&lt;- Previous</a>
           </li>
           <li className="ml-3 first:ml-0">
-            <a className="btn bg-white border-slate-200 hover:border-slate-300 text-indigo-500" href="#0">Next -&gt;</a>
+            <a className="btn bg-white border-slate-200 hover:border-slate-300 text-primary" href="#0">Next -&gt;</a>
           </li>
         </ul>
       </nav>

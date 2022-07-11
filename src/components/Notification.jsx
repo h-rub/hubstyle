@@ -30,7 +30,7 @@ function Notification({
         );
       default:
         return (
-          <svg className="w-4 h-4 shrink-0 fill-current text-indigo-500 mt-[3px] mr-3" viewBox="0 0 16 16">
+          <svg className="w-4 h-4 shrink-0 fill-current text-primary mt-[3px] mr-3" viewBox="0 0 16 16">
             <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm1 12H7V7h2v5zM8 6c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z" />
           </svg>
         );
@@ -57,7 +57,7 @@ function Notification({
               </button>
             </div>
             <div className="text-right mt-1">
-              <a className="font-medium text-indigo-500 hover:text-indigo-600" href="#0">Action -&gt;</a>
+              <a className="font-medium text-primary hover:text-indigo-600" href="#0">Action -&gt;</a>
             </div>
           </div>
         </div>
