@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-
 import './styleDate.css';
+import ModalBlank from '../../components/ModalBlank';
+
+const NewHub = (data) => {
+  fetch('https://hubhr.herokuapp.com/api/associate/create', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+    });
+};
 
 function FormNewHubstar() {
   const onsubmit = (data) => console.log(data);
@@ -26,7 +40,7 @@ function FormNewHubstar() {
           <h2 className='text-2xl text-slate-800 font-bold mb-6'>
             Datos personales
           </h2>
-          <form onSubmit={handleSubmit(onsubmit)}>
+          <form onSubmit={handleSubmit(NewHub)}>
             <section className='grid gap-5 md:grid-cols-3'>
               <div>
                 {/* INPUT FIRST NAME */}
@@ -119,7 +133,7 @@ function FormNewHubstar() {
                     RFC<span className='text-rose-500'>*</span>
                   </label>
                   <input
-                    className='form-input w-full'
+                    className='uppercase form-input w-full'
                     autoComplete='off'
                     type='text'
                     {...register('rfc', {
@@ -147,7 +161,7 @@ function FormNewHubstar() {
                     CURP <span className='text-rose-500'>*</span>
                   </label>
                   <input
-                    className='form-input w-full'
+                    className='uppercase form-input w-full '
                     autoComplete='off'
                     type='text'
                     {...register('curp', {
@@ -169,7 +183,7 @@ function FormNewHubstar() {
                 </div>
               </div>
               <div>
-                {/* SELECT GENERO */}
+                {/* SELECT GENER */}
                 <div>
                   <label className='block text-sm font-medium mb-1'>
                     Genero<span className='text-rose-500'>*</span>
@@ -183,8 +197,8 @@ function FormNewHubstar() {
                       },
                     })}>
                     <option value=''>selecciona</option>
-                    <option value='1'>Masculino</option>
-                    <option value='2'>Femenino</option>
+                    <option value='M'>Masculino</option>
+                    <option value='F'>Femenino</option>
                   </select>
                   {errors.first_name && (
                     <span className='text-red-500 text-sm'>
@@ -216,8 +230,7 @@ function FormNewHubstar() {
                       },
                     })}>
                     <option value=''>selecciona</option>
-                    <option value='1'>Entrevistado</option>
-                    <option value='2'>Intern</option>
+                    <option>Entrevistado</option>
                   </select>
                   {errors.first_name && (
                     <span className='text-red-500 text-sm'>
@@ -236,6 +249,7 @@ function FormNewHubstar() {
                     <select
                       className='form-select w-full'
                       {...register('job_title', {
+                        valueAsNumber: true,
                         required: {
                           value: true,
                           message: 'El campo es requerido',
@@ -266,6 +280,7 @@ function FormNewHubstar() {
                   {...register('signature', {
                     required: {
                       value: true,
+                      setValueAs: (val) => true,
                       message: 'El campo es requerido',
                     },
                   })}>
@@ -386,6 +401,7 @@ function FormNewHubstar() {
                     <select
                       className='form-select w-full'
                       {...register('country', {
+                        valueAsNumber: true,
                         required: {
                           value: true,
                           message: 'El campo es requerido',
