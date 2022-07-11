@@ -1,4 +1,4 @@
-import computerWomen from './jpg/auth-image.jpg';
+import computerWomen from './jpg/computerWomen.jpg';
 import sentImage from './png/auth-decoration.png';
 
 export default {
