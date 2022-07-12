@@ -3,10 +3,12 @@ import { useForm } from 'react-hook-form';
 import './styleDate.css';
 import ModalConfirm from '../../../helpers/ModalConfirm';
 import ModalBlank from '../../components/ModalBlank';
+import Banner from '../../components/Banner';
 
 function FormNewHubstar() {
   const onsubmit = (data) => console.log(data);
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
+  const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
 
   const {
     handleSubmit,
@@ -27,7 +29,7 @@ function FormNewHubstar() {
         if (json === 200) {
           console.log(json);
         } else {
-          console.log(json);
+          setBannerErrorOpen(true);
         }
       });
   };
@@ -41,6 +43,27 @@ function FormNewHubstar() {
             Añadir colaborador ✨
           </h1>
         </div>
+        {/* BANNER ERROR */}
+        {!bannerErrorOpen ? (
+          <div className='space-y-3'>
+            <Banner
+              type='error'
+              open={bannerErrorOpen}
+              setOpen={setBannerErrorOpen}>
+              We’re currently experiencing an increase in inquiries. There may
+            </Banner>
+          </div>
+        ) : (
+          <div className='space-y-3'>
+            <Banner
+              type='error'
+              open={bannerErrorOpen}
+              setOpen={setBannerErrorOpen}>
+              We’re currently experiencing an increase in inquiries. There may
+              be a delay in responses from the Support.
+            </Banner>
+          </div>
+        )}
         <div className='border-t border-slate-200'></div>
         <div className='space-y-8 mt-8'>
           <h2 className='text-2xl text-slate-800 font-bold mb-6'>
