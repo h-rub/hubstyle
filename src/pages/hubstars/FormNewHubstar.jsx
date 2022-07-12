@@ -6,7 +6,7 @@ import ModalBlank from '../../components/ModalBlank';
 
 function FormNewHubstar() {
   const onsubmit = (data) => console.log(data);
-  const [infoModalOpen, setInfoModalOpen] = useState(false);
+  const [dangerModalOpen, setDangerModalOpen] = useState(false);
 
   const {
     handleSubmit,
@@ -31,7 +31,6 @@ function FormNewHubstar() {
         }
       });
   };
-  console.log(infoModalOpen);
 
   return (
     <>
@@ -439,10 +438,10 @@ function FormNewHubstar() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    setInfoModalOpen(true);
+                    setDangerModalOpen(true);
                   }}
                   type='button'
-                  className='btn border-slate-200 hover:border-slate-300 text-emerald-500'>
+                  className='btn border-slate-200 hover:border-slate-300 text-emerald-500 hover:bg-red-500 hover:text-slate-50'>
                   Cancelar
                 </button>
               </div>
@@ -452,8 +451,8 @@ function FormNewHubstar() {
       </div>
       {/* MODAL CONFIRM */}
       <ModalConfirm
-        setInfoModalOpen={setInfoModalOpen}
-        infoModalOpen={infoModalOpen}
+        dangerModalOpen={dangerModalOpen}
+        setDangerModalOpen={setDangerModalOpen}
       />
     </>
   );
