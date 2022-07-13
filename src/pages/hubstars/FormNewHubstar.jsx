@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import './styleDate.css';
 import ModalConfirm from '../../../helpers/ModalConfirm';
 import Banner from '../../components/Banner';
 
@@ -16,9 +15,10 @@ function FormNewHubstar() {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm();
+  } = useForm({ defaultValues: { signature: 'false' } });
 
   const NewHub = (data) => {
+    let datas = null;
     fetch('https://hubhr.herokuapp.com/api/associate/create', {
       method: 'POST',
       headers: {
@@ -27,12 +27,14 @@ function FormNewHubstar() {
       body: JSON.stringify(data),
     }).then((response) => {
       if (response.ok === true) {
+        datas = response.json();
         setBannerSuccessOpen(true);
         setTimeout(() => {
           navigate('/hubstars/all');
         }, 3000);
       } else if (response.ok === false) {
         setBannerErrorOpen(true);
+        datas = response.json();
         setTimeout(() => {
           setBannerErrorOpen(false);
         }, 7000);
@@ -56,7 +58,7 @@ function FormNewHubstar() {
               type='success'
               open={bannerSuccessOpen}
               setOpen={setBannerSuccessOpen}>
-              operación exitosa, tus datos han sido guardados satisfactoriamente
+              operación exitosa. Rediriguiendo...
             </Banner>
           </div>
         ) : bannerErrorOpen ? (
@@ -66,7 +68,7 @@ function FormNewHubstar() {
               open={bannerErrorOpen}
               setOpen={setBannerErrorOpen}>
               Los datos ya existen en nuestra base de datos, favor de verificar
-              CURP Y RFC
+              CURP y RFC
             </Banner>
           </div>
         ) : null}
@@ -181,10 +183,10 @@ function FormNewHubstar() {
                         value: /[a-zA-Z0-9]/,
                         message: 'El formato no es correcto',
                       },
-                      minLength: {
-                        value: 13,
-                        message: 'El RFC debe de tener 13 caracteres',
-                      },
+                      // minLength: {
+                      //   value: 13,
+                      //   message: 'El RFC debe de tener 13 caracteres',
+                      // },
                     })}
                   />{' '}
                   {errors.rfc && (
@@ -213,10 +215,10 @@ function FormNewHubstar() {
                         value: /[a-zA-Z0-9]/,
                         message: 'El formato no es correcto',
                       },
-                      minLength: {
-                        value: 18,
-                        message: 'La CURP debe de tener al menos 18 caracteres',
-                      },
+                      // minLength: {
+                      //   value: 18,
+                      //   message: 'La CURP debe de tener al menos 18 caracteres',
+                      // },
                     })}
                   />{' '}
                   {errors.curp && (
@@ -242,8 +244,8 @@ function FormNewHubstar() {
                     })}>
                     <option value=''>Selecciona</option>
                     <option value='M'>Masculino</option>
-                    {/* <option value='F'>Femenino</option>
-                    <option value='O'>Otro</option> */}
+                    <option value='F'>Femenino</option>
+                    <option value='O'>Otro</option>
                   </select>
                   {errors.first_name && (
                     <span className='text-red-500 text-sm'>
@@ -276,10 +278,10 @@ function FormNewHubstar() {
                     })}>
                     <option value=''>Selecciona</option>
                     <option>Entrevistado</option>
-                    {/* <option>Intern</option>
+                    <option>Intern</option>
                     <option>Planta</option>
                     <option>Freelancer</option>
-                    <option>Baja</option> */}
+                    <option>Baja</option>
                   </select>
                   {errors.first_name && (
                     <span className='text-red-500 text-sm'>
@@ -327,6 +329,7 @@ function FormNewHubstar() {
                   <span className='text-rose-500'>*</span>
                 </label>
                 <select
+                  disabled
                   className='form-select w-full'
                   {...register('signature', {
                     required: {
@@ -334,11 +337,7 @@ function FormNewHubstar() {
                       setValueAs: (val) => true,
                       message: 'El campo es requerido',
                     },
-                  })}>
-                  <option value=''>Selecciona</option>
-                  <option value='true'>Si</option>
-                  {/* <option value='false'>No</option> */}
-                </select>
+                  })}></select>
                 {errors.signature && (
                   <span className='text-red-500 text-sm'>
                     {errors.signature.message}
@@ -460,9 +459,9 @@ function FormNewHubstar() {
                       })}>
                       <option value=''>Selecciona</option>
                       <option value='1'>Mexico</option>
-                      <option value='2'>Colombia</option>
+                      {/* <option value='2'>Colombia</option>
                       <option value='3'>Ecuador</option>
-                      <option value='4'>Perú</option>
+                      <option value='4'>Perú</option> */}
                     </select>
                     {errors.country && (
                       <span className='text-red-500 text-sm'>

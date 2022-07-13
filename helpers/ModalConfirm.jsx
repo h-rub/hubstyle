@@ -48,7 +48,7 @@ const MoldalConfirm = ({ dangerModalOpen, setDangerModalOpen }) => {
                   e.stopPropagation();
                   setDangerModalOpen(false);
                 }}>
-                Regresar
+                Continuar con la captura
               </button>
               <button
                 onClick={backPage}
