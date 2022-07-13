@@ -17,9 +17,8 @@ function UsersTiles() {
       .then((response) => response.json())
       .then((json) => {
         setHubList(json);
-        console.log(json);
       });
-  }, []);
+  }, [hubList]);
 
   return (
     <div className='flex h-screen overflow-hidden'>
@@ -106,7 +105,9 @@ function UsersTiles() {
               <div className='grid grid-cols-12 gap-6'>
                 {hubList.map((data) => {
                   return (
-                    <div className='col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-slate-200'>
+                    <div
+                      key={hubList.id}
+                      className='col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-slate-200'>
                       <div className='flex flex-col h-full'>
                         {/* Card top */}
                         <div className='grow p-5'>
