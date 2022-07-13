@@ -18,7 +18,6 @@ function FormNewHubstar() {
   } = useForm({ defaultValues: { signature: 'false' } });
 
   const NewHub = (data) => {
-    let datas = null;
     fetch('https://hubhr.herokuapp.com/api/associate/create', {
       method: 'POST',
       headers: {
@@ -183,10 +182,10 @@ function FormNewHubstar() {
                         value: /[a-zA-Z0-9]/,
                         message: 'El formato no es correcto',
                       },
-                      // minLength: {
-                      //   value: 13,
-                      //   message: 'El RFC debe de tener 13 caracteres',
-                      // },
+                      minLength: {
+                        value: 13,
+                        message: 'El RFC debe de tener 13 caracteres',
+                      },
                     })}
                   />{' '}
                   {errors.rfc && (
@@ -215,10 +214,10 @@ function FormNewHubstar() {
                         value: /[a-zA-Z0-9]/,
                         message: 'El formato no es correcto',
                       },
-                      // minLength: {
-                      //   value: 18,
-                      //   message: 'La CURP debe de tener al menos 18 caracteres',
-                      // },
+                      minLength: {
+                        value: 18,
+                        message: 'La CURP debe de tener al menos 18 caracteres',
+                      },
                     })}
                   />{' '}
                   {errors.curp && (
@@ -307,10 +306,10 @@ function FormNewHubstar() {
                         },
                       })}>
                       <option value=''>Selecciona</option>
-                      <option value='1'>Backend Developer</option>
-                      {/* <option value='2'>Frontend Developer</option>
-                      <option value='3'>DBA</option>
-                      <option value='4'>UI/UX</option> */}
+                      <option>Backend Developer</option>
+                      <option>Frontend Developer</option>
+                      <option>DBA</option>
+                      <option>UI/UX</option>
                     </select>
                     {errors.first_name && (
                       <span className='text-red-500 text-sm'>
@@ -458,10 +457,10 @@ function FormNewHubstar() {
                         },
                       })}>
                       <option value=''>Selecciona</option>
-                      <option value='1'>Mexico</option>
-                      {/* <option value='2'>Colombia</option>
-                      <option value='3'>Ecuador</option>
-                      <option value='4'>Perú</option> */}
+                      <option>Mexico</option>
+                      <option>Colombia</option>
+                      <option>Ecuador</option>
+                      <option>Perú</option>
                     </select>
                     {errors.country && (
                       <span className='text-red-500 text-sm'>
