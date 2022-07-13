@@ -1,30 +1,44 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import './styleDate.css';
-import ModalBlank from '../../components/ModalBlank';
-
-const NewHub = (data) => {
-  fetch('https://hubhr.herokuapp.com/api/associate/create', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-    });
-};
+import ModalConfirm from '../../../helpers/ModalConfirm';
+import Banner from '../../components/Banner';
 
 function FormNewHubstar() {
   const onsubmit = (data) => console.log(data);
+  const [dangerModalOpen, setDangerModalOpen] = useState(false);
+  const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
+  const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
+  const navigate = useNavigate();
 
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
+
+  const NewHub = (data) => {
+    fetch('https://hubhr.herokuapp.com/api/associate/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then((response) => {
+      if (response.ok === true) {
+        setBannerSuccessOpen(true);
+        setTimeout(() => {
+          navigate('/hubstars/all');
+        }, 3000);
+      } else if (response.ok === false) {
+        setBannerErrorOpen(true);
+        setTimeout(() => {
+          setBannerErrorOpen(false);
+        }, 7000);
+      }
+    });
+  };
 
   return (
     <>
@@ -35,6 +49,28 @@ function FormNewHubstar() {
             Añadir colaborador ✨
           </h1>
         </div>
+        {/* BANNER SUCCESS AND ERROR */}
+        {bannerSuccessOpen ? (
+          <div className='space-y-3'>
+            <Banner
+              type='success'
+              open={bannerSuccessOpen}
+              setOpen={setBannerSuccessOpen}>
+              operación exitosa, tus datos han sido guardados satisfactoriamente
+            </Banner>
+          </div>
+        ) : bannerErrorOpen ? (
+          <div className='space-y-3'>
+            <Banner
+              type='error'
+              open={bannerErrorOpen}
+              setOpen={setBannerErrorOpen}>
+              Los datos ya existen en nuestra base de datos, favor de verificar
+              CURP Y RFC
+            </Banner>
+          </div>
+        ) : null}
+
         <div className='border-t border-slate-200'></div>
         <div className='space-y-8 mt-8'>
           <h2 className='text-2xl text-slate-800 font-bold mb-6'>
@@ -145,6 +181,10 @@ function FormNewHubstar() {
                         value: /[a-zA-Z0-9]/,
                         message: 'El formato no es correcto',
                       },
+                      minLength: {
+                        value: 13,
+                        message: 'El RFC debe de tener 13 caracteres',
+                      },
                     })}
                   />{' '}
                   {errors.rfc && (
@@ -173,6 +213,10 @@ function FormNewHubstar() {
                         value: /[a-zA-Z0-9]/,
                         message: 'El formato no es correcto',
                       },
+                      minLength: {
+                        value: 18,
+                        message: 'La CURP debe de tener al menos 18 caracteres',
+                      },
                     })}
                   />{' '}
                   {errors.curp && (
@@ -196,9 +240,10 @@ function FormNewHubstar() {
                         message: 'El campo es requerido',
                       },
                     })}>
-                    <option value=''>selecciona</option>
+                    <option value=''>Selecciona</option>
                     <option value='M'>Masculino</option>
-                    <option value='F'>Femenino</option>
+                    {/* <option value='F'>Femenino</option>
+                    <option value='O'>Otro</option> */}
                   </select>
                   {errors.first_name && (
                     <span className='text-red-500 text-sm'>
@@ -229,8 +274,12 @@ function FormNewHubstar() {
                         message: 'El campo es requerido',
                       },
                     })}>
-                    <option value=''>selecciona</option>
+                    <option value=''>Selecciona</option>
                     <option>Entrevistado</option>
+                    {/* <option>Intern</option>
+                    <option>Planta</option>
+                    <option>Freelancer</option>
+                    <option>Baja</option> */}
                   </select>
                   {errors.first_name && (
                     <span className='text-red-500 text-sm'>
@@ -255,9 +304,11 @@ function FormNewHubstar() {
                           message: 'El campo es requerido',
                         },
                       })}>
-                      <option value=''>selecciona</option>
-                      <option value='1'>Backend</option>
-                      <option value='2'>Frontend</option>
+                      <option value=''>Selecciona</option>
+                      <option value='1'>Backend Developer</option>
+                      {/* <option value='2'>Frontend Developer</option>
+                      <option value='3'>DBA</option>
+                      <option value='4'>UI/UX</option> */}
                     </select>
                     {errors.first_name && (
                       <span className='text-red-500 text-sm'>
@@ -284,9 +335,9 @@ function FormNewHubstar() {
                       message: 'El campo es requerido',
                     },
                   })}>
-                  <option value=''>selecciona</option>
+                  <option value=''>Selecciona</option>
                   <option value='true'>Si</option>
-                  <option value='false'>No</option>
+                  {/* <option value='false'>No</option> */}
                 </select>
                 {errors.signature && (
                   <span className='text-red-500 text-sm'>
@@ -407,9 +458,11 @@ function FormNewHubstar() {
                           message: 'El campo es requerido',
                         },
                       })}>
-                      <option value=''>selecciona</option>
-                      <option value='1'>MEXICO</option>
-                      <option value='2'>COLOMBIA</option>
+                      <option value=''>Selecciona</option>
+                      <option value='1'>Mexico</option>
+                      <option value='2'>Colombia</option>
+                      <option value='3'>Ecuador</option>
+                      <option value='4'>Perú</option>
                     </select>
                     {errors.country && (
                       <span className='text-red-500 text-sm'>
@@ -430,8 +483,12 @@ function FormNewHubstar() {
               </div>
               <div className='m-1.5'>
                 <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setDangerModalOpen(true);
+                  }}
                   type='button'
-                  className='btn border-slate-200 hover:border-slate-300 text-emerald-500'>
+                  className='btn border-slate-200 hover:border-slate-300 text-emerald-500 hover:bg-red-500 hover:text-slate-50'>
                   Cancelar
                 </button>
               </div>
@@ -439,6 +496,11 @@ function FormNewHubstar() {
           </form>
         </div>
       </div>
+      {/* MODAL CONFIRM */}
+      <ModalConfirm
+        dangerModalOpen={dangerModalOpen}
+        setDangerModalOpen={setDangerModalOpen}
+      />
     </>
   );
 }

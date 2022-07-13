@@ -20,204 +20,126 @@ import Image11 from '../../images/user-64-11.jpg';
 import Image12 from '../../images/user-64-12.jpg';
 
 function UsersTiles() {
-
   const items = [
-    // {
-    //   id: 0,
-    //   name: 'Dominik McNeail',
-    //   image: Image01,
-    //   link: '#0',
-    //   location: '🇮🇹',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 1,
-    //   name: 'Ivan Mesaros',
-    //   image: Image02,
-    //   link: '#0',
-    //   location: '🇫🇷',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 2,
-    //   name: 'Tisha Yanchev',
-    //   image: Image03,
-    //   link: '#0',
-    //   location: '🇩🇪',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 3,
-    //   name: 'Sergio Gonnelli',
-    //   image: Image04,
-    //   link: '#0',
-    //   location: '🇮🇹',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 4,
-    //   name: 'Jerzy Wierzy',
-    //   image: Image05,
-    //   link: '#0',
-    //   location: '🇪🇸',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 5,
-    //   name: 'Mirko Grubisic',
-    //   image: Image06,
-    //   link: '#0',
-    //   location: '🇩🇪',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 6,
-    //   name: 'Alisha Acharya',
-    //   image: Image07,
-    //   link: '#0',
-    //   location: '🇬🇧',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 7,
-    //   name: 'Brian Halligan',
-    //   image: Image08,
-    //   link: '#0',
-    //   location: '🇺🇸',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 8,
-    //   name: 'Patricia Semklo',
-    //   image: Image09,
-    //   link: '#0',
-    //   location: '🇮🇳',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 9,
-    //   name: 'Maria Martinez',
-    //   image: Image10,
-    //   link: '#0',
-    //   location: '🇮🇹',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 10,
-    //   name: 'Vedad Siljak',
-    //   image: Image11,
-    //   link: '#0',
-    //   location: '🇮🇹🇨🇦',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
-    // {
-    //   id: 11,
-    //   name: 'Dominik Lamakani',
-    //   image: Image12,
-    //   link: '#0',
-    //   location: '🇧🇪',
-    //   content: 'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
-    // },
+    {
+      id: 0,
+      name: 'Dominik McNeail',
+      image: Image01,
+      link: '#0',
+      location: '🇮🇹',
+      content:
+        'Fitness Fanatic, Design Enthusiast, Mentor, Meetup Organizer & PHP Lover.',
+    },
   ];
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  
-  return (
-    <div className="flex h-screen overflow-hidden">
 
+  return (
+    <div className='flex h-screen overflow-hidden'>
       {/* Sidebar */}
       <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      {/* Content area */} 
-      <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
-
+      {/* Content area */}
+      <div className='relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden'>
         {/*  Site header */}
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         <main>
-          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
-
+          <div className='px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto'>
             {/* Page header */}
-            <div className="sm:flex sm:justify-between sm:items-center mb-8">
-
+            <div className='sm:flex sm:justify-between sm:items-center mb-8'>
               {/* Left: Title */}
-              <div className="mb-4 sm:mb-0">
-                <h1 className="text-2xl md:text-3xl text-slate-800 font-bold">Hubstars ✨</h1>
+              <div className='mb-4 sm:mb-0'>
+                <h1 className='text-2xl md:text-3xl text-slate-800 font-bold'>
+                  Hubstars ✨
+                </h1>
               </div>
 
               {/* Right: Actions */}
-              <div className="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
+              <div className='grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2'>
                 {/* Search form */}
                 <SearchForm />
                 {/* Add member button */}
                 <Link to='/hubstars/add'>
-                <button className="btn bg-secondary hover:bg-primary hover:text-white text-primary">
-                  <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
-                    <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                  </svg>
-                  <span className="hidden xs:block ml-2">Añadir colaborador</span>
-                </button>
+                  <button className='btn bg-secondary hover:bg-primary hover:text-white text-primary'>
+                    <svg
+                      className='w-4 h-4 fill-current opacity-50 shrink-0'
+                      viewBox='0 0 16 16'>
+                      <path d='M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z' />
+                    </svg>
+                    <span className='hidden xs:block ml-2'>
+                      Añadir colaborador
+                    </span>
+                  </button>
                 </Link>
               </div>
-
             </div>
 
-            {items.length === 0 ? <div className="border-t border-slate-200">
-              <div className="max-w-2xl m-auto mt-16">
-
-                <div className="text-center px-4">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-t from-slate-200 to-slate-100 mb-4">
-                    <svg className="w-5 h-6 fill-current" viewBox="0 0 20 24">
-                      <path className="text-slate-500" d="M10 10.562l9-5-8.514-4.73a1 1 0 00-.972 0L1 5.562l9 5z" />
-                      <path className="text-slate-300" d="M9 12.294l-9-5v10.412a1 1 0 00.514.874L9 23.294v-11z" />
-                      <path className="text-slate-400" d="M11 12.294v11l8.486-4.714a1 1 0 00.514-.874V7.295l-9 4.999z" />
-                    </svg>
+            {items.length === 0 ? (
+              <div className='border-t border-slate-200'>
+                <div className='max-w-2xl m-auto mt-16'>
+                  <div className='text-center px-4'>
+                    <div className='inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-t from-slate-200 to-slate-100 mb-4'>
+                      <svg className='w-5 h-6 fill-current' viewBox='0 0 20 24'>
+                        <path
+                          className='text-slate-500'
+                          d='M10 10.562l9-5-8.514-4.73a1 1 0 00-.972 0L1 5.562l9 5z'
+                        />
+                        <path
+                          className='text-slate-300'
+                          d='M9 12.294l-9-5v10.412a1 1 0 00.514.874L9 23.294v-11z'
+                        />
+                        <path
+                          className='text-slate-400'
+                          d='M11 12.294v11l8.486-4.714a1 1 0 00.514-.874V7.295l-9 4.999z'
+                        />
+                      </svg>
+                    </div>
+                    <h2 className='text-2xl text-slate-800 font-bold mb-2'>
+                      Añade el primer colaborador
+                    </h2>
+                    <div className='mb-6'>
+                      Crea los registros de las personas que hacen posible
+                      Hubmine
+                    </div>
+                    <Link to='/hubstars/add'>
+                      <button className='btn bg-secondary hover:bg-primary hover:text-white text-primary'>
+                        <svg
+                          className='w-4 h-4 fill-current opacity-50 shrink-0'
+                          viewBox='0 0 16 16'>
+                          <path d='M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z' />
+                        </svg>
+                        <span className='ml-2'>Añadir colaborador</span>
+                      </button>
+                    </Link>
                   </div>
-                  <h2 className="text-2xl text-slate-800 font-bold mb-2">Añade el primer colaborador</h2>
-                  <div className="mb-6">Crea los registros de las personas que hacen posible Hubmine</div>
-                  <Link to="/hubstars/add">
-                  <button className="btn bg-secondary hover:bg-primary hover:text-white text-primary">
-                    <svg className="w-4 h-4 fill-current opacity-50 shrink-0" viewBox="0 0 16 16">
-                      <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                    </svg>
-                    <span className="ml-2">Añadir colaborador</span>
-                  </button>
-                  </Link>
                 </div>
-
               </div>
-            </div> :   
-            
-            <div className="grid grid-cols-12 gap-6">
-
-                {
-                  
-                  items.map(item => {
-                    return (
-                      <UsersTilesCard
-                        key={item.id}
-                        id={item.id}
-                        name={item.name}
-                        image={item.image}
-                        link={item.link}
-                        location={item.location}
-                        content={item.content}
-                      />
-                    )
-                  })
-                }
-            </div>}
+            ) : (
+              <div className='grid grid-cols-12 gap-6'>
+                {items.map((item) => {
+                  return (
+                    <UsersTilesCard
+                      key={item.id}
+                      id={item.id}
+                      name={item.name}
+                      image={item.image}
+                      link={item.link}
+                      location={item.location}
+                      content={item.content}
+                    />
+                  );
+                })}
+              </div>
+            )}
 
             {/* Pagination */}
             {/* <div className="mt-8">
               <PaginationNumeric />
             </div> */}
-
           </div>
         </main>
-
       </div>
-      
     </div>
   );
 }
