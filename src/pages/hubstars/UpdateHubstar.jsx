@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
-import FormNewHubstar from './FormNewHubstar';
 
 function NewHubstar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -16,9 +15,7 @@ function NewHubstar() {
         {/*  Site header */}
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-        <main>
-          <FormNewHubstar />
-        </main>
+        <main></main>
       </div>
     </div>
   );

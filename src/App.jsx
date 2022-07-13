@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import UsersTiles from './pages/hubstars/UsersTiles';
 import Profile from './pages/hubstars/Profile';
 import NewHubstar from './pages/hubstars/NewHubstar';
+import UpdateHubstar from './pages/hubstars/UpdateHubstar';
 
 import Account from './pages/settings/Account';
 import Notifications from './pages/settings/Notifications';
@@ -64,10 +65,46 @@ function App() {
           }
         />
 
-        <Route path='/hubstars/all' element={<UsersTiles />} />
-        <Route path='/hubstars/add' element={<NewHubstar />} />
-        <Route path='/hubstars/profile' element={<Profile />} />
-        <Route path='/hubstars/new-hubstar' element={<NewHubstar />} />
+        <Route
+          path='/hubstars/all'
+          element={
+            <PrivateRoute>
+              <UsersTiles />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='/hubstars/add'
+          element={
+            <PrivateRoute>
+              <NewHubstar />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='/hubstars/profile'
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='/hubstars/new-hubstar'
+          element={
+            <PrivateRoute>
+              <NewHubstar />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path='/hubstars/update-hubstar'
+          element={
+            <PrivateRoute>
+              <UpdateHubstar />
+            </PrivateRoute>
+          }
+        />
 
         <Route path='/settings/account' element={<Account />} />
         <Route path='/settings/notifications' element={<Notifications />} />
