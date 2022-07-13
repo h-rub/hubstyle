@@ -7,12 +7,12 @@ import './charts/ChartjsConfig';
 
 // Import pages
 import Dashboard from './pages/Dashboard';
-
+// HUBSTARS
 import UsersTiles from './pages/hubstars/UsersTiles';
 import Profile from './pages/hubstars/Profile';
 import NewHubstar from './pages/hubstars/NewHubstar';
 import UpdateHubstar from './pages/hubstars/UpdateHubstar';
-
+// -------
 import Account from './pages/settings/Account';
 import Notifications from './pages/settings/Notifications';
 
