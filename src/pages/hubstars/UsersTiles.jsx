@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import SearchForm from '../../partials/actions/SearchForm';
-import UsersTilesCard from '../../partials/community/UsersTilesCard';
+import UsersTilesCard from './UsersTilesCard';
 import PaginationNumeric from '../../components/PaginationNumeric';
 
 import Image01 from '../../images/user-64-01.jpg';
