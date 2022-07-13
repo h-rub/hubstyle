@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
@@ -33,6 +33,16 @@ function UsersTiles() {
   ];
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [hubList, setHubList] = useState([]);
+
+  useEffect(() => {
+    fetch('https://hubhr.herokuapp.com/api/associate-list')
+      .then((response) => response.json())
+      .then((json) => {
+        setHubList(json);
+        console.log(json);
+      });
+  }, []);
 
   return (
     <div className='flex h-screen overflow-hidden'>

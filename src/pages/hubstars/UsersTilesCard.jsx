@@ -43,7 +43,7 @@ function UsersTilesCard(props) {
                   <div className='flex items-center'>
                     <span className='text-sm font-medium text-slate-400 -mt-0.5 mr-1'>
                       -&gt;
-                    </span>{' '}
+                    </span>
                     <span>{props.location}</span>
                   </div>
                 </div>
