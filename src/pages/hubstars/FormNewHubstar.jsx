@@ -3,12 +3,14 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import ModalConfirm from '../../../helpers/ModalConfirm';
 import Banner from '../../components/Banner';
+import { LoadingButton } from '../../../helpers/LoadingButton';
 
 function FormNewHubstar() {
   const onsubmit = (data) => console.log(data);
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
   const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
   const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -27,12 +29,12 @@ function FormNewHubstar() {
     }).then((response) => {
       if (response.ok === true) {
         setBannerSuccessOpen(true);
+        setLoading(true);
         setTimeout(() => {
           navigate('/hubstars/all');
         }, 3000);
       } else if (response.ok === false) {
         setBannerErrorOpen(true);
-
         setTimeout(() => {
           setBannerErrorOpen(false);
         }, 7000);
@@ -472,11 +474,15 @@ function FormNewHubstar() {
             </section>
             <section className='w-full flex space-x-6 justify-center items-center mt-10'>
               <div className='m-1.5'>
-                <button
-                  type='submit'
-                  className='btn bg-emerald-500 hover:bg-emerald-600 text-white'>
-                  Guardar
-                </button>
+                {!loading ? (
+                  <button
+                    type='submit'
+                    className='btn bg-emerald-500 hover:bg-emerald-600 text-white'>
+                    Guardar
+                  </button>
+                ) : (
+                  <LoadingButton />
+                )}
               </div>
               <div className='m-1.5'>
                 <button
