@@ -305,10 +305,10 @@ function FormNewHubstar() {
                         },
                       })}>
                       <option value=''>Selecciona</option>
-                      <option>Backend Developer</option>
-                      <option>Frontend Developer</option>
+                      <option value='1'>Project Manager</option>
+                      {/* <option>Frontend Developer</option>
                       <option>DBA</option>
-                      <option>UI/UX</option>
+                      <option>UI/UX</option> */}
                     </select>
                     {errors.first_name && (
                       <span className='text-red-500 text-sm'>
@@ -456,10 +456,10 @@ function FormNewHubstar() {
                         },
                       })}>
                       <option value=''>Selecciona</option>
-                      <option>Mexico</option>
-                      <option>Colombia</option>
-                      <option>Ecuador</option>
-                      <option>Perú</option>
+                      <option Value='1'>Mexico</option>
+                      {/* <option Value='Colombia'>Colombia</option>
+                      <option Value='Ecuador'>Ecuador</option>
+                      <option Value='Peru'>Perú</option> */}
                     </select>
                     {errors.country && (
                       <span className='text-red-500 text-sm'>

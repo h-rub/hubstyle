@@ -5,21 +5,12 @@ import Header from '../../partials/Header';
 import SearchForm from '../../partials/actions/SearchForm';
 import PaginationNumeric from '../../components/PaginationNumeric';
 import UsersTilesCard from './UsersTilesCard';
+import { useFetchHubstarList } from './hooks/useFetchHubstarList';
 
 function UsersTiles() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [hubList, setHubList] = useState([]);
 
-  useEffect(() => {
-    const getListHubstar = () => {
-      fetch('https://hubhr.herokuapp.com/api/associate-list')
-        .then((response) => response.json())
-        .then((json) => {
-          setHubList(json);
-        });
-    };
-    getListHubstar();
-  }, [hubList]);
+  const { hubList, isLoading } = useFetchHubstarList();
 
   return (
     <div className='flex h-screen overflow-hidden'>
