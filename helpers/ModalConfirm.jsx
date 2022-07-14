@@ -51,7 +51,10 @@ const MoldalConfirm = ({ dangerModalOpen, setDangerModalOpen }) => {
                 Continuar con la captura
               </button>
               <button
-                onClick={backPage}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  backPage();
+                }}
                 type='button'
                 className='btn-sm bg-rose-500 hover:bg-rose-600 text-white'>
                 Sí, quiero salir

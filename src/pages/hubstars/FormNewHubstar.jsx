@@ -26,14 +26,13 @@ function FormNewHubstar() {
       body: JSON.stringify(data),
     }).then((response) => {
       if (response.ok === true) {
-        datas = response.json();
         setBannerSuccessOpen(true);
         setTimeout(() => {
           navigate('/hubstars/all');
         }, 3000);
       } else if (response.ok === false) {
         setBannerErrorOpen(true);
-        datas = response.json();
+
         setTimeout(() => {
           setBannerErrorOpen(false);
         }, 7000);
@@ -57,7 +56,7 @@ function FormNewHubstar() {
               type='success'
               open={bannerSuccessOpen}
               setOpen={setBannerSuccessOpen}>
-              operación exitosa. Rediriguiendo...
+              operación exitosa. Redirigiendo...
             </Banner>
           </div>
         ) : bannerErrorOpen ? (

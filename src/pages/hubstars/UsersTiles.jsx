@@ -13,11 +13,14 @@ function UsersTiles() {
   const [hubList, setHubList] = useState([]);
 
   useEffect(() => {
-    fetch('https://hubhr.herokuapp.com/api/associate-list')
-      .then((response) => response.json())
-      .then((json) => {
-        setHubList(json);
-      });
+    const getListHubstar = () => {
+      fetch('https://hubhr.herokuapp.com/api/associate-list')
+        .then((response) => response.json())
+        .then((json) => {
+          setHubList(json);
+        });
+    };
+    getListHubstar();
   }, [hubList]);
 
   return (
@@ -103,10 +106,10 @@ function UsersTiles() {
               </div>
             ) : (
               <div className='grid grid-cols-12 gap-6'>
-                {hubList.map((data) => {
-                  return (
-                    <div
-                      key={hubList.id}
+                {hubList.map((data) => (
+                  <>
+                    <section
+                      key={data.id}
                       className='col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-slate-200'>
                       <div className='flex flex-col h-full'>
                         {/* Card top */}
@@ -204,7 +207,7 @@ function UsersTiles() {
                             </Link>
                             <Link
                               className='block flex-1 text-center text-sm text-slate-600 hover:text-primary font-medium px-3 py-4 group'
-                              to='/hubstars/update-hubstar'>
+                              to={`/hubstars/update-hubstar${data.id}`}>
                               <div className='flex items-center justify-center'>
                                 <svg
                                   className='w-4 h-4 fill-current text-slate-600 group-hover:text-primary shrink-0 mr-2'
@@ -217,9 +220,9 @@ function UsersTiles() {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    </section>
+                  </>
+                ))}
               </div>
             )}
 
