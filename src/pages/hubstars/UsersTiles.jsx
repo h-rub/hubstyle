@@ -207,7 +207,7 @@ function UsersTiles() {
                             </Link>
                             <Link
                               className='block flex-1 text-center text-sm text-slate-600 hover:text-primary font-medium px-3 py-4 group'
-                              to={`/hubstars/update-hubstar${data.id}`}>
+                              to={`/hubstars/update-hubstar/${data.id}`}>
                               <div className='flex items-center justify-center'>
                                 <svg
                                   className='w-4 h-4 fill-current text-slate-600 group-hover:text-primary shrink-0 mr-2'

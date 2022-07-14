@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Image01 from '../../images/user-64-01.jpg';
 import Banner from '../../components/Banner';
 import ModalConfirm from '../../../helpers/ModalConfirm';
@@ -9,12 +9,38 @@ const FormUpdateHubstar = () => {
   const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
 
+  const { id } = useParams();
+
   const onSubmit = (data) => console.log(data);
   const {
     handleSubmit,
     register,
+    setValue,
     formState: { errors },
   } = useForm();
+
+  useEffect(() => {
+    const getDetailsHubstar = () => {
+      fetch(`https://hubhr.herokuapp.com/api/associate-detail?id=${id}`)
+        .then((response) => response.json())
+        .then((json) => {
+          setValue('first_name', json[0].first_name);
+          setValue('last_name', json[0].last_name);
+          setValue('email', json[0].email);
+          setValue('rfc', json[0].rfc);
+          setValue('curp', json[0].curp);
+          setValue('gender', json[0].gender);
+          setValue('status', json[0].status);
+          setValue('job_title', json[0].job_title);
+          setValue('signature', json[0].signature);
+          setValue('start_date', json[0].start_date);
+          setValue('finish_date', json[0].finish_date);
+          setValue('interbank_key', json[0].interbank_key);
+          setValue('country', json[0].country);
+        });
+    };
+    getDetailsHubstar();
+  }, []);
 
   return (
     <>
@@ -281,17 +307,21 @@ const FormUpdateHubstar = () => {
                     <select
                       className='form-select w-full'
                       {...register('job_title', {
-                        valueAsNumber: true,
                         required: {
                           value: true,
                           message: 'El campo es requerido',
                         },
                       })}>
                       <option value=''>Selecciona</option>
-                      <option>Backend Developer</option>
-                      <option>Frontend Developer</option>
-                      <option>DBA</option>
-                      <option>UI/UX</option>
+                      <option value='Backend Developer'>
+                        Backend Developer
+                      </option>
+                      <option value='Frontend Developer'>
+                        Frontend Developer
+                      </option>
+                      <option value='Project Manager'>Project Manager</option>
+                      <option value='DBA'>DBA</option>
+                      <option value='UI/UX'>UI/UX</option>
                     </select>
                     {errors.first_name && (
                       <span className='text-red-500 text-sm'>
@@ -310,15 +340,17 @@ const FormUpdateHubstar = () => {
                   <span className='text-rose-500'>*</span>
                 </label>
                 <select
-                  disabled
                   className='form-select w-full'
                   {...register('signature', {
+                    setValueAs: (val) => true,
                     required: {
                       value: true,
-                      setValueAs: (val) => true,
                       message: 'El campo es requerido',
                     },
-                  })}></select>
+                  })}>
+                  <option value={true}>Sí</option>
+                  <option value={false}>No</option>
+                </select>
                 {errors.signature && (
                   <span className='text-red-500 text-sm'>
                     {errors.signature.message}
@@ -432,17 +464,15 @@ const FormUpdateHubstar = () => {
                     <select
                       className='form-select w-full'
                       {...register('country', {
-                        valueAsNumber: true,
                         required: {
                           value: true,
                           message: 'El campo es requerido',
                         },
                       })}>
-                      <option value=''>Selecciona</option>
-                      <option>Mexico</option>
-                      <option>Colombia</option>
-                      <option>Ecuador</option>
-                      <option>Perú</option>
+                      <option value='Mexico'>Mexico</option>
+                      <option value='Colombia'>Colombia</option>
+                      <option value='Ecuador'>Ecuador</option>
+                      <option value='Peru'>Perú</option>
                     </select>
                     {errors.country && (
                       <span className='text-red-500 text-sm'>

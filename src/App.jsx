@@ -98,7 +98,7 @@ function App() {
           }
         />
         <Route
-          path='/hubstars/update-hubstar'
+          path='/hubstars/update-hubstar/:id'
           element={
             <PrivateRoute>
               <UpdateHubstar />
