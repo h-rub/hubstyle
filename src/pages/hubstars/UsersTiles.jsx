@@ -2,15 +2,38 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
-import SearchForm from '../../partials/actions/SearchForm';
 import PaginationNumeric from '../../components/PaginationNumeric';
 import UsersTilesCard from './UsersTilesCard';
 import { useFetchHubstarList } from './hooks/useFetchHubstarList';
 
 function UsersTiles() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [search, setSearch] = useState('');
 
-  const { hubList, isLoading } = useFetchHubstarList();
+  const { hubList, hubListCard, setHubList } = useFetchHubstarList();
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+    filter(e.target.value);
+  };
+
+  const filter = (mineOfSearch) => {
+    let searchResult = hubListCard.filter((element) => {
+      if (
+        element.first_name
+          .toString()
+          .toLowerCase()
+          .includes(mineOfSearch.toLowerCase()) ||
+        element.last_name
+          .toString()
+          .toLowerCase()
+          .includes(mineOfSearch.toLowerCase())
+      ) {
+        return element;
+      }
+    });
+    setHubList(searchResult);
+  };
 
   return (
     <div className='flex h-screen overflow-hidden'>
@@ -36,7 +59,31 @@ function UsersTiles() {
               {/* Right: Actions */}
               <div className='grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2'>
                 {/* Search form */}
-                <SearchForm />
+                <div className='relative'>
+                  <label htmlFor='action-search' className='sr-only'>
+                    Buscar...
+                  </label>
+                  <input
+                    autoComplete='false'
+                    value={search}
+                    id='action-search'
+                    className='form-input pl-9 focus:border-primary'
+                    type='search'
+                    onChange={handleSearch}
+                    placeholder='Buscar...'
+                  />
+                  <div
+                    className='absolute inset-0 mt-2.5 right-auto group'
+                    aria-label='Search'>
+                    <svg
+                      className='w-4 h-4 shrink-0 fill-current text-slate-400 group-hover:text-slate-500 ml-3 mr-2'
+                      viewBox='0 0 16 16'
+                      xmlns='http://www.w3.org/2000/svg'>
+                      <path d='M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z' />
+                      <path d='M15.707 14.293L13.314 11.9a8.019 8.019 0 01-1.414 1.414l2.393 2.393a.997.997 0 001.414 0 .999.999 0 000-1.414z' />
+                    </svg>
+                  </div>
+                </div>
                 {/* Add member button */}
                 <Link to='/hubstars/add'>
                   <button className='btn bg-secondary hover:bg-primary hover:text-white text-primary'>

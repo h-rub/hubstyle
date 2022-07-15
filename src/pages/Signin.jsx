@@ -179,7 +179,7 @@ function Signin() {
                       Iniciar sesión
                     </button>
                   ) : (
-                    <ButtonLoading />
+                    <LoadingButton />
                   )}
                 </div>
               </form>

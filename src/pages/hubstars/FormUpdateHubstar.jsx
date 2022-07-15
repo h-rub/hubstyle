@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import Image01 from '../../images/user-64-01.jpg';
 import Banner from '../../components/Banner';
 import ModalConfirm from '../../../helpers/ModalConfirm';
 
