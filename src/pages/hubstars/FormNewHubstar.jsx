@@ -6,7 +6,6 @@ import Banner from '../../components/Banner';
 import { LoadingButton } from '../../../helpers/LoadingButton';
 
 function FormNewHubstar() {
-  const onsubmit = (data) => console.log(data);
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
   const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
   const [bannerErrorOpen, setBannerErrorOpen] = useState(false);

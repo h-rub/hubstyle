@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Banner from '../../components/Banner';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import PaginationNumeric from '../../components/PaginationNumeric';
@@ -8,9 +9,12 @@ import { useFetchHubstarList } from './hooks/useFetchHubstarList';
 
 function UsersTiles() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
+  const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
   const [search, setSearch] = useState('');
 
-  const { hubList, hubListCard, setHubList } = useFetchHubstarList();
+  const { hubList, hubListCard, setHubList, setReloadHubstarList } =
+    useFetchHubstarList();
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -46,6 +50,24 @@ function UsersTiles() {
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
         <main>
+          {/* BANNER SUCCESS AND DANGER */}
+          <div className='space-y-3'>
+            <Banner
+              type='success'
+              open={bannerSuccessOpen}
+              setOpen={setBannerSuccessOpen}>
+              operación exitosa. El registro se eliminó.
+            </Banner>
+            <div className='space-y-3'>
+              <Banner
+                type='error'
+                open={bannerErrorOpen}
+                setOpen={setBannerErrorOpen}>
+                El registro no se eliminó, al parecer tenemos problemas con
+                nuestro servidor.
+              </Banner>
+            </div>
+          </div>
           <div className='px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto'>
             {/* Page header */}
             <div className='sm:flex sm:justify-between sm:items-center mb-8'>
@@ -55,7 +77,6 @@ function UsersTiles() {
                   Hubstars ✨
                 </h1>
               </div>
-
               {/* Right: Actions */}
               <div className='grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2'>
                 {/* Search form */}
@@ -149,6 +170,9 @@ function UsersTiles() {
                     first_name={data.first_name}
                     last_name={data.last_name}
                     country={data.country}
+                    setBannerSuccessOpen={setBannerSuccessOpen}
+                    setBannerErrorOpen={setBannerErrorOpen}
+                    setReloadHubstarList={setReloadHubstarList}
                   />
                 ))}
               </div>
