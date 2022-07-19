@@ -320,7 +320,7 @@ function FormNewHubstar() {
                 </div>
               </div>
               {/* INPUT SIGNATURE */}
-              <div>
+              <div className='hidden'>
                 <label
                   className='block text-sm font-medium mb-1'
                   htmlFor='default'>
@@ -345,13 +345,13 @@ function FormNewHubstar() {
               </div>
               {/* INPUT START DATE */}
               <div className='flex space-x-5'>
-                <div className='relative'>
+                <div className='relative w-full'>
                   <label className='block text-sm font-medium mb-1'>
                     Fecha de Inicio <span className='text-rose-500'>*</span>
                   </label>
                   <input
                     type='date'
-                    className='form-input pl-9 text-slate-500 hover:text-slate-600 font-medium focus:border-slate-300 w-60 styleDate'
+                    className='form-input pl-9 text-slate-500 hover:text-slate-600 font-medium focus:border-slate-300 w-full styleDate'
                     {...register('start_date', {
                       required: {
                         value: true,
@@ -371,15 +371,17 @@ function FormNewHubstar() {
                       {errors.start_date.message}
                     </span>
                   )}
-                  {/* INPUT FINISH DATE */}
                 </div>
-                <div className='relative'>
+              </div>
+              {/* INPUT FINISH DATE */}
+              <div className='flex space-x-5'>
+                <div className='relative w-full'>
                   <label className='block text-sm font-medium mb-1'>
                     Fecha final <span className='text-rose-500'>*</span>
                   </label>
                   <input
                     type='date'
-                    className='form-input pl-9 text-slate-500 hover:text-slate-600 font-medium focus:border-slate-300 w-60 styleDate'
+                    className='form-input pl-9 text-slate-500 hover:text-slate-600 font-medium focus:border-slate-300 w-full styleDate'
                     {...register('finish_date', {
                       required: {
                         value: true,
@@ -402,6 +404,7 @@ function FormNewHubstar() {
                 </div>
               </div>
             </section>
+            <section className='grid gap-5 md:grid-cols-3 mt-8'></section>
             <article className='mt-10'>
               <h2 className='text-2xl text-slate-800 font-bold mb-6'>
                 Dato bancario y localidad
