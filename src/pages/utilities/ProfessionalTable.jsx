@@ -74,7 +74,7 @@ export const ProfessionalTable = () => {
                   </div>
                 </div>
                 {/* Add member button */}
-                <Link to='/hubstars/add'>
+                <Link to='#'>
                   <button className='btn bg-secondary hover:bg-primary hover:text-white text-primary'>
                     <svg
                       className='w-4 h-4 fill-current opacity-50 shrink-0'
@@ -157,7 +157,7 @@ export const ProfessionalTable = () => {
                               Titulo de profesion
                             </div>
                           </th>
-                          <th className='px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap'>
+                          <th className='px-3 first:pl-5 last:pr-5 py-3 whitespace-nowrap'>
                             <div className='font-semibold text-left'>
                               Editar
                             </div>
