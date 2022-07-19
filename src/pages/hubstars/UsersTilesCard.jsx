@@ -23,11 +23,12 @@ function UsersTilesCard(props) {
                     <div
                       className='absolute top-0 right-0 -mr-2 bg-white rounded-full shadow'
                       aria-hidden='true'>
-                      <svg
+                      🇲🇽
+                      {/* <svg
                         className='w-8 h-8 fill-current text-amber-500'
                         viewBox='0 0 32 32'>
                         <path d='M21 14.077a.75.75 0 01-.75-.75 1.5 1.5 0 00-1.5-1.5.75.75 0 110-1.5 1.5 1.5 0 001.5-1.5.75.75 0 111.5 0 1.5 1.5 0 001.5 1.5.75.75 0 010 1.5 1.5 1.5 0 00-1.5 1.5.75.75 0 01-.75.75zM14 24.077a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 110-2 4 4 0 004-4 1 1 0 012 0 4 4 0 004 4 1 1 0 010 2 4 4 0 00-4 4 1 1 0 01-1 1z' />
-                      </svg>
+                      </svg> */}
                     </div>
                     <img
                       className='rounded-full'

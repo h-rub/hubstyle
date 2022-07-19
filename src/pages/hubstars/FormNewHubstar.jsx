@@ -457,7 +457,7 @@ function FormNewHubstar() {
                         },
                       })}>
                       <option value=''>Selecciona</option>
-                      <option Value='1'>Mexico</option>
+                      <option Value=''>Mexico</option>
                       {/* <option Value='Colombia'>Colombia</option>
                       <option Value='Ecuador'>Ecuador</option>
                       <option Value='Peru'>Perú</option> */}

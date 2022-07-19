@@ -5,7 +5,7 @@ import Banner from '../../components/Banner';
 import ModalConfirm from '../../../helpers/ModalConfirm';
 
 const FormUpdateHubstar = () => {
-  const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
+  const [bannerSuccessOpen, setBannerSuccessOpen] = useState(true);
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
 
   const { id } = useParams();
@@ -50,16 +50,15 @@ const FormUpdateHubstar = () => {
           </h1>
         </div>
         <div className='border-t border-slate-200'></div>
-
+        <div className='space-y-3'>
+          <Banner
+            type='success'
+            open={bannerSuccessOpen}
+            setOpen={setBannerSuccessOpen}>
+            operación exitosa. Rediriguiendo...
+          </Banner>
+        </div>
         <div className='space-y-8 mt-8'>
-          <div className='space-y-3'>
-            <Banner
-              type='success'
-              open={bannerSuccessOpen}
-              setOpen={setBannerSuccessOpen}>
-              operación exitosa. Rediriguiendo...
-            </Banner>
-          </div>
           <h2 className='text-2xl text-slate-800 font-bold mb-6'>
             Datos personales
           </h2>
