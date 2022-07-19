@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import FormNewHubstar from './FormNewHubstar';
-import { Loading } from '../../../helpers/Loading';
 
 function NewHubstar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);

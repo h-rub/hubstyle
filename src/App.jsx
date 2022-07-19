@@ -13,6 +13,10 @@ import Profile from './pages/hubstars/Profile';
 import NewHubstar from './pages/hubstars/NewHubstar';
 import UpdateHubstar from './pages/hubstars/UpdateHubstar';
 // -------
+
+// PROFESSIONAL PROFILE
+import { ProfessionalTable } from './pages/utilities/ProfessionalTable';
+
 import Account from './pages/settings/Account';
 import Notifications from './pages/settings/Notifications';
 
@@ -102,6 +106,15 @@ function App() {
           element={
             <PrivateRoute>
               <UpdateHubstar />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path='professional/all'
+          element={
+            <PrivateRoute>
+              <ProfessionalTable />
             </PrivateRoute>
           }
         />
