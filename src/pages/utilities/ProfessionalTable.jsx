@@ -4,7 +4,7 @@ import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import ProfessionalTableItem from './ProfessionalTableItem';
 
-export const ProfessionalTable = () => {
+const ProfessionalTable = () => {
   const orders = [
     {
       id: '0',
@@ -186,3 +186,5 @@ export const ProfessionalTable = () => {
     </div>
   );
 };
+
+export default ProfessionalTable;
