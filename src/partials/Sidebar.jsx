@@ -416,14 +416,16 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 }}
               </SidebarLinkGroup>
               {/* UTILITIES */}
-              <SidebarLinkGroup activecondition={pathname.includes('utility')}>
+              <SidebarLinkGroup
+                activecondition={pathname.includes('professional')}>
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <a
                         href='#0'
                         className={`block text-slate-200 hover:text-white truncate transition duration-150 ${
-                          pathname.includes('utility') && 'hover:text-slate-200'
+                          pathname.includes('professional') &&
+                          'hover:text-slate-200'
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
@@ -438,8 +440,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               viewBox='0 0 24 24'>
                               <circle
                                 className={`fill-current text-slate-400 ${
-                                  pathname.includes('utility') &&
-                                  'text-indigo-300'
+                                  pathname.includes('professional') &&
+                                  'text-secondary'
                                 }`}
                                 cx='18.5'
                                 cy='5.5'
@@ -447,7 +449,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               />
                               <circle
                                 className={`fill-current text-slate-600 ${
-                                  pathname.includes('utility') && 'text-primary'
+                                  pathname.includes('professional') &&
+                                  'text-primary'
                                 }`}
                                 cx='5.5'
                                 cy='5.5'
@@ -455,7 +458,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               />
                               <circle
                                 className={`fill-current text-slate-600 ${
-                                  pathname.includes('utility') && 'text-primary'
+                                  pathname.includes('professional') &&
+                                  'text-primary'
                                 }`}
                                 cx='18.5'
                                 cy='18.5'
@@ -463,8 +467,8 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                               />
                               <circle
                                 className={`fill-current text-slate-400 ${
-                                  pathname.includes('utility') &&
-                                  'text-indigo-300'
+                                  pathname.includes('professional') &&
+                                  'text-secondary'
                                 }`}
                                 cx='5.5'
                                 cy='18.5'
