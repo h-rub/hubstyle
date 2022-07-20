@@ -190,9 +190,9 @@ function Signin() {
                   <div className='mt-5'>
                     <div className='bg-amber-100 text-amber-600 px-3 py-2 rounded'>
                       <svg
-                        className='inline w-3 h-3 shrink-0 fill-current mr-2'
-                        viewBox='0 0 12 12'>
-                        <path d='M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z' />
+                        className='inline w-4 h-4 shrink-0 fill-current mr-2'
+                        viewBox='0 0 17 17'>
+                        <path d='M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 12c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm1-3H7V4h2v5z' />
                       </svg>
                       <span className='text-sm'>
                         Este sitio es de uso exclusivo para empleados de
@@ -205,9 +205,9 @@ function Signin() {
                   <div className='mt-5'>
                     <div className='bg-red-100 text-red-600 px-3 py-2 rounded'>
                       <svg
-                        className='inline w-3 h-3 shrink-0 fill-current mr-2'
-                        viewBox='0 0 12 12'>
-                        <path d='M10.28 1.28L3.989 7.575 1.695 5.28A1 1 0 00.28 6.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 1.28z' />
+                        className='inline w-4 h-4 shrink-0 fill-current mr-2'
+                        viewBox='0 0 17 17'>
+                        <path d='M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm3.5 10.1l-1.4 1.4L8 9.4l-2.1 2.1-1.4-1.4L6.6 8 4.5 5.9l1.4-1.4L8 6.6l2.1-2.1 1.4 1.4L9.4 8l2.1 2.1z' />
                       </svg>
                       <span className='text-sm'>
                         Se ha producido un problema al iniciar sesión. Comprueba
