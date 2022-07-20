@@ -142,14 +142,9 @@ const ProfessionalTable = () => {
                       {/* Table header */}
                       <thead className='text-xs uppercase text-slate-500 bg-slate-50 border-t border-slate-200'>
                         <tr>
-                          <th className='px-2 first:pl-10 last:pr-5 py-3 whitespace-nowrap'>
+                          <th className='px-2 first:pl-14 last:pr-5 py-3 whitespace-nowrap'>
                             <div className='font-semibold text-left'>
                               Fecha de creación
-                            </div>
-                          </th>
-                          <th className='px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap'>
-                            <div className='font-semibold text-left'>
-                              Colaborador
                             </div>
                           </th>
                           <th className='px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap'>
