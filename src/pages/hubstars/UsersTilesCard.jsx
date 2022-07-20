@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import EditMenu from '../../components/DropdownEditMenu';
-import { ModalDelete } from '../../../helpers/ModalDelete';
+import { ModalDelete } from '../hubstars/helpers/ModalDelete';
 import Image01 from '../../images/user-64-01.jpg';
 
 function UsersTilesCard(props) {

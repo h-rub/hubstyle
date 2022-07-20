@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Loading } from '../../../helpers/Loading';
+import { Loading } from './helpers/Loading';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import FormUpdateHubstar from './FormUpdateHubstar';

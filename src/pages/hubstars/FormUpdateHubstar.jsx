@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import Banner from '../../components/Banner';
-import ModalConfirm from '../../../helpers/ModalConfirm';
+import ModalConfirm from './helpers/ModalConfirm';
 
 const FormUpdateHubstar = () => {
   const [bannerSuccessOpen, setBannerSuccessOpen] = useState(true);

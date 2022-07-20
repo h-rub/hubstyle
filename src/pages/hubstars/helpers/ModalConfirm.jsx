@@ -1,34 +1,11 @@
 import React from 'react';
-import ModalBlank from '../src/components/ModalBlank';
+import ModalBlank from '../../../../src/components/ModalBlank';
+import { useNavigate } from 'react-router-dom';
 
-export const ModalDelete = ({
-  dangerModalOpen,
-  setDangerModalOpen,
-  id,
-  setBannerSuccessOpen,
-  setBannerErrorOpen,
-  setReloadHubstarList,
-}) => {
-  const deleteHubstar = async (id) => {
-    fetch(`https://hubhr.herokuapp.com/api/associate/delete/${id}`, {
-      method: 'DELETE',
-    }).then((response) => {
-      if (response.status === 200) {
-        setBannerSuccessOpen(true);
-        setDangerModalOpen(false);
-        setTimeout(() => {
-          setBannerSuccessOpen(false);
-        }, 3000);
-      } else {
-        setBannerErrorOpen(true);
-        setDangerModalOpen(false);
-        setTimeout(() => {
-          setBannerErrorOpen(false);
-        }, 5000);
-      }
-    });
-    setReloadHubstarList(true);
-  };
+const MoldalConfirm = ({ dangerModalOpen, setDangerModalOpen }) => {
+  const navigate = useNavigate();
+
+  const backPage = () => navigate('/hubstars/all');
 
   return (
     <div className='m-1.5'>
@@ -51,15 +28,15 @@ export const ModalDelete = ({
             {/* Modal header */}
             <div className='mb-2'>
               <div className='text-lg font-semibold text-slate-800'>
-                ¿Seguro de que quieres eliminar el registro?
+                ¿Seguro de que quieres dejar esta página?
               </div>
             </div>
             {/* Modal content */}
             <div className='text-sm mb-10'>
               <div className='space-y-2'>
                 <p>
-                  Al eliminar el presente registro, ya no se podra recuperar la
-                  información del colaborador.
+                  Se perderán todos los datos capturados y no podrás
+                  recuperarlos.
                 </p>
               </div>
             </div>
@@ -71,16 +48,16 @@ export const ModalDelete = ({
                   e.stopPropagation();
                   setDangerModalOpen(false);
                 }}>
-                No deseo eliminar
+                Continuar con la captura
               </button>
               <button
                 onClick={(e) => {
                   e.stopPropagation();
-                  deleteHubstar(id);
+                  backPage();
                 }}
                 type='button'
                 className='btn-sm bg-rose-500 hover:bg-rose-600 text-white'>
-                Sí quiero eliminar
+                Sí, quiero salir
               </button>
             </div>
           </div>
@@ -90,3 +67,5 @@ export const ModalDelete = ({
     </div>
   );
 };
+
+export default MoldalConfirm;

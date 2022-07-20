@@ -6,6 +6,7 @@ import ModalBasic from '../../components/ModalBasic';
 import ModalCookies from '../../components/ModalCookies';
 import ModalBlank from '../../components/ModalBlank';
 import ModalAction from '../../components/ModalAction';
+import ModalUpdate from '../../components/ModalUpdate';
 import ModalSearch from '../../components/ModalSearch';
 
 import AnnouncementIcon from '../../images/announcement-icon.svg';
@@ -21,6 +22,7 @@ function ModalPage() {
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
   const [infoModalOpen, setInfoModalOpen] = useState(false);
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
+  const [updateModalOpen, setUpdateModalOpen] = useState(false);
   const [newsletterModalOpen, setNewsletterModalOpen] = useState(false);
   const [announcementModalOpen, setAnnouncementModalOpen] = useState(false);
   const [integrationModalOpen, setIntegrationModalOpen] = useState(false);
@@ -1069,6 +1071,91 @@ function ModalPage() {
                         </div>
                       </ModalBasic>
                       {/* End */}
+                      {/* MODAL UPDATE */}
+                      <div className='m-1.5'>
+                        {/* Start */}
+                        <button
+                          className='btn bg-primary hover:bg-indigo-600 text-white'
+                          aria-controls='feedback-modal'
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFeedbackModalOpen(true);
+                          }}>
+                          Update Feedback
+                        </button>
+                        <ModalUpdate
+                          id='feedback-modal'
+                          modalOpen={updateModalOpen}
+                          setModalOpen={setUpdateModalOpen}
+                          title='Send Feedback'>
+                          {/* Modal content */}
+                          <div className='px-5 py-4'>
+                            <div className='text-sm'>
+                              <div className='font-medium text-slate-800 mb-3'>
+                                Let us know what you think 🙌
+                              </div>
+                            </div>
+                            <div className='space-y-3'>
+                              <div>
+                                <label
+                                  className='block text-sm font-medium mb-1'
+                                  htmlFor='name'>
+                                  Name <span className='text-rose-500'>*</span>
+                                </label>
+                                <input
+                                  id='name'
+                                  className='form-input w-full px-2 py-1'
+                                  type='text'
+                                  required
+                                />
+                              </div>
+                              <div>
+                                <label
+                                  className='block text-sm font-medium mb-1'
+                                  htmlFor='email'>
+                                  Email <span className='text-rose-500'>*</span>
+                                </label>
+                                <input
+                                  id='email'
+                                  className='form-input w-full px-2 py-1'
+                                  type='email'
+                                  required
+                                />
+                              </div>
+                              <div>
+                                <label
+                                  className='block text-sm font-medium mb-1'
+                                  htmlFor='feedback'>
+                                  Message{' '}
+                                  <span className='text-rose-500'>*</span>
+                                </label>
+                                <textarea
+                                  id='feedback'
+                                  className='form-textarea w-full px-2 py-1'
+                                  rows='4'
+                                  required></textarea>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Modal footer */}
+                          <div className='px-5 py-4 border-t border-slate-200'>
+                            <div className='flex flex-wrap justify-end space-x-2'>
+                              <button
+                                className='btn-sm border-slate-200 hover:border-slate-300 text-slate-600'
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setUpdateModalOpen(false);
+                                }}>
+                                Cancel
+                              </button>
+                              <button className='btn-sm bg-primary hover:bg-indigo-600 text-white'>
+                                Send
+                              </button>
+                            </div>
+                          </div>
+                        </ModalUpdate>
+                        {/* End */}
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import ProfessionalTableItem from './ProfessionalTableItem';
+import ModalCreateTittleJob from './helpers/ModalCreateTittleJob';
 
 const ProfessionalTable = () => {
   const orders = [
@@ -20,6 +21,7 @@ const ProfessionalTable = () => {
     },
   ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -74,8 +76,14 @@ const ProfessionalTable = () => {
                   </div>
                 </div>
                 {/* Add member button */}
-                <Link to='#'>
-                  <button className='btn bg-secondary hover:bg-primary hover:text-white text-primary'>
+                <div>
+                  <button
+                    type='button'
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setFeedbackModalOpen(true);
+                    }}
+                    className='btn bg-secondary hover:bg-primary hover:text-white text-primary'>
                     <svg
                       className='w-4 h-4 fill-current opacity-50 shrink-0'
                       viewBox='0 0 16 16'>
@@ -85,7 +93,7 @@ const ProfessionalTable = () => {
                       Añadir perfil profesional
                     </span>
                   </button>
-                </Link>
+                </div>
               </div>
             </div>
             {!orders.length ? (
@@ -178,6 +186,11 @@ const ProfessionalTable = () => {
           </div>
         </main>
       </div>
+      {/* MODAL CREATE */}
+      <ModalCreateTittleJob
+        setFeedbackModalOpen={setFeedbackModalOpen}
+        feedbackModalOpen={feedbackModalOpen}
+      />
     </div>
   );
 };

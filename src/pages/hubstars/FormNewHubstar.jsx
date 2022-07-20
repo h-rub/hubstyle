@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import ModalConfirm from '../../../helpers/ModalConfirm';
+import ModalConfirm from '../hubstars/helpers/ModalConfirm';
 import Banner from '../../components/Banner';
-import { LoadingButton } from '../../../helpers/LoadingButton';
+import { LoadingButton } from '../hubstars/helpers/LoadingButton';
 
 function FormNewHubstar() {
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
