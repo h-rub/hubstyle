@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
+import Banner from '../../components/Banner';
 import ProfessionalTableItem from './ProfessionalTableItem';
 import ModalCreateTittleJob from './helpers/ModalCreateTittleJob';
 
@@ -21,6 +22,7 @@ const ProfessionalTable = () => {
     },
   ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [bannerSuccessOpen, setBannerSuccessOpen] = useState(true);
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
   const [list, setList] = useState([]);
 
@@ -44,6 +46,7 @@ const ProfessionalTable = () => {
             {/* Page header */}
             <div className='sm:flex sm:justify-between sm:items-center mb-8'>
               {/* Left: Title */}
+
               <div className='mb-4 sm:mb-0'>
                 <h1 className='text-2xl md:text-3xl text-slate-800 font-bold'>
                   Perfiles profesionales 👨🏻‍💻 👩🏽‍💻
@@ -137,6 +140,15 @@ const ProfessionalTable = () => {
               </div>
             ) : (
               <div className='bg-white shadow-lg rounded-sm border border-slate-200 relative'>
+                {/* BANNER SUCCESS AND DANGER */}
+                <div className='space-y-3'>
+                  <Banner
+                    type='success'
+                    open={bannerSuccessOpen}
+                    setOpen={setBannerSuccessOpen}>
+                    operación exitosa. El registro se eliminó.
+                  </Banner>
+                </div>
                 <header className='px-5 py-4'>
                   <h2 className='font-semibold text-slate-800'>
                     Todos los perfiles profesionales{' '}

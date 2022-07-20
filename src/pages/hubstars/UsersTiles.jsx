@@ -58,16 +58,17 @@ function UsersTiles() {
               setOpen={setBannerSuccessOpen}>
               operación exitosa. El registro se eliminó.
             </Banner>
-            <div className='space-y-3'>
-              <Banner
-                type='error'
-                open={bannerErrorOpen}
-                setOpen={setBannerErrorOpen}>
-                El registro no se eliminó, al parecer tenemos problemas con
-                nuestro servidor.
-              </Banner>
-            </div>
           </div>
+          <div className='space-y-3'>
+            <Banner
+              type='error'
+              open={bannerErrorOpen}
+              setOpen={setBannerErrorOpen}>
+              El registro no se eliminó, al parecer tenemos problemas con
+              nuestro servidor.
+            </Banner>
+          </div>
+
           <div className='px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto'>
             {/* Page header */}
             <div className='sm:flex sm:justify-between sm:items-center mb-8'>

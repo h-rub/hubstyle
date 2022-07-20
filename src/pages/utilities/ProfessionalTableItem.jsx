@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import ModalUpdateTittleJob from './helpers/ModalUpdateTittleJob';
+import ModalDeleteTittleJob from './helpers/ModalDeleteTittleJob';
 
 function OrdersTableItem() {
   const [updateModalOpen, setUpdateModalOpen] = useState(false);
+  const [dangerModalOpen, setDangerModalOpen] = useState(false);
 
   return (
     <>
       <tbody className='text-sm'>
+        <tr>
+          <td>
+            {/* MODAL DELETE */}
+            <ModalDeleteTittleJob
+              dangerModalOpen={dangerModalOpen}
+              setDangerModalOpen={setDangerModalOpen}
+            />
+          </td>
+        </tr>
         {/* Row */}
         <tr>
           <td className='px-2 first:pl-14 last:pr-5 py-3 whitespace-nowrap'>
@@ -38,7 +49,12 @@ function OrdersTableItem() {
             <div className='flex items-center'>
               <div className='m-1.5'>
                 {/* DELETE BUTTON */}
-                <button className='btn border-slate-200 hover:border-slate-300'>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setDangerModalOpen(true);
+                  }}
+                  className='btn border-slate-200 hover:border-slate-300'>
                   <svg
                     className='w-4 h-4 fill-current text-rose-500 shrink-0'
                     viewBox='0 0 16 16'>
