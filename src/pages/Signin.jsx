@@ -16,7 +16,7 @@ function Signin() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: 'all' });
+  } = useForm();
 
   const toggleEye = () => {
     setEye((prevState) => !prevState);
@@ -33,7 +33,7 @@ function Signin() {
     })
       .then((response) => response.json())
       .then((json) => {
-        if (json.user.id === 36) {
+        if (json.token) {
           setLoading(true);
           let result = json;
           localStorage.setItem('token', result.token);
@@ -141,11 +141,6 @@ function Signin() {
                         required: {
                           value: true,
                           message: 'El campo es requerido',
-                        },
-                        minLength: {
-                          value: 6,
-                          message:
-                            'La contraseña debe de tener al menos 6 caracteres',
                         },
                       })}
                     />
