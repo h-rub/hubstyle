@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Transition from '../utils/Transition';
-
 import UserAvatar from '../images/user-36-03.jpg';
 
-function DropdownProfile({ align }) {
+function Logout({ align }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navigate = useNavigate();
 
   const trigger = useRef(null);
   const dropdown = useRef(null);
@@ -35,6 +35,13 @@ function DropdownProfile({ align }) {
     document.addEventListener('keydown', keyHandler);
     return () => document.removeEventListener('keydown', keyHandler);
   });
+
+  function Logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('first_name');
+    localStorage.removeItem('email');
+    navigate('/signin');
+  }
 
   return (
     <div className='relative inline-flex'>
@@ -92,15 +99,14 @@ function DropdownProfile({ align }) {
               </Link>
             </li>
             <li>
-              <Link
+              <button
                 className='font-medium text-sm text-black-500 hover:text-primary flex items-center py-1 px-3'
-                to='/signin'
                 onClick={() => {
                   setDropdownOpen(!dropdownOpen);
-                  deleteStorage();
+                  Logout();
                 }}>
                 Cerrar sesión
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -109,4 +115,4 @@ function DropdownProfile({ align }) {
   );
 }
 
-export default DropdownProfile;
+export default Logout;

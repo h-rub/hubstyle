@@ -29,7 +29,7 @@ import EmptyState from './pages/utility/EmptyState';
 import PageNotFound from './pages/utility/PageNotFound';
 
 import Signin from './pages/Signin';
-import Signup from './pages/Signup';
+
 import ResetPassword from './pages/ResetPassword';
 
 import FormPage from './pages/component/FormPage';
@@ -140,7 +140,7 @@ function App() {
             </PublicRoute>
           }
         />
-        <Route path='/signup' element={<Signup />} />
+
         <Route path='/reset-password' element={<ResetPassword />} />
 
         {/* Vista previa de Componentes */}
