@@ -125,9 +125,6 @@ function UsersTilesCard(props) {
           dangerModalOpen={dangerModalOpen}
           setDangerModalOpen={setDangerModalOpen}
           id={props.id}
-          setBannerSuccessOpen={props.setBannerSuccessOpen}
-          setBannerErrorOpen={props.setBannerErrorOpen}
-          setReloadHubstarList={props.setReloadHubstarList}
         />
       </section>
     </>

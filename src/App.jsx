@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import StateProvider from './pages/hubstars/context/StateProvider';
 
 import './css/style.scss';
 
@@ -56,7 +57,7 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <>
+    <StateProvider>
       <Routes>
         {/* Dashboard */}
         <Route
@@ -152,7 +153,7 @@ function App() {
         <Route path='/component/tooltip' element={<TooltipPage />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
-    </>
+    </StateProvider>
   );
 }
 

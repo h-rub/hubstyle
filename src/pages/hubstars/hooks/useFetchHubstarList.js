@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import StateContext from '../context/StateContext';
 
-export const useFetchHubstarList = () => {
+const useFetchHubstarList = () => {
   const [hubList, setHubList] = useState([]);
   const [hubListCard, setHubListCard] = useState([]);
-  const [reloadHubstarList, setReloadHubstarList] = useState(false);
+
+  const { reloadHubstarList, setReloadHubstarList } = useContext(StateContext);
 
   const getListHubstar = async () => {
     fetch('https://hubhr.herokuapp.com/api/associate-list')
@@ -23,6 +25,7 @@ export const useFetchHubstarList = () => {
     hubList,
     hubListCard,
     setHubList,
-    setReloadHubstarList,
   };
 };
+
+export default useFetchHubstarList;

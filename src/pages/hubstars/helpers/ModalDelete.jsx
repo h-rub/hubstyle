@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ModalBlank from '../../../../src/components/ModalBlank';
+import StateContext from '../context/StateContext';
 
-export const ModalDelete = ({
-  dangerModalOpen,
-  setDangerModalOpen,
-  id,
-  setBannerSuccessOpen,
-  setBannerErrorOpen,
-  setReloadHubstarList,
-}) => {
+export const ModalDelete = ({ dangerModalOpen, setDangerModalOpen, id }) => {
+  const { setBannerSuccessOpen, setBannerErrorOpen, setReloadHubstarList } =
+    useContext(StateContext);
+
   const deleteHubstar = async (id) => {
     fetch(`https://hubhr.herokuapp.com/api/associate/delete/${id}`, {
       method: 'DELETE',

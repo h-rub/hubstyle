@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import PaginationNumeric from '../../components/PaginationNumeric';
 import UsersTilesCard from './UsersTilesCard';
-import { useFetchHubstarList } from './hooks/useFetchHubstarList';
+import useFetchHubstarList from './hooks/useFetchHubstarList';
+import StateContext from './context/StateContext';
 
 function UsersTiles() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
-  const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
   const [search, setSearch] = useState('');
 
-  const { hubList, hubListCard, setHubList, setReloadHubstarList } =
-    useFetchHubstarList();
+  const {
+    bannerSuccessOpen,
+    setBannerSuccessOpen,
+    bannerErrorOpen,
+    setBannerErrorOpen,
+    setReloadHubstarList,
+  } = useContext(StateContext);
+
+  const { hubList, hubListCard, setHubList } = useFetchHubstarList();
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -171,9 +177,6 @@ function UsersTiles() {
                     first_name={data.first_name}
                     last_name={data.last_name}
                     country={data.country}
-                    setBannerSuccessOpen={setBannerSuccessOpen}
-                    setBannerErrorOpen={setBannerErrorOpen}
-                    setReloadHubstarList={setReloadHubstarList}
                   />
                 ))}
               </div>

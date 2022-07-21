@@ -94,7 +94,6 @@ function Signin() {
                 </Link>
               </div>
             </div>
-
             <div className='max-w-lg mx-auto px-4 py-8'>
               <h1 className='text-3xl text-slate-800 font-bold mb-6'>
                 Hola de nuevo ✨
@@ -211,7 +210,7 @@ function Signin() {
                       </svg>
                       <span className='text-sm'>
                         Se ha producido un problema al iniciar sesión. Comprueba
-                        el correo electrónico y la contraseña o crea una cuenta.
+                        el correo electrónico y la contraseña.
                       </span>
                     </div>
                   </div>
