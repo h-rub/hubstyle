@@ -11,6 +11,7 @@ function Signin() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  const onsubmit = (data) => console.log(data);
   const {
     register,
     handleSubmit,
@@ -32,10 +33,12 @@ function Signin() {
     })
       .then((response) => response.json())
       .then((json) => {
-        if (json.id === 1) {
-          let result = json;
-          localStorage.setItem('id', result.id);
+        if (json.user.id === 36) {
           setLoading(true);
+          let result = json;
+          localStorage.setItem('token', result.token);
+          localStorage.setItem('first_name', result.user.first_name);
+          console.log(json);
           setTimeout(() => {
             navigate('/');
           }, 2000);
@@ -109,7 +112,7 @@ function Signin() {
                       autoComplete='off'
                       className='form-input w-full'
                       type='email'
-                      {...register('username', {
+                      {...register('email', {
                         required: {
                           value: true,
                           message: 'El campo es requerido',
@@ -120,9 +123,9 @@ function Signin() {
                         },
                       })}
                     />
-                    {errors.username && (
+                    {errors.email && (
                       <span className='text-red-500 text-sm'>
-                        {errors.username.message}
+                        {errors.email.message}
                       </span>
                     )}
                   </div>

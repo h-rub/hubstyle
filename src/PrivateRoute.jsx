@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 function PrivateRoute({ children }) {
-  const id = localStorage.getItem('id');
+  const id = localStorage.getItem('token');
 
   if (!id) {
     return <Navigate to='/signin' />;
