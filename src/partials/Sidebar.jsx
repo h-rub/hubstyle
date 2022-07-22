@@ -1,11 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import SidebarLinkGroup from './SidebarLinkGroup';
+import StateContext from '../pages/hubstars/context/StateContext';
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
   const { pathname } = location;
+
+  const { tokenValid, dataUser } = useContext(StateContext);
+  const navigate = useNavigate();
 
   const trigger = useRef(null);
   const sidebar = useRef(null);
@@ -216,6 +219,11 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
                         <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
                           <li className='mb-1 last:mb-0'>
                             <NavLink
+                              onClick={(e) => {
+                                e.preventDefault();
+                                tokenValid(dataUser);
+                                navigate('/');
+                              }}
                               end
                               to='/'
                               className={({ isActive }) =>
