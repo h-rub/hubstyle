@@ -6,7 +6,7 @@ import Header from '../../partials/Header';
 import PaginationNumeric from '../../components/PaginationNumeric';
 import UsersTilesCard from './UsersTilesCard';
 import useFetchHubstarList from './hooks/useFetchHubstarList';
-import StateContext from './context/StateContext';
+import StateContext from '../../context/StateContext';
 
 function UsersTiles() {
   const [sidebarOpen, setSidebarOpen] = useState(false);

@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
-import StateContext from '../context/StateContext';
+import StateContext from '../../../context/StateContext';
 
 const useFetchHubstarList = () => {
   const [hubList, setHubList] = useState([]);

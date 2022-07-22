@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import ModalBlank from '../../../../src/components/ModalBlank';
-import StateContext from '../context/StateContext';
+import StateContext from '../../../context/StateContext';
 
 export const ModalDelete = ({ dangerModalOpen, setDangerModalOpen, id }) => {
   const { setBannerSuccessOpen, setBannerErrorOpen, setReloadHubstarList } =

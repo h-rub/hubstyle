@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import SidebarLinkGroup from './SidebarLinkGroup';
-import StateContext from '../pages/hubstars/context/StateContext';
+import StateContext from '../context/StateContext';
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();

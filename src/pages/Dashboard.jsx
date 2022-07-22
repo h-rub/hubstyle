@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import StateContext from './hubstars/context/StateContext';
+import StateContext from '../context/StateContext';
 
 import Sidebar from '../partials/Sidebar';
 import Header from '../partials/Header';

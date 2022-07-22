@@ -28,7 +28,7 @@ const StateProvider = ({ children }) => {
       body: JSON.stringify(dataUser),
     }).then((response) => {
       if (response.status === 200) {
-        return;
+        return console.log('estamos validando el token');
       } else {
         navigate('/signin');
         localStorage.removeItem('token');

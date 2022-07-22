@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import StateProvider from './pages/hubstars/context/StateProvider';
+import StateProvider from './context/StateProvider';
 
 import './css/style.scss';
 
