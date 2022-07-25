@@ -19,12 +19,6 @@ const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen }) => {
               </label>
               <input className='form-input w-full px-2 py-1' type='text' />
             </div>
-            <div>
-              <label className='block text-sm font-medium mb-1'>
-                Fecha de creacíon <span className='text-rose-500'>*</span>
-              </label>
-              <input className='form-input w-full px-2 py-1' type='date' />
-            </div>
           </div>
         </div>
         {/* Modal footer */}

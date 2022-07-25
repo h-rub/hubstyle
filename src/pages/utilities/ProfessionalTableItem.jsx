@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ModalUpdateTittleJob from './helpers/ModalUpdateTittleJob';
 import ModalDeleteTittleJob from './helpers/ModalDeleteTittleJob';
 
-function OrdersTableItem() {
+function OrdersTableItem(props) {
   const [updateModalOpen, setUpdateModalOpen] = useState(false);
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
 
@@ -21,10 +21,7 @@ function OrdersTableItem() {
         {/* Row */}
         <tr>
           <td className='px-2 first:pl-14 last:pr-5 py-3 whitespace-nowrap'>
-            <div className='flex items-center'>16 de junio del 2022</div>
-          </td>
-          <td className='px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap'>
-            <div className='flex items-center'>Proyect Manager</div>
+            <div className='flex items-center'>{props.job_title}</div>
           </td>
           <td className='px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap'>
             <div className='flex items-center'>

@@ -1,35 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import Banner from '../../components/Banner';
 import ProfessionalTableItem from './ProfessionalTableItem';
 import ModalCreateTittleJob from './helpers/ModalCreateTittleJob';
+import StateContext from '../../context/StateContext';
 
 const ProfessionalTable = () => {
-  const orders = [
-    {
-      id: '0',
-    },
-    {
-      id: '1',
-    },
-    {
-      id: '2',
-    },
-    {
-      id: '3',
-    },
-  ];
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [bannerSuccessOpen, setBannerSuccessOpen] = useState(true);
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    setList(orders);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const {
+    jobList,
+    bannerSuccessOpen,
+    setBannerSuccessOpen,
+    bannerErrorOpen,
+    setBannerErrorOpen,
+  } = useContext(StateContext);
 
   return (
     <div className='flex h-screen overflow-hidden'>
@@ -99,7 +86,7 @@ const ProfessionalTable = () => {
                 </div>
               </div>
             </div>
-            {!orders.length ? (
+            {!jobList.length ? (
               <div className='border-t border-slate-200'>
                 <div className='max-w-2xl m-auto mt-16'>
                   <div className='text-center px-4'>
@@ -142,11 +129,19 @@ const ProfessionalTable = () => {
               <div className='bg-white shadow-lg rounded-sm border border-slate-200 relative'>
                 {/* BANNER SUCCESS AND DANGER */}
                 <div className='space-y-3'>
+                  {/* BANNERS INFO  */}
                   <Banner
                     type='success'
                     open={bannerSuccessOpen}
                     setOpen={setBannerSuccessOpen}>
-                    operación exitosa. El registro se eliminó.
+                    operación exitosa. El perfil profesional se guardo.
+                  </Banner>
+                  <Banner
+                    type='error'
+                    open={bannerErrorOpen}
+                    setOpen={setBannerErrorOpen}>
+                    Lo sentimos, al parecer tenemos problemas con nuestro
+                    servidor.
                   </Banner>
                 </div>
                 <header className='px-5 py-4'>
@@ -164,11 +159,6 @@ const ProfessionalTable = () => {
                         <tr>
                           <th className='px-2 first:pl-14 last:pr-5 py-3 whitespace-nowrap'>
                             <div className='font-semibold text-left'>
-                              Fecha de creación
-                            </div>
-                          </th>
-                          <th className='px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap'>
-                            <div className='font-semibold text-left'>
                               Titulo de profesion
                             </div>
                           </th>
@@ -185,11 +175,12 @@ const ProfessionalTable = () => {
                         </tr>
                       </thead>
                       {/* Table body */}
-                      {list.map((order) => {
-                        return (
-                          <ProfessionalTableItem key={order.id} id={order.id} />
-                        );
-                      })}
+                      {jobList.map((title) => (
+                        <ProfessionalTableItem
+                          key={title.id}
+                          job_title={title.job_title}
+                        />
+                      ))}
                     </table>
                   </div>
                 </div>
@@ -202,6 +193,8 @@ const ProfessionalTable = () => {
       <ModalCreateTittleJob
         setFeedbackModalOpen={setFeedbackModalOpen}
         feedbackModalOpen={feedbackModalOpen}
+        setBannerSuccessOpen={setBannerSuccessOpen}
+        setBannerErrorOpen={setBannerErrorOpen}
       />
     </div>
   );

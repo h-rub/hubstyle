@@ -107,7 +107,7 @@ function FormNewHubstar() {
           <h2 className='text-2xl text-slate-800 font-bold mb-6'>
             Datos personales
           </h2>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(NewHub)}>
             <section className='grid gap-5 md:grid-cols-3'>
               <div>
                 {/* INPUT FIRST NAME */}

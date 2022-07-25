@@ -76,6 +76,7 @@ const StateProvider = ({ children }) => {
         dataUser,
         tokenValid,
         jobList,
+        setJobList,
         countryAll,
       }}>
       {children}
