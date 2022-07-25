@@ -46,6 +46,23 @@ function FormNewHubstar() {
     });
   };
 
+  function valid() {
+    let archivo = document.getElementById('archivo').value,
+      extension = archivo.substring(archivo.lastIndexOf('.'), archivo.length);
+    let imgsize = document.getElementById('archivo').files[0].size;
+    if (
+      document
+        .getElementById('archivo')
+        .getAttribute('accept')
+        .split(',')
+        .indexOf(extension) < 0
+    ) {
+      alert('formato incorrecto del tamaño');
+    } else if (imgsize > 1048676) {
+      alert('excedes del tamaño');
+    }
+  }
+
   return (
     <>
       <div className='px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto'>
@@ -496,8 +513,8 @@ function FormNewHubstar() {
                   </label>
                   <textarea
                     className='form-input w-full'
+                    type='text'
                     autoComplete='off'
-                    type=''
                     {...register('short_description', {
                       required: {
                         value: true,
@@ -516,8 +533,20 @@ function FormNewHubstar() {
                   )}
                 </div>
                 {/* INPUT ADJUNTAR ARCHIVO */}
-                <div>
-                  <input type='file' />
+                <div className='mt-8'>
+                  <label className='block text-sm font-medium mb-1'>
+                    Añade una imagen del usuario
+                  </label>
+                  <input
+                    onChange={valid}
+                    accept='.jpg,.png'
+                    id='archivo'
+                    type='file'
+                  />
+                  <ModalConfirm
+                    dangerModalOpen={dangerModalOpen}
+                    setDangerModalOpen={setDangerModalOpen}
+                  />
                 </div>
               </div>
             </section>
