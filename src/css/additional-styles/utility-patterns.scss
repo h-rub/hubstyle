@@ -106,7 +106,7 @@ input[type="search"]::-webkit-search-results-decoration {
   scrollbar-width: none;  /* Firefox */
 }
 
-
+// quitar el icono del calendario que viene por defecto
 
 .styleDate[type='date']::-webkit-calendar-picker-indicator {
     width: 100%;
@@ -132,7 +132,7 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   
 
-
+// estilo del spinner al cargar la pagina
   .spinner {
     margin: 100px auto 0;
     width: 70px;
@@ -174,3 +174,16 @@ input[type="search"]::-webkit-search-results-decoration {
       transform: scale(1.0);
     }
   }  
+
+//estilo al input tipo file
+
+input[type=file] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+

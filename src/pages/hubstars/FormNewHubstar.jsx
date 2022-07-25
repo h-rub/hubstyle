@@ -11,6 +11,8 @@ function FormNewHubstar() {
   const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
   const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [formatInvalid, setFormatInvalid] = useState(false);
+  const [sizeInvalid, setSizeInvalid] = useState(false);
   const navigate = useNavigate();
 
   const { jobList, countryAll } = useContext(StateContext);
@@ -57,9 +59,15 @@ function FormNewHubstar() {
         .split(',')
         .indexOf(extension) < 0
     ) {
-      alert('formato incorrecto del tamaño');
+      setFormatInvalid(true);
+      setTimeout(() => {
+        setFormatInvalid(false);
+      }, 2000);
     } else if (imgsize > 1048676) {
-      alert('excedes del tamaño');
+      setSizeInvalid(true);
+      setTimeout(() => {
+        setSizeInvalid(false);
+      }, 2000);
     }
   }
 
@@ -534,19 +542,37 @@ function FormNewHubstar() {
                 </div>
                 {/* INPUT ADJUNTAR ARCHIVO */}
                 <div className='mt-8'>
-                  <label className='block text-sm font-medium mb-1'>
+                  <h5 className='block text-sm font-medium mb-1'>
                     Añade una imagen del usuario
-                  </label>
-                  <input
-                    onChange={valid}
-                    accept='.jpg,.png'
-                    id='archivo'
-                    type='file'
-                  />
-                  <ModalConfirm
-                    dangerModalOpen={dangerModalOpen}
-                    setDangerModalOpen={setDangerModalOpen}
-                  />
+                  </h5>
+                  <div className='space-x-5'>
+                    <label
+                      htmlFor='archivo'
+                      className='btn border-slate-200 hover:border-slate-300 text-emerald-500 hover:text-emerald-200 cursor-pointer'>
+                      Selecciona un archivo
+                    </label>
+                    <input
+                      onChange={valid}
+                      accept='.jpg,.png'
+                      id='archivo'
+                      type='file'
+                      {...register('picture', {
+                        required: {
+                          value: false,
+                        },
+                      })}
+                    />
+                    {formatInvalid && (
+                      <span className='text-red-500 text-sm'>
+                        Soló se permite formato .png y .jpg
+                      </span>
+                    )}
+                    {sizeInvalid && (
+                      <span className='text-red-500 text-sm'>
+                        El archivo es mayor a 1MB
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </section>
