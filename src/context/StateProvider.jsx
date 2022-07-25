@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import StateContext from './StateContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -7,8 +7,12 @@ const StateProvider = ({ children }) => {
   const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
   const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
   const [reloadHubstarList, setReloadHubstarList] = useState(false);
+  // ESTADO PARA GUARDAR LOS TITULOS DEL PUESTO
+  const [jobList, setJobList] = useState([]);
+  //ESTADO PARA GUARDAR LAS CIUDADES
+  const [countryAll, setCountryAll] = useState([]);
 
-  // VALIDACION DE TOKEN
+  // API VALIDACION DE TOKEN
   const token = localStorage.getItem('token');
   const email = localStorage.getItem('email');
   const navigate = useNavigate();
@@ -37,6 +41,29 @@ const StateProvider = ({ children }) => {
       }
     });
   }
+
+  // API PARA LOS TITULOS DEL PUESTO
+  const jobTitleList = async () => {
+    fetch('https://hubhr.herokuapp.com/api/list-job-titles/')
+      .then((response) => response.json())
+      .then((json) => setJobList(json));
+  };
+
+  useEffect(() => {
+    jobTitleList();
+  }, []);
+
+  //API PARA LAS CIUDADES
+  const countryList = async () => {
+    fetch('https://hubhr.herokuapp.com/api/list-countries/')
+      .then((response) => response.json())
+      .then((json) => setCountryAll(json));
+  };
+
+  useEffect(() => {
+    countryList();
+  }, []);
+
   return (
     <StateContext.Provider
       value={{
@@ -48,6 +75,8 @@ const StateProvider = ({ children }) => {
         setReloadHubstarList,
         dataUser,
         tokenValid,
+        jobList,
+        countryAll,
       }}>
       {children}
     </StateContext.Provider>

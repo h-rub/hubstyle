@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import ModalConfirm from '../hubstars/helpers/ModalConfirm';
 import Banner from '../../components/Banner';
 import { LoadingButton } from '../hubstars/helpers/LoadingButton';
+import StateContext from '../../context/StateContext';
 
 function FormNewHubstar() {
   const [dangerModalOpen, setDangerModalOpen] = useState(false);
@@ -11,6 +12,10 @@ function FormNewHubstar() {
   const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const { jobList, countryAll } = useContext(StateContext);
+
+  const onSubmit = (data) => console.log(data);
 
   const {
     handleSubmit,
@@ -77,7 +82,7 @@ function FormNewHubstar() {
           <h2 className='text-2xl text-slate-800 font-bold mb-6'>
             Datos personales
           </h2>
-          <form onSubmit={handleSubmit(NewHub)}>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <section className='grid gap-5 md:grid-cols-3'>
               <div>
                 {/* INPUT FIRST NAME */}
@@ -246,9 +251,9 @@ function FormNewHubstar() {
                     <option value='F'>Femenino</option>
                     <option value='O'>Otro</option>
                   </select>
-                  {errors.first_name && (
+                  {errors.gender && (
                     <span className='text-red-500 text-sm'>
-                      {errors.first_name.message}
+                      {errors.gender.message}
                     </span>
                   )}
                 </div>
@@ -276,15 +281,15 @@ function FormNewHubstar() {
                       },
                     })}>
                     <option value=''>Selecciona</option>
-                    <option>Entrevistado</option>
-                    <option>Intern</option>
-                    <option>Planta</option>
-                    <option>Freelancer</option>
-                    <option>Baja</option>
+                    <option value='Entrevistado'>Entrevistado</option>
+                    <option value='Intern'>Intern</option>
+                    <option value='Planta'>Planta</option>
+                    <option value='Freelancer'>Freelancer</option>
+                    <option value='Baja'>Baja</option>
                   </select>
-                  {errors.first_name && (
+                  {errors.status && (
                     <span className='text-red-500 text-sm'>
-                      {errors.first_name.message}
+                      {errors.status.message}
                     </span>
                   )}
                 </div>
@@ -306,14 +311,15 @@ function FormNewHubstar() {
                         },
                       })}>
                       <option value=''>Selecciona</option>
-                      <option value='1'>Project Manager</option>
-                      {/* <option>Frontend Developer</option>
-                      <option>DBA</option>
-                      <option>UI/UX</option> */}
+                      {jobList.map((title) => (
+                        <option key={title.id} value={title.id}>
+                          {title.job_title}
+                        </option>
+                      ))}
                     </select>
-                    {errors.first_name && (
+                    {errors.job_title && (
                       <span className='text-red-500 text-sm'>
-                        {errors.first_name.message}
+                        {errors.job_title.message}
                       </span>
                     )}
                   </div>
@@ -404,7 +410,6 @@ function FormNewHubstar() {
                 </div>
               </div>
             </section>
-            <section className='grid gap-5 md:grid-cols-3 mt-8'></section>
             <article className='mt-10'>
               <h2 className='text-2xl text-slate-800 font-bold mb-6'>
                 Dato bancario y localidad
@@ -460,10 +465,11 @@ function FormNewHubstar() {
                         },
                       })}>
                       <option value=''>Selecciona</option>
-                      <option Value=''>Mexico</option>
-                      {/* <option Value='Colombia'>Colombia</option>
-                      <option Value='Ecuador'>Ecuador</option>
-                      <option Value='Peru'>Perú</option> */}
+                      {countryAll.map((country) => (
+                        <option key={country.id} value={country.id}>
+                          {country.country}
+                        </option>
+                      ))}
                     </select>
                     {errors.country && (
                       <span className='text-red-500 text-sm'>
@@ -471,6 +477,47 @@ function FormNewHubstar() {
                       </span>
                     )}
                   </div>
+                </div>
+              </div>
+            </section>
+            <article className='mt-10'>
+              <h2 className='text-2xl text-slate-800 font-bold mb-6'>
+                Breve descripción
+              </h2>
+              <div className='border-t border-slate-200'></div>
+            </article>
+            <section className='mt-8'>
+              <div>
+                {/* SHORT DESCRIPTION */}
+                <div>
+                  <label className='block text-sm font-medium mb-1'>
+                    Descripción del usuario (gustos, personalidad, etc)
+                    <span className='text-rose-500'>*</span>
+                  </label>
+                  <textarea
+                    className='form-input w-full'
+                    autoComplete='off'
+                    type=''
+                    {...register('short_description', {
+                      required: {
+                        value: true,
+                        message: 'El campo es requerido',
+                      },
+                      maxLength: {
+                        value: 150,
+                        message: 'soló se permiten 150 caracteres',
+                      },
+                    })}
+                  />
+                  {errors.short_description && (
+                    <span className='text-red-500 text-sm'>
+                      {errors.short_description.message}
+                    </span>
+                  )}
+                </div>
+                {/* INPUT ADJUNTAR ARCHIVO */}
+                <div>
+                  <input type='file' />
                 </div>
               </div>
             </section>
