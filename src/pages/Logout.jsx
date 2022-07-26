@@ -10,6 +10,8 @@ function Logout({ align }) {
   const trigger = useRef(null);
   const dropdown = useRef(null);
 
+  let username = localStorage.getItem('first_name');
+
   // close on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
@@ -60,7 +62,7 @@ function Logout({ align }) {
         />
         <div className='flex items-center truncate'>
           <span className='truncate ml-2 text-sm font-medium group-hover:text-slate-800'>
-            Hubmine HR.
+            {username}
           </span>
           <svg
             className='w-3 h-3 shrink-0 ml-1 fill-current text-slate-400'
@@ -86,7 +88,7 @@ function Logout({ align }) {
           onFocus={() => setDropdownOpen(true)}
           onBlur={() => setDropdownOpen(false)}>
           <div className='pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200'>
-            <div className='font-medium text-slate-800'>Hubmine HR.</div>
+            <div className='font-medium text-slate-800'>{username}</div>
             <div className='text-xs text-slate-500 italic'>Administrador</div>
           </div>
           <ul>

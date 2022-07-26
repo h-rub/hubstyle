@@ -189,8 +189,10 @@ const ProfessionalTable = () => {
                 </div>
                 <header className='px-5 py-4'>
                   <h2 className='font-semibold text-slate-800'>
-                    Todos los perfiles profesionales{' '}
-                    <span className='text-slate-400 font-medium'>442</span>
+                    Total de perfiles profesionales{' '}
+                    <span className='text-slate-400 font-medium'>
+                      {jobList.length}
+                    </span>
                   </h2>
                 </header>
                 <div>
