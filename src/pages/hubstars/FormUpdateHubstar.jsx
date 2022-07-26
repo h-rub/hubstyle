@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Banner from '../../components/Banner';
 import ModalConfirm from './helpers/ModalConfirm';
+import Image01 from '../../images/user-64-01.jpg';
 
 const FormUpdateHubstar = () => {
   const [bannerSuccessOpen, setBannerSuccessOpen] = useState(true);
@@ -64,7 +65,7 @@ const FormUpdateHubstar = () => {
           </h2>
 
           <form onSubmit={handleSubmit(onSubmit)}>
-            {/* <div className='flex justify-center items-center'>
+            <div className='flex justify-center items-center'>
               <Link className='relative inline-flex items-start mr-5' to='#'>
                 <div
                   className='absolute top-0 right-0 -mr-2 bg-white rounded-full shadow'
@@ -83,7 +84,7 @@ const FormUpdateHubstar = () => {
                   alt={Image01}
                 />
               </Link>
-            </div> */}
+            </div>
             <section className='grid gap-5 md:grid-cols-3 mt-14'>
               <div>
                 {/* INPUT FIRST NAME */}
