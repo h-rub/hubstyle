@@ -140,10 +140,15 @@ const ProfessionalTable = () => {
                       Añade el primer perfil profesional
                     </h2>
                     <div className='mb-6'>
-                      Crea los perfiles profesionales de nuestros hubstars
+                      Crea el primer perfil profesional de nuestros hubstars
                     </div>
-                    <Link to='/hubstars/add'>
-                      <button className='btn bg-secondary hover:bg-primary hover:text-white text-primary'>
+                    <div>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setFeedbackModalOpen(true);
+                        }}
+                        className='btn bg-secondary hover:bg-primary hover:text-white text-primary'>
                         <svg
                           className='w-4 h-4 fill-current opacity-50 shrink-0'
                           viewBox='0 0 16 16'>
@@ -151,7 +156,7 @@ const ProfessionalTable = () => {
                         </svg>
                         <span className='ml-2'>Añadir perfil profesional</span>
                       </button>
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </div>

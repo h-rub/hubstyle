@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import ModalUpdateTittleJob from './helpers/ModalUpdateTittleJob';
 import ModalDeleteTittleJob from './helpers/ModalDeleteTittleJob';
 
@@ -22,7 +22,9 @@ function OrdersTableItem(props) {
         {/* Row */}
         <tr>
           <td className='px-2 first:pl-14 last:pr-5 py-3 whitespace-nowrap'>
-            <div className='flex items-center'>{props.job_title}</div>
+            <div className='flex items-center capitalize'>
+              {props.job_title}
+            </div>
           </td>
           <td className='px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap'>
             <div className='flex items-center'>
