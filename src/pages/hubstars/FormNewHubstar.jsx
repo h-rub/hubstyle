@@ -32,21 +32,23 @@ function FormNewHubstar() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    }).then((response) => {
-      if (response.ok === true) {
-        setBannerSuccessOpen(true);
-        setLoading(true);
-        setTimeout(() => {
-          navigate('/hubstars/all');
-        }, 3000);
-      } else if (response.ok === false) {
-        setBannerErrorOpen(true);
-        setTimeout(() => {
-          setBannerErrorOpen(false);
-        }, 7000);
-      }
-    });
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
   };
+
+  // if (response.ok === true) {
+  //   setBannerSuccessOpen(true);
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     navigate('/hubstars/all');
+  //   }, 3000);
+  // } else if (response.ok === false) {
+  //   setBannerErrorOpen(true);
+  //   setTimeout(() => {
+  //     setBannerErrorOpen(false);
+  //   }, 7000);
+  // }
 
   function valid() {
     let archivo = document.getElementById('archivo').value,

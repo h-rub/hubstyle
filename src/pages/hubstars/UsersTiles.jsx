@@ -176,6 +176,10 @@ function UsersTiles() {
                     first_name={data.first_name}
                     last_name={data.last_name}
                     country={data.country}
+                    short_description={data.short_description}
+                    job_title={data.job_title}
+                    picture={data.picture}
+                    country_flag={data.country_flag}
                   />
                 ))}
               </div>
