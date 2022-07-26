@@ -11,8 +11,10 @@ import StateContext from '../../context/StateContext';
 const ProfessionalTable = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [feedbackModalOpen, setFeedbackModalOpen] = useState(false);
+  const [searchJobTitle, setSearchJobTitle] = useState('');
   const {
     jobList,
+    setJobList,
     bannerSuccessOpen,
     setBannerSuccessOpen,
     bannerErrorOpen,
@@ -22,7 +24,27 @@ const ProfessionalTable = () => {
     banner2SuccessOpen,
     banner2ErrorOpen,
     setBanner2ErrorOpen,
+    jobListTable,
   } = useContext(StateContext);
+
+  const handleChangeSearchJob = (e) => {
+    setSearchJobTitle(e.target.value);
+    filterJob(e.target.value);
+  };
+
+  const filterJob = (mindleOfJob) => {
+    let jobResult = jobListTable.filter((element) => {
+      if (
+        element.job_title
+          .toString()
+          .toLowerCase()
+          .includes(mindleOfJob.toLowerCase())
+      ) {
+        return element;
+      }
+    });
+    setJobList(jobResult);
+  };
 
   return (
     <div className='flex h-screen overflow-hidden'>
@@ -53,11 +75,13 @@ const ProfessionalTable = () => {
                     Buscar...
                   </label>
                   <input
+                    value={searchJobTitle}
                     autoComplete='false'
                     id='action-search'
                     className='form-input pl-9 focus:border-primary'
                     type='search'
                     placeholder='Buscar...'
+                    onChange={handleChangeSearchJob}
                   />
                   <div
                     className='absolute inset-0 mt-2.5 right-auto group'
