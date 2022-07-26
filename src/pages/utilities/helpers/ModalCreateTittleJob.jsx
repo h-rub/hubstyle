@@ -7,10 +7,12 @@ const ModalCreateTittleJob = ({
   setFeedbackModalOpen,
   setBannerSuccessOpen,
   setBannerErrorOpen,
+  setUpdateJobList,
 }) => {
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -24,6 +26,7 @@ const ModalCreateTittleJob = ({
     }).then((response) => {
       if (response.status === 201) {
         setBannerSuccessOpen(true);
+        reset();
         setTimeout(() => {
           setBannerSuccessOpen(false);
         }, 3000);
@@ -34,6 +37,7 @@ const ModalCreateTittleJob = ({
         }, 3000);
       }
     });
+    setUpdateJobList(false);
   };
 
   return (

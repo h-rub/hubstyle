@@ -16,6 +16,7 @@ const ProfessionalTable = () => {
     setBannerSuccessOpen,
     bannerErrorOpen,
     setBannerErrorOpen,
+    setUpdateJobList,
   } = useContext(StateContext);
 
   return (
@@ -195,6 +196,7 @@ const ProfessionalTable = () => {
         feedbackModalOpen={feedbackModalOpen}
         setBannerSuccessOpen={setBannerSuccessOpen}
         setBannerErrorOpen={setBannerErrorOpen}
+        setUpdateJobList={setUpdateJobList}
       />
     </div>
   );

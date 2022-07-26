@@ -9,6 +9,7 @@ const StateProvider = ({ children }) => {
   const [reloadHubstarList, setReloadHubstarList] = useState(false);
   // ESTADO PARA GUARDAR LOS TITULOS DEL PUESTO
   const [jobList, setJobList] = useState([]);
+  const [updateJobList, setUpdateJobList] = useState(false);
   //ESTADO PARA GUARDAR LAS CIUDADES
   const [countryAll, setCountryAll] = useState([]);
 
@@ -47,11 +48,12 @@ const StateProvider = ({ children }) => {
     fetch('https://hubhr.herokuapp.com/api/list-job-titles/')
       .then((response) => response.json())
       .then((json) => setJobList(json));
+    setUpdateJobList(true);
   };
 
   useEffect(() => {
     jobTitleList();
-  }, []);
+  }, [updateJobList]);
 
   //API PARA LAS CIUDADES
   const countryList = async () => {
@@ -78,6 +80,7 @@ const StateProvider = ({ children }) => {
         jobList,
         setJobList,
         countryAll,
+        setUpdateJobList,
       }}>
       {children}
     </StateContext.Provider>

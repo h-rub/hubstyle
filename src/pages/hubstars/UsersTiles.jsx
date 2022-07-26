@@ -17,7 +17,6 @@ function UsersTiles() {
     setBannerSuccessOpen,
     bannerErrorOpen,
     setBannerErrorOpen,
-    setReloadHubstarList,
   } = useContext(StateContext);
 
   const { hubList, hubListCard, setHubList } = useFetchHubstarList();
