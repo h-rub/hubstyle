@@ -3,9 +3,11 @@ import StateContext from './StateContext';
 import { useNavigate } from 'react-router-dom';
 
 const StateProvider = ({ children }) => {
-  // ESTADOS PARA LOS COMPONENTE USERTILES
+  // ESTADOS PARA LOS BANNERS
   const [bannerSuccessOpen, setBannerSuccessOpen] = useState(false);
   const [bannerErrorOpen, setBannerErrorOpen] = useState(false);
+  const [banner2SuccessOpen, setBanner2SuccessOpen] = useState(false);
+  const [banner2ErrorOpen, setBanner2ErrorOpen] = useState(false);
   const [reloadHubstarList, setReloadHubstarList] = useState(false);
   // ESTADO PARA GUARDAR LOS TITULOS DEL PUESTO
   const [jobList, setJobList] = useState([]);
@@ -81,6 +83,10 @@ const StateProvider = ({ children }) => {
         setJobList,
         countryAll,
         setUpdateJobList,
+        setBanner2SuccessOpen,
+        banner2SuccessOpen,
+        banner2ErrorOpen,
+        setBanner2ErrorOpen,
       }}>
       {children}
     </StateContext.Provider>

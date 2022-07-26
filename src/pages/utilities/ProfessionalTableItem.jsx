@@ -15,6 +15,7 @@ function OrdersTableItem(props) {
             <ModalDeleteTittleJob
               dangerModalOpen={dangerModalOpen}
               setDangerModalOpen={setDangerModalOpen}
+              id={props.id}
             />
           </td>
         </tr>
@@ -64,6 +65,7 @@ function OrdersTableItem(props) {
             <ModalUpdateTittleJob
               updateModalOpen={updateModalOpen}
               setUpdateModalOpen={setUpdateModalOpen}
+              id={props.id}
             />
           </td>
         </tr>

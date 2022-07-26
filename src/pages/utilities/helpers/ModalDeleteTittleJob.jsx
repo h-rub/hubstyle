@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ModalBlank from '../../../components/ModalBlank';
+import StateContext from '../../../context/StateContext';
 
-const ModalDeleteTittleJob = ({ dangerModalOpen, setDangerModalOpen }) => {
+const ModalDeleteTittleJob = ({ dangerModalOpen, setDangerModalOpen, id }) => {
+  const { setBanner2SuccessOpen, setBanner2ErrorOpen, setUpdateJobList } =
+    useContext(StateContext);
+
+  const deleteJobTitle = async (id) => {
+    fetch(`https://hubhr.herokuapp.com/api/job-title/delete/${id}`, {
+      method: 'DELETE',
+    }).then((response) => {
+      if (response.status === 200) {
+        setBanner2SuccessOpen(true);
+        setDangerModalOpen(false);
+        setTimeout(() => {
+          setBanner2SuccessOpen(false);
+        }, 3000);
+      } else {
+        setBanner2ErrorOpen(true);
+        setDangerModalOpen(false);
+        setTimeout(() => {
+          setBanner2ErrorOpen(false);
+        }, 3000);
+      }
+    });
+    setUpdateJobList(false);
+  };
+
   return (
     <div className='m-1.5'>
       {/* Start */}
@@ -48,6 +73,7 @@ const ModalDeleteTittleJob = ({ dangerModalOpen, setDangerModalOpen }) => {
               <button
                 onClick={(e) => {
                   e.stopPropagation();
+                  deleteJobTitle(id);
                 }}
                 type='button'
                 className='btn-sm bg-rose-500 hover:bg-rose-600 text-white'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ModalUpdate from '../../../components/ModalUpdate';
 
-const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen }) => {
+const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen, id }) => {
   return (
     <div className='m-1.5'>
       <ModalUpdate
@@ -32,7 +32,7 @@ const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen }) => {
               }}>
               Cancelar
             </button>
-            <button className='btn-sm bg-primary hover:bg-indigo-600 text-white'>
+            <button className='btn-sm bg-primary text-white'>
               Actualizar puesto
             </button>
           </div>

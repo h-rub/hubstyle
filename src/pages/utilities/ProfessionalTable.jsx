@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../../partials/Sidebar';
 import Header from '../../partials/Header';
 import Banner from '../../components/Banner';
+import Banner2 from '../../components/Banner2';
 import ProfessionalTableItem from './ProfessionalTableItem';
 import ModalCreateTittleJob from './helpers/ModalCreateTittleJob';
 import StateContext from '../../context/StateContext';
@@ -17,6 +18,10 @@ const ProfessionalTable = () => {
     bannerErrorOpen,
     setBannerErrorOpen,
     setUpdateJobList,
+    setBanner2SuccessOpen,
+    banner2SuccessOpen,
+    banner2ErrorOpen,
+    setBanner2ErrorOpen,
   } = useContext(StateContext);
 
   return (
@@ -135,7 +140,7 @@ const ProfessionalTable = () => {
                     type='success'
                     open={bannerSuccessOpen}
                     setOpen={setBannerSuccessOpen}>
-                    operación exitosa. El perfil profesional se guardo.
+                    Operación exitosa. El perfil profesional se guardó.
                   </Banner>
                   <Banner
                     type='error'
@@ -144,6 +149,19 @@ const ProfessionalTable = () => {
                     Lo sentimos, al parecer tenemos problemas con nuestro
                     servidor.
                   </Banner>
+                  <Banner2
+                    type='success'
+                    open={banner2SuccessOpen}
+                    setOpen={setBanner2SuccessOpen}>
+                    Operación exitosa. El perfil profesional se eliminó.
+                  </Banner2>
+                  <Banner2
+                    type='error'
+                    open={banner2ErrorOpen}
+                    setOpen={setBanner2ErrorOpen}>
+                    Lo sentimos, al parecer tenemos problemas con nuestro
+                    servidor.
+                  </Banner2>
                 </div>
                 <header className='px-5 py-4'>
                   <h2 className='font-semibold text-slate-800'>
@@ -179,6 +197,7 @@ const ProfessionalTable = () => {
                       {jobList.map((title) => (
                         <ProfessionalTableItem
                           key={title.id}
+                          id={title.id}
                           job_title={title.job_title}
                         />
                       ))}
