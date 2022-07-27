@@ -13,6 +13,7 @@ function FormNewHubstar() {
   const [loading, setLoading] = useState(false);
   const [formatInvalid, setFormatInvalid] = useState(false);
   const [sizeInvalid, setSizeInvalid] = useState(false);
+
   const navigate = useNavigate();
 
   const { jobList, countryAll } = useContext(StateContext);
@@ -25,16 +26,30 @@ function FormNewHubstar() {
     formState: { errors },
   } = useForm({ defaultValues: { signature: 'false' } });
 
-  const NewHub = (data) => {
+  const NewHub = async (data) => {
+    console.log(data.country);
+    const files = document.getElementById('archivo').files;
+    let formData = new FormData();
+    formData.append('country ', data.country);
+    formData.append('curp ', data.curp);
+    formData.append('email ', data.email);
+    formData.append('first_name ', data.first_name);
+    formData.append('gender ', data.gender);
+    formData.append('interbank_key ', data.interbank_key);
+    formData.append('job_title ', data.job_title);
+    formData.append('last_name ', data.last_name);
+    formData.append('rfc ', data.rfc);
+    formData.append('short_description', short_description);
+    formData.append('picture', files[0]);
+
     fetch('https://hubhr.herokuapp.com/api/associate/create', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+      body: formData,
     })
       .then((response) => response.json())
-      .then((json) => console.log(json));
+      .then((json) => {
+        console.log(json);
+      });
   };
 
   // if (response.ok === true) {
@@ -50,7 +65,7 @@ function FormNewHubstar() {
   //   }, 7000);
   // }
 
-  function valid() {
+  const valid = () => {
     let archivo = document.getElementById('archivo').value,
       extension = archivo.substring(archivo.lastIndexOf('.'), archivo.length);
     let imgsize = document.getElementById('archivo').files[0].size;
@@ -71,7 +86,7 @@ function FormNewHubstar() {
         setSizeInvalid(false);
       }, 2000);
     }
-  }
+  };
 
   return (
     <>
@@ -118,7 +133,7 @@ function FormNewHubstar() {
                     Nombre<span className='text-rose-500'>*</span>
                   </label>
                   <input
-                    className='form-input w-full'
+                    className='form-input w-full capitalize'
                     autoComplete='off'
                     type='text'
                     {...register('first_name', {
@@ -146,7 +161,7 @@ function FormNewHubstar() {
                     Apellido<span className='text-rose-500'>*</span>
                   </label>
                   <input
-                    className='form-input w-full'
+                    className='form-input w-full capitalize'
                     autoComplete='off'
                     type='text'
                     {...register('last_name', {
@@ -202,7 +217,7 @@ function FormNewHubstar() {
                     RFC<span className='text-rose-500'>*</span>
                   </label>
                   <input
-                    className='uppercase form-input w-full'
+                    className='uppercase form-input w-full '
                     autoComplete='off'
                     type='text'
                     {...register('rfc', {
