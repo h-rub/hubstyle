@@ -26,9 +26,11 @@ function FormNewHubstar() {
     formState: { errors },
   } = useForm({ defaultValues: { signature: 'false' } });
 
-  const NewHub = async (data) => {
-    console.log(data.country);
-    const files = document.getElementById('archivo').files;
+  const newHub = async (data) => {
+    console.log(data);
+    const files = document.getElementById('archivo').value
+      ? document.getElementById('archivo').files[0]
+      : '';
     let formData = new FormData();
     formData.append('country ', data.country);
     formData.append('curp ', data.curp);
@@ -39,8 +41,8 @@ function FormNewHubstar() {
     formData.append('job_title ', data.job_title);
     formData.append('last_name ', data.last_name);
     formData.append('rfc ', data.rfc);
-    formData.append('short_description', short_description);
-    formData.append('picture', files[0]);
+    formData.append('short_description', data.short_description);
+    formData.append('picture', files);
 
     fetch('https://hubhr.herokuapp.com/api/associate/create', {
       method: 'POST',
@@ -66,7 +68,7 @@ function FormNewHubstar() {
   // }
 
   const valid = () => {
-    let archivo = document.getElementById('archivo').value,
+    let archivo = document.getElementById('archivo').files,
       extension = archivo.substring(archivo.lastIndexOf('.'), archivo.length);
     let imgsize = document.getElementById('archivo').files[0].size;
     if (
@@ -124,7 +126,7 @@ function FormNewHubstar() {
           <h2 className='text-2xl text-slate-800 font-bold mb-6'>
             Datos personales
           </h2>
-          <form onSubmit={handleSubmit(NewHub)}>
+          <form onSubmit={handleSubmit(newHub)}>
             <section className='grid gap-5 md:grid-cols-3'>
               <div>
                 {/* INPUT FIRST NAME */}
