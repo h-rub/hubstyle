@@ -1076,18 +1076,18 @@ function ModalPage() {
                         {/* Start */}
                         <button
                           className='btn bg-primary hover:bg-indigo-600 text-white'
-                          aria-controls='feedback-modal'
+                          aria-controls='update-modal'
                           onClick={(e) => {
                             e.stopPropagation();
                             setFeedbackModalOpen(true);
                           }}>
                           Update Feedback
                         </button>
-                        <ModalUpdate
-                          id='feedback-modal'
+                        <ModalBasic
+                          id='update-modal'
                           modalOpen={updateModalOpen}
                           setModalOpen={setUpdateModalOpen}
-                          title='Send Feedback'>
+                          title='Send update'>
                           {/* Modal content */}
                           <div className='px-5 py-4'>
                             <div className='text-sm'>
@@ -1125,12 +1125,12 @@ function ModalPage() {
                               <div>
                                 <label
                                   className='block text-sm font-medium mb-1'
-                                  htmlFor='feedback'>
+                                  htmlFor='update'>
                                   Message{' '}
                                   <span className='text-rose-500'>*</span>
                                 </label>
                                 <textarea
-                                  id='feedback'
+                                  id='update'
                                   className='form-textarea w-full px-2 py-1'
                                   rows='4'
                                   required></textarea>
@@ -1153,7 +1153,7 @@ function ModalPage() {
                               </button>
                             </div>
                           </div>
-                        </ModalUpdate>
+                        </ModalBasic>
                         {/* End */}
                       </div>
                     </div>

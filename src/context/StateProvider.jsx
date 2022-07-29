@@ -54,11 +54,11 @@ const StateProvider = ({ children }) => {
         setJobList(json);
         setJobListTable(json);
       });
-    setUpdateJobList(true);
   };
 
   useEffect(() => {
     jobTitleList();
+    setUpdateJobList(false);
   }, [updateJobList]);
 
   //API PARA LAS CIUDADES

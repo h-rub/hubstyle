@@ -26,6 +26,7 @@ const ModalCreateTittleJob = ({
     }).then((response) => {
       if (response.status === 201) {
         setBannerSuccessOpen(true);
+        setFeedbackModalOpen(false);
         reset();
         setTimeout(() => {
           setBannerSuccessOpen(false);
@@ -36,8 +37,8 @@ const ModalCreateTittleJob = ({
           setBannerErrorOpen(false);
         }, 3000);
       }
+      setUpdateJobList(true);
     });
-    setUpdateJobList(false);
   };
 
   return (
@@ -92,13 +93,7 @@ const ModalCreateTittleJob = ({
                   }}>
                   Cancelar
                 </button>
-                <button
-                  type='submit'
-                  className='btn-sm bg-primary  text-white'
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setFeedbackModalOpen(false);
-                  }}>
+                <button type='submit' className='btn-sm bg-primary  text-white'>
                   Crear puesto
                 </button>
               </div>

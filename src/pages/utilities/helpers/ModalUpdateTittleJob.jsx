@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ModalUpdate from '../../../components/ModalUpdate';
 import { useForm } from 'react-hook-form';
+import StateContext from '../../../context/StateContext';
 
 const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen, id }) => {
+  const { setBannerSuccessOpen, setBannerErrorOpen, setUpdateJobList } =
+    useContext(StateContext);
+
   const {
     handleSubmit,
     register,
@@ -10,7 +14,7 @@ const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen, id }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (title) => console.log(title);
 
   const jobTitleDetail = async () => {
     fetch(`https://hubhr.herokuapp.com/api/job-title-detail?id=${id}`)
@@ -24,6 +28,30 @@ const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen, id }) => {
     jobTitleDetail();
   }, []);
 
+  const updateJobTitle = async (title) => {
+    fetch(`https://hubhr.herokuapp.com/api/job-title/update/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(title),
+    }).then((response) => {
+      if (response.status === 200) {
+        setBannerSuccessOpen(true);
+        setUpdateModalOpen(false);
+        setTimeout(() => {
+          setBannerSuccessOpen(false);
+        }, 3000);
+      } else {
+        setBannerErrorOpen(true);
+        setTimeout(() => {
+          setBannerErrorOpen(false);
+        }, 3000);
+      }
+      setUpdateJobList(true);
+    });
+  };
+
   return (
     <div className='m-1.5'>
       <ModalUpdate
@@ -32,7 +60,7 @@ const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen, id }) => {
         setModalOpen={setUpdateModalOpen}
         title='Actualizar perfil profesional'>
         {/* Modal content */}
-        <form onSubmit={handleSubmit(jobTitleDetail)}>
+        <form onSubmit={handleSubmit(updateJobTitle)}>
           <>
             <div className='px-5 py-4'>
               <div className='space-y-3'>
@@ -75,12 +103,7 @@ const ModalUpdateTittleJob = ({ updateModalOpen, setUpdateModalOpen, id }) => {
                   }}>
                   Cancelar
                 </button>
-                <button
-                  type='submit'
-                  className='btn-sm bg-primary text-white'
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}>
+                <button type='submit' className='btn-sm bg-primary text-white'>
                   Actualizar puesto
                 </button>
               </div>

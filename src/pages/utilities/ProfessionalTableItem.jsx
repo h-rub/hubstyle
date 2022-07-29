@@ -17,6 +17,12 @@ function OrdersTableItem(props) {
               setDangerModalOpen={setDangerModalOpen}
               id={props.id}
             />
+            {/* MODAL UPDATE */}
+            <ModalUpdateTittleJob
+              updateModalOpen={updateModalOpen}
+              setUpdateModalOpen={setUpdateModalOpen}
+              id={props.id}
+            />
           </td>
         </tr>
         {/* Row */}
@@ -63,12 +69,6 @@ function OrdersTableItem(props) {
                 </button>
               </div>
             </div>
-            {/* MODAL UPDATE */}
-            <ModalUpdateTittleJob
-              updateModalOpen={updateModalOpen}
-              setUpdateModalOpen={setUpdateModalOpen}
-              id={props.id}
-            />
           </td>
         </tr>
       </tbody>

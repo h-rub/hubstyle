@@ -169,7 +169,7 @@ const ProfessionalTable = () => {
                     type='success'
                     open={bannerSuccessOpen}
                     setOpen={setBannerSuccessOpen}>
-                    Operación exitosa. El perfil profesional se guardó.
+                    Operación exitosa.
                   </Banner>
                   <Banner
                     type='error'

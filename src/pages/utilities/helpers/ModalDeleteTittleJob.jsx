@@ -23,8 +23,8 @@ const ModalDeleteTittleJob = ({ dangerModalOpen, setDangerModalOpen, id }) => {
           setBanner2ErrorOpen(false);
         }, 3000);
       }
+      setUpdateJobList(true);
     });
-    setUpdateJobList(false);
   };
 
   return (
