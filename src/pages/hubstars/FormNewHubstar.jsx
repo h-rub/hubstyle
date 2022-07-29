@@ -47,49 +47,45 @@ function FormNewHubstar() {
     fetch('https://hubhr.herokuapp.com/api/associate/create', {
       method: 'POST',
       body: formData,
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-      });
+    }).then((response) => {
+      if (response.ok === true) {
+        setBannerSuccessOpen(true);
+        setLoading(true);
+        setTimeout(() => {
+          navigate('/hubstars/all');
+        }, 3000);
+      } else if (response.ok === false) {
+        setBannerErrorOpen(true);
+        setTimeout(() => {
+          setBannerErrorOpen(false);
+        }, 7000);
+      }
+    });
   };
 
-  // if (response.ok === true) {
-  //   setBannerSuccessOpen(true);
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     navigate('/hubstars/all');
-  //   }, 3000);
-  // } else if (response.ok === false) {
-  //   setBannerErrorOpen(true);
-  //   setTimeout(() => {
-  //     setBannerErrorOpen(false);
-  //   }, 7000);
-  // }
+  function valid(x) {
+    var imagen = document.getElementById('archivo').files;
 
-  const valid = () => {
-    let archivo = document.getElementById('archivo').files,
-      extension = archivo.substring(archivo.lastIndexOf('.'), archivo.length);
-    let imgsize = document.getElementById('archivo').files[0].size;
-    if (
-      document
-        .getElementById('archivo')
-        .getAttribute('accept')
-        .split(',')
-        .indexOf(extension) < 0
-    ) {
-      setFormatInvalid(true);
-      setTimeout(() => {
-        setFormatInvalid(false);
-      }, 2000);
-    } else if (imgsize > 1048676) {
-      setSizeInvalid(true);
-      setTimeout(() => {
-        setSizeInvalid(false);
-      }, 2000);
+    if (imagen.length) {
+      for (x = 0; x < imagen.length; x++) {
+        if (imagen[x].type != 'image/png' && imagen[x].type != 'image/jpg') {
+          setFormatInvalid(true);
+          setTimeout(() => {
+            setFormatInvalid(false);
+          }, 2000);
+          return;
+        }
+
+        if (imagen[x].size > 1024 * 1024 * 1) {
+          setSizeInvalid(true);
+          setTimeout(() => {
+            setSizeInvalid(false);
+          }, 2000);
+          return;
+        }
+      }
     }
-  };
-
+  }
   return (
     <>
       <div className='px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto'>
@@ -219,6 +215,7 @@ function FormNewHubstar() {
                     RFC<span className='text-rose-500'>*</span>
                   </label>
                   <input
+                    maxlength='13'
                     className='uppercase form-input w-full '
                     autoComplete='off'
                     type='text'
@@ -251,6 +248,7 @@ function FormNewHubstar() {
                     CURP <span className='text-rose-500'>*</span>
                   </label>
                   <input
+                    maxlength='18'
                     className='uppercase form-input w-full '
                     autoComplete='off'
                     type='text'
@@ -539,6 +537,7 @@ function FormNewHubstar() {
                     <span className='text-rose-500'>*</span>
                   </label>
                   <textarea
+                    maxlength='150'
                     className='form-input w-full'
                     type='text'
                     autoComplete='off'
@@ -567,11 +566,10 @@ function FormNewHubstar() {
                   <div className='space-x-5'>
                     <label
                       htmlFor='archivo'
-                      className='btn border-slate-200 hover:border-slate-300 text-emerald-500 hover:text-emerald-200 cursor-pointer'>
+                      className='btn border-slate-200 hover:border-slate-300 text-emerald-500 hover:text-emerald-200 cursor-pointer img-size'>
                       Selecciona un archivo
                     </label>
                     <input
-                      onChange={valid}
                       accept='.jpg,.png'
                       id='archivo'
                       type='file'
@@ -580,6 +578,7 @@ function FormNewHubstar() {
                           value: false,
                         },
                       })}
+                      onChange={valid}
                     />
                     {formatInvalid && (
                       <span className='text-red-500 text-sm'>
@@ -588,7 +587,7 @@ function FormNewHubstar() {
                     )}
                     {sizeInvalid && (
                       <span className='text-red-500 text-sm'>
-                        El archivo es mayor a 1MB
+                        Soló se permite archivos que pesen menos de un 1MB
                       </span>
                     )}
                   </div>
