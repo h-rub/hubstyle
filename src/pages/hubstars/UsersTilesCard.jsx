@@ -38,7 +38,7 @@ function UsersTilesCard(props) {
                         alt='foto de perfil'
                       />
                     ) : (
-                      <div className='rounded-full bg-primary w-16 h-16 flex justify-center items-center text-3xl text-white font-bold'>
+                      <div className='uppercase rounded-full bg-primary w-16 h-16 flex justify-center items-center text-3xl text-white font-bold'>
                         {props.first_name[0]}
                       </div>
                     )}
